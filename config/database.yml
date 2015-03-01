@@ -1,0 +1,23 @@
+development:
+  adapter: postgresql
+  encoding: utf8
+  database: contriapp_dev
+  username: dbapp
+  password: C0ntri@pp!
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: utf8
+  database: contriapp_test
+  username: dbapp
+  password: C0ntri@pp!
+  host: localhost
+
+  production:
+    adapter: postgresql
+    encoding: utf8
+    database: contriapp_prod
+    username: dbapp
+    password: C0ntri@pp!
+    host: localhost
