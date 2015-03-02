@@ -1,0 +1,109 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Project name:</strong>
+  <%= @project.project_name %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @project.start_date %>
+</p>
+
+<p>
+  <strong>Deadline:</strong>
+  <%= @project.deadline %>
+</p>
+
+<p>
+  <strong>Client goal:</strong>
+  <%= @project.client_goal %>
+</p>
+
+<p>
+  <strong>Time frame description:</strong>
+  <%= @project.time_frame_description %>
+</p>
+
+<p>
+  <strong>Mobilization quantity:</strong>
+  <%= @project.mobilization_quantity %>
+</p>
+
+<p>
+  <strong>Liquidate damages yn:</strong>
+  <%= @project.liquidate_damages_yn %>
+</p>
+
+<p>
+  <strong>Prevailing wages certified payroll yn:</strong>
+  <%= @project.prevailing_wages_certified_payroll_yn %>
+</p>
+
+<p>
+  <strong>Permit special inspection in possession:</strong>
+  <%= @project.permit_special_inspection_in_possession %>
+</p>
+
+<p>
+  <strong>Restricted work hours:</strong>
+  <%= @project.restricted_work_hours %>
+</p>
+
+<p>
+  <strong>Permit submittal required:</strong>
+  <%= @project.permit_submittal_required %>
+</p>
+
+<p>
+  <strong>Permit fees required:</strong>
+  <%= @project.permit_fees_required %>
+</p>
+
+<p>
+  <strong>Permit fees:</strong>
+  <%= @project.permit_fees %>
+</p>
+
+<p>
+  <strong>Project budget:</strong>
+  <%= @project.project_budget %>
+</p>
+
+<p>
+  <strong>Deal type:</strong>
+  <%= @project.deal_type_id %>
+</p>
+
+<p>
+  <strong>Deal type description:</strong>
+  <%= @project.deal_type_description %>
+</p>
+
+<p>
+  <strong>Project setting:</strong>
+  <%= @project.project_setting_id %>
+</p>
+
+<p>
+  <strong>Procurement tool:</strong>
+  <%= @project.procurement_tool_id %>
+</p>
+
+<p>
+  <strong>Sales person:</strong>
+  <%= @project.sales_person_id %>
+</p>
+
+<p>
+  <strong>Project status:</strong>
+  <%= @project.project_status_id %>
+</p>
+
+<p>
+  <strong>Irrigation responsibility:</strong>
+  <%= @project.irrigation_responsibility_id %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

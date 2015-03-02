@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Projects</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Project name</th>
+      <th>Start date</th>
+      <th>Deadline</th>
+      <th>Client goal</th>
+      <th>Time frame description</th>
+      <th>Mobilization quantity</th>
+      <th>Liquidate damages yn</th>
+      <th>Prevailing wages certified payroll yn</th>
+      <th>Permit special inspection in possession</th>
+      <th>Restricted work hours</th>
+      <th>Permit submittal required</th>
+      <th>Permit fees required</th>
+      <th>Permit fees</th>
+      <th>Project budget</th>
+      <th>Deal type</th>
+      <th>Deal type description</th>
+      <th>Project setting</th>
+      <th>Procurement tool</th>
+      <th>Sales person</th>
+      <th>Project status</th>
+      <th>Irrigation responsibility</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.project_name %></td>
+        <td><%= project.start_date %></td>
+        <td><%= project.deadline %></td>
+        <td><%= project.client_goal %></td>
+        <td><%= project.time_frame_description %></td>
+        <td><%= project.mobilization_quantity %></td>
+        <td><%= project.liquidate_damages_yn %></td>
+        <td><%= project.prevailing_wages_certified_payroll_yn %></td>
+        <td><%= project.permit_special_inspection_in_possession %></td>
+        <td><%= project.restricted_work_hours %></td>
+        <td><%= project.permit_submittal_required %></td>
+        <td><%= project.permit_fees_required %></td>
+        <td><%= project.permit_fees %></td>
+        <td><%= project.project_budget %></td>
+        <td><%= project.deal_type_id %></td>
+        <td><%= project.deal_type_description %></td>
+        <td><%= project.project_setting_id %></td>
+        <td><%= project.procurement_tool_id %></td>
+        <td><%= project.sales_person_id %></td>
+        <td><%= project.project_status_id %></td>
+        <td><%= project.irrigation_responsibility_id %></td>
+        <td><%= link_to 'Show', project %></td>
+        <td><%= link_to 'Edit', edit_project_path(project) %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Project', new_project_path %>

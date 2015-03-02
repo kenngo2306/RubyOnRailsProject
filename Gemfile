@@ -4,13 +4,42 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 #thin webserver
 gem 'thin'
 #PostgeSQL gem
 gem 'pg'
+
+#---Extra Gems-----
+
+
+
+
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'pundit'
+gem 'sendgrid'
+gem 'simple_form'
+gem 'kaminari'
+gem 'prawn-rails'
+group :development do
+  gem 'spring'
+  gem 'better_errors'
+  gem 'binding_of_caller', :platforms=>[:mri_21]
+  gem 'quiet_assets'
+  gem 'rails_layout'
+end
+group :production do
+  gem 'rails_12factor'
+end
+
+
+#---Extra Gems----
+
+
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
@@ -42,9 +71,6 @@ group :development, :test do
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
 
 
   #this is a test for syncing

@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project_name: MyString
+  start_date: 2015-03-01
+  deadline: 2015-03-01
+  client_goal: MyText
+  time_frame_description: MyText
+  mobilization_quantity: 1
+  liquidate_damages_yn: false
+  prevailing_wages_certified_payroll_yn: false
+  permit_special_inspection_in_possession: false
+  restricted_work_hours: MyText
+  permit_submittal_required: false
+  permit_fees_required: false
+  permit_fees: MyText
+  project_budget: 9.99
+  deal_type_id: 1
+  deal_type_description: MyText
+  project_setting_id: 1
+  procurement_tool_id: 1
+  sales_person_id: 1
+  project_status_id: 1
+  irrigation_responsibility_id: 1
+
+two:
+  project_name: MyString
+  start_date: 2015-03-01
+  deadline: 2015-03-01
+  client_goal: MyText
+  time_frame_description: MyText
+  mobilization_quantity: 1
+  liquidate_damages_yn: false
+  prevailing_wages_certified_payroll_yn: false
+  permit_special_inspection_in_possession: false
+  restricted_work_hours: MyText
+  permit_submittal_required: false
+  permit_fees_required: false
+  permit_fees: MyText
+  project_budget: 9.99
+  deal_type_id: 1
+  deal_type_description: MyText
+  project_setting_id: 1
+  procurement_tool_id: 1
+  sales_person_id: 1
+  project_status_id: 1
+  irrigation_responsibility_id: 1

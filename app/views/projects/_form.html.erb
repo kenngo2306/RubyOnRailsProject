@@ -1,0 +1,101 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :project_name %><br>
+    <%= f.text_field :project_name %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br>
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :deadline %><br>
+    <%= f.date_select :deadline %>
+  </div>
+  <div class="field">
+    <%= f.label :client_goal %><br>
+    <%= f.text_area :client_goal %>
+  </div>
+  <div class="field">
+    <%= f.label :time_frame_description %><br>
+    <%= f.text_area :time_frame_description %>
+  </div>
+  <div class="field">
+    <%= f.label :mobilization_quantity %><br>
+    <%= f.number_field :mobilization_quantity %>
+  </div>
+  <div class="field">
+    <%= f.label :liquidate_damages_yn %><br>
+    <%= f.check_box :liquidate_damages_yn %>
+  </div>
+  <div class="field">
+    <%= f.label :prevailing_wages_certified_payroll_yn %><br>
+    <%= f.check_box :prevailing_wages_certified_payroll_yn %>
+  </div>
+  <div class="field">
+    <%= f.label :permit_special_inspection_in_possession %><br>
+    <%= f.check_box :permit_special_inspection_in_possession %>
+  </div>
+  <div class="field">
+    <%= f.label :restricted_work_hours %><br>
+    <%= f.text_area :restricted_work_hours %>
+  </div>
+  <div class="field">
+    <%= f.label :permit_submittal_required %><br>
+    <%= f.check_box :permit_submittal_required %>
+  </div>
+  <div class="field">
+    <%= f.label :permit_fees_required %><br>
+    <%= f.check_box :permit_fees_required %>
+  </div>
+  <div class="field">
+    <%= f.label :permit_fees %><br>
+    <%= f.text_area :permit_fees %>
+  </div>
+  <div class="field">
+    <%= f.label :project_budget %><br>
+    <%= f.text_field :project_budget %>
+  </div>
+  <div class="field">
+    <%= f.label :deal_type_id %><br>
+    <%= f.number_field :deal_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :deal_type_description %><br>
+    <%= f.text_area :deal_type_description %>
+  </div>
+  <div class="field">
+    <%= f.label :project_setting_id %><br>
+    <%= f.number_field :project_setting_id %>
+  </div>
+  <div class="field">
+    <%= f.label :procurement_tool_id %><br>
+    <%= f.number_field :procurement_tool_id %>
+  </div>
+  <div class="field">
+    <%= f.label :sales_person_id %><br>
+    <%= f.number_field :sales_person_id %>
+  </div>
+  <div class="field">
+    <%= f.label :project_status_id %><br>
+    <%= f.number_field :project_status_id %>
+  </div>
+  <div class="field">
+    <%= f.label :irrigation_responsibility_id %><br>
+    <%= f.number_field :irrigation_responsibility_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
