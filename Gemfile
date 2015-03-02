@@ -21,7 +21,7 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'pundit'
 gem 'sendgrid'
-gem 'simple_form'
+# gem 'simple_form'
 gem 'kaminari'
 gem 'prawn-rails'
 group :development do
