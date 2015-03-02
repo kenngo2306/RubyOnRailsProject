@@ -1,0 +1,38 @@
+<%- model_class = ProjectUtility -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:utility_id) %></th>
+      <th><%= model_class.human_attribute_name(:project_site_information_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @project_utilities.each do |project_utility| %>
+      <tr>
+        <td><%= link_to project_utility.id, project_utility_path(project_utility) %></td>
+        <td><%= project_utility.utility_id %></td>
+        <td><%= project_utility.project_site_information_id %></td>
+        <td><%=l project_utility.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_project_utility_path(project_utility), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      project_utility_path(project_utility),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_project_utility_path,
+            :class => 'btn btn-primary' %>

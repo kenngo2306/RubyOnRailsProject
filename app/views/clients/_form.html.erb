@@ -1,0 +1,59 @@
+<%= form_for @client, :html => { :class => "form-horizontal client" } do |f| %>
+
+    <% if @client.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@client.errors.count, "error") %> prohibited this client from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @client.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :client_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :client_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@client[:client_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :billing_address, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :billing_address, :class => 'form-control' %>
+    </div>
+    <%= error_span(@client[:billing_address]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :billing_city, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :billing_city, :class => 'form-control' %>
+    </div>
+    <%= error_span(@client[:billing_city]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :billing_zip, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :billing_zip, :class => 'form-control' %>
+    </div>
+    <%= error_span(@client[:billing_zip]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :state_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :state_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@client[:state_id]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            clients_path, :class => 'btn btn-default' %>
+
+<% end %>

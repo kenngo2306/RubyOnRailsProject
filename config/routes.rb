@@ -1,4 +1,56 @@
 Rails.application.routes.draw do
+  resources :utilities
+
+  resources :project_utilities
+
+  resources :requested_sales_documents
+
+  resources :project_requested_sales_documents
+
+  resources :contact_types
+
+  resources :contacts
+
+  resources :clients
+
+  resources :project_contacts
+
+  resources :sales_people
+
+  resources :project_statuses
+
+  resources :project_settings
+
+  resources :deal_types
+
+  resources :procurement_tools
+
+  resources :soil_conditions
+
+  resources :project_soil_conditions
+
+  resources :states
+
+  resources :project_sites
+
+  resources :irrigation_responsibilities
+
+  resources :project_type_informations
+
+  resources :project_site_informations
+
+  resources :answers
+
+  resources :questions
+
+  resources :category_option_selections
+
+  resources :category_options
+
+  resources :categories
+
+  resources :project_types
+
   resources :phones
 
   resources :projects

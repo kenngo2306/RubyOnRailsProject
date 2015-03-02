@@ -17,7 +17,7 @@ gem 'pg'
 
 
 
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
 gem 'devise'
 gem 'pundit'
 gem 'sendgrid'
@@ -75,7 +75,9 @@ group :development, :test do
 
   #this is a test for syncing
 
-
+  gem 'twitter-bootstrap-rails'
+  gem 'therubyracer'
+  gem 'less-rails'
 
 end
 

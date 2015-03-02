@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sales_person_first_name: MyString
+  sales_person_last_name: MyString
+  sales_person_email: MyString
+  sales_person_phone: MyString
+
+two:
+  sales_person_first_name: MyString
+  sales_person_last_name: MyString
+  sales_person_email: MyString
+  sales_person_phone: MyString

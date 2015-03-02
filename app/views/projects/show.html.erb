@@ -1,109 +1,59 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Project -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Project name:</strong>
-  <%= @project.project_name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:project_name) %>:</strong></dt>
+  <dd><%= @project.project_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_date) %>:</strong></dt>
+  <dd><%= @project.start_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:deadline) %>:</strong></dt>
+  <dd><%= @project.deadline %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:client_goal) %>:</strong></dt>
+  <dd><%= @project.client_goal %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:time_frame_description) %>:</strong></dt>
+  <dd><%= @project.time_frame_description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:mobilization_quantity) %>:</strong></dt>
+  <dd><%= @project.mobilization_quantity %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:liquidate_damages_yn) %>:</strong></dt>
+  <dd><%= @project.liquidate_damages_yn %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:prevailing_wages_certified_payroll_yn) %>:</strong></dt>
+  <dd><%= @project.prevailing_wages_certified_payroll_yn %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:permit_special_inspection_in_possession) %>:</strong></dt>
+  <dd><%= @project.permit_special_inspection_in_possession %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:restricted_work_hours) %>:</strong></dt>
+  <dd><%= @project.restricted_work_hours %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:permit_submittal_required) %>:</strong></dt>
+  <dd><%= @project.permit_submittal_required %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:permit_fees_required) %>:</strong></dt>
+  <dd><%= @project.permit_fees_required %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:permit_fees) %>:</strong></dt>
+  <dd><%= @project.permit_fees %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:project_budget) %>:</strong></dt>
+  <dd><%= @project.project_budget %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:deal_type_id) %>:</strong></dt>
+  <dd><%= @project.deal_type_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:deal_type_description) %>:</strong></dt>
+  <dd><%= @project.deal_type_description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:project_setting_id) %>:</strong></dt>
+  <dd><%= @project.project_setting_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:procurement_tool_id) %>:</strong></dt>
+  <dd><%= @project.procurement_tool_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sales_person_id) %>:</strong></dt>
+  <dd><%= @project.sales_person_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:project_status_id) %>:</strong></dt>
+  <dd><%= @project.project_status_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:irrigation_responsibility_id) %>:</strong></dt>
+  <dd><%= @project.irrigation_responsibility_id %></dd>
+</dl>
 
-<p>
-  <strong>Start date:</strong>
-  <%= @project.start_date %>
-</p>
-
-<p>
-  <strong>Deadline:</strong>
-  <%= @project.deadline %>
-</p>
-
-<p>
-  <strong>Client goal:</strong>
-  <%= @project.client_goal %>
-</p>
-
-<p>
-  <strong>Time frame description:</strong>
-  <%= @project.time_frame_description %>
-</p>
-
-<p>
-  <strong>Mobilization quantity:</strong>
-  <%= @project.mobilization_quantity %>
-</p>
-
-<p>
-  <strong>Liquidate damages yn:</strong>
-  <%= @project.liquidate_damages_yn %>
-</p>
-
-<p>
-  <strong>Prevailing wages certified payroll yn:</strong>
-  <%= @project.prevailing_wages_certified_payroll_yn %>
-</p>
-
-<p>
-  <strong>Permit special inspection in possession:</strong>
-  <%= @project.permit_special_inspection_in_possession %>
-</p>
-
-<p>
-  <strong>Restricted work hours:</strong>
-  <%= @project.restricted_work_hours %>
-</p>
-
-<p>
-  <strong>Permit submittal required:</strong>
-  <%= @project.permit_submittal_required %>
-</p>
-
-<p>
-  <strong>Permit fees required:</strong>
-  <%= @project.permit_fees_required %>
-</p>
-
-<p>
-  <strong>Permit fees:</strong>
-  <%= @project.permit_fees %>
-</p>
-
-<p>
-  <strong>Project budget:</strong>
-  <%= @project.project_budget %>
-</p>
-
-<p>
-  <strong>Deal type:</strong>
-  <%= @project.deal_type_id %>
-</p>
-
-<p>
-  <strong>Deal type description:</strong>
-  <%= @project.deal_type_description %>
-</p>
-
-<p>
-  <strong>Project setting:</strong>
-  <%= @project.project_setting_id %>
-</p>
-
-<p>
-  <strong>Procurement tool:</strong>
-  <%= @project.procurement_tool_id %>
-</p>
-
-<p>
-  <strong>Sales person:</strong>
-  <%= @project.sales_person_id %>
-</p>
-
-<p>
-  <strong>Project status:</strong>
-  <%= @project.project_status_id %>
-</p>
-
-<p>
-  <strong>Irrigation responsibility:</strong>
-  <%= @project.irrigation_responsibility_id %>
-</p>
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              projects_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_project_path(@project), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              project_path(@project),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

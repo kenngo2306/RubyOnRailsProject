@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  area_length: 9.99
+  area_width: 9.99
+  area_description: MyText
+  geotech_report_in_position: false
+  bobcat_accessible: false
+  construction_fence_required: false
+  client_fence_dismantle_reinstall_required: false
+  rock_excavation_required: false
+  hand_dig_required: false
+  dirt_haul_off_required: false
+  tree_vegetation_removal_required: false
+  area_is_sloped: false
+  site_survey_required: false
+  surface_protection_required: false
+  under_ground_obstacles_yn: false
+  structural_removal_required: false
+  pvt_locator_required: false
+  project_type_information_id: 1
+
+two:
+  area_length: 9.99
+  area_width: 9.99
+  area_description: MyText
+  geotech_report_in_position: false
+  bobcat_accessible: false
+  construction_fence_required: false
+  client_fence_dismantle_reinstall_required: false
+  rock_excavation_required: false
+  hand_dig_required: false
+  dirt_haul_off_required: false
+  tree_vegetation_removal_required: false
+  area_is_sloped: false
+  site_survey_required: false
+  surface_protection_required: false
+  under_ground_obstacles_yn: false
+  structural_removal_required: false
+  pvt_locator_required: false
+  project_type_information_id: 1

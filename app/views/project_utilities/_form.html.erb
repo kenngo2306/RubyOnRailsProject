@@ -1,0 +1,38 @@
+<%= form_for @project_utility, :html => { :class => "form-horizontal project_utility" } do |f| %>
+
+    <% if @project_utility.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@project_utility.errors.count, "error") %> prohibited this project_utility from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @project_utility.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :utility_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :utility_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_utility[:utility_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :project_site_information_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :project_site_information_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_utility[:project_site_information_id]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            project_utilities_path, :class => 'btn btn-default' %>
+
+<% end %>

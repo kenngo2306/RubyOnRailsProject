@@ -1,0 +1,66 @@
+<%= form_for @project_site, :html => { :class => "form-horizontal project_site" } do |f| %>
+
+    <% if @project_site.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@project_site.errors.count, "error") %> prohibited this project_site from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @project_site.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :site_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :site_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_site[:site_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :site_address, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :site_address, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_site[:site_address]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :site_city, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :site_city, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_site[:site_city]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :site_zip, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :site_zip, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_site[:site_zip]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :site_access, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :site_access, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_site[:site_access]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :state_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :state_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_site[:state_id]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            project_sites_path, :class => 'btn btn-default' %>
+
+<% end %>

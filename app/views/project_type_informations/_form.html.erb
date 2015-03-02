@@ -1,0 +1,52 @@
+<%= form_for @project_type_information, :html => { :class => "form-horizontal project_type_information" } do |f| %>
+
+    <% if @project_type_information.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@project_type_information.errors.count, "error") %> prohibited this project_type_information from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @project_type_information.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :proposal_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :proposal_number, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_type_information[:proposal_number]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :revision_number, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :revision_number, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_type_information[:revision_number]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :project_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :project_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_type_information[:project_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :project_type_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :project_type_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_type_information[:project_type_id]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            project_type_informations_path, :class => 'btn btn-default' %>
+
+<% end %>

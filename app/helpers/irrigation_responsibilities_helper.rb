@@ -1,0 +1,2 @@
+module IrrigationResponsibilitiesHelper
+end

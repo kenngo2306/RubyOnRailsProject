@@ -1,0 +1,2 @@
+module ProjectSoilConditionsHelper
+end

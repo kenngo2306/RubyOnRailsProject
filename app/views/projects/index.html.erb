@@ -1,38 +1,40 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Projects</h1>
-
-<table>
+<%- model_class = Project -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>Project name</th>
-      <th>Start date</th>
-      <th>Deadline</th>
-      <th>Client goal</th>
-      <th>Time frame description</th>
-      <th>Mobilization quantity</th>
-      <th>Liquidate damages yn</th>
-      <th>Prevailing wages certified payroll yn</th>
-      <th>Permit special inspection in possession</th>
-      <th>Restricted work hours</th>
-      <th>Permit submittal required</th>
-      <th>Permit fees required</th>
-      <th>Permit fees</th>
-      <th>Project budget</th>
-      <th>Deal type</th>
-      <th>Deal type description</th>
-      <th>Project setting</th>
-      <th>Procurement tool</th>
-      <th>Sales person</th>
-      <th>Project status</th>
-      <th>Irrigation responsibility</th>
-      <th colspan="3"></th>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:project_name) %></th>
+      <th><%= model_class.human_attribute_name(:start_date) %></th>
+      <th><%= model_class.human_attribute_name(:deadline) %></th>
+      <th><%= model_class.human_attribute_name(:client_goal) %></th>
+      <th><%= model_class.human_attribute_name(:time_frame_description) %></th>
+      <th><%= model_class.human_attribute_name(:mobilization_quantity) %></th>
+      <th><%= model_class.human_attribute_name(:liquidate_damages_yn) %></th>
+      <th><%= model_class.human_attribute_name(:prevailing_wages_certified_payroll_yn) %></th>
+      <th><%= model_class.human_attribute_name(:permit_special_inspection_in_possession) %></th>
+      <th><%= model_class.human_attribute_name(:restricted_work_hours) %></th>
+      <th><%= model_class.human_attribute_name(:permit_submittal_required) %></th>
+      <th><%= model_class.human_attribute_name(:permit_fees_required) %></th>
+      <th><%= model_class.human_attribute_name(:permit_fees) %></th>
+      <th><%= model_class.human_attribute_name(:project_budget) %></th>
+      <th><%= model_class.human_attribute_name(:deal_type_id) %></th>
+      <th><%= model_class.human_attribute_name(:deal_type_description) %></th>
+      <th><%= model_class.human_attribute_name(:project_setting_id) %></th>
+      <th><%= model_class.human_attribute_name(:procurement_tool_id) %></th>
+      <th><%= model_class.human_attribute_name(:sales_person_id) %></th>
+      <th><%= model_class.human_attribute_name(:project_status_id) %></th>
+      <th><%= model_class.human_attribute_name(:irrigation_responsibility_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @projects.each do |project| %>
       <tr>
+        <td><%= link_to project.id, project_path(project) %></td>
         <td><%= project.project_name %></td>
         <td><%= project.start_date %></td>
         <td><%= project.deadline %></td>
@@ -54,14 +56,21 @@
         <td><%= project.sales_person_id %></td>
         <td><%= project.project_status_id %></td>
         <td><%= project.irrigation_responsibility_id %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l project.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_project_path(project), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      project_path(project),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Project', new_project_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_project_path,
+            :class => 'btn btn-primary' %>

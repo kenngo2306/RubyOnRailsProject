@@ -1,0 +1,38 @@
+<%= form_for @project_soil_condition, :html => { :class => "form-horizontal project_soil_condition" } do |f| %>
+
+    <% if @project_soil_condition.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@project_soil_condition.errors.count, "error") %> prohibited this project_soil_condition from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @project_soil_condition.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :soil_condition_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :soil_condition_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_soil_condition[:soil_condition_id]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :project_site_information_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :project_site_information_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_soil_condition[:project_site_information_id]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            project_soil_conditions_path, :class => 'btn btn-default' %>
+
+<% end %>

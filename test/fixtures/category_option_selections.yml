@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category_option_selection_name: MyString
+  category_option_id: 1
+  project_type_information_id: 1
+
+two:
+  category_option_selection_name: MyString
+  category_option_id: 1
+  project_type_information_id: 1

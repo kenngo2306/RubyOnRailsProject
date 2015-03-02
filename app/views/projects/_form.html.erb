@@ -1,101 +1,171 @@
-<%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+<%= form_for @project, :html => { :class => "form-horizontal project" } do |f| %>
 
-      <ul>
-      <% @project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <% if @project.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @project.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :project_name %><br>
-    <%= f.text_field :project_name %>
+  <div class="control-group">
+    <%= f.label :project_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :project_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:project_name]) %>
   </div>
-  <div class="field">
-    <%= f.label :start_date %><br>
-    <%= f.date_select :start_date %>
+  <div class="control-group">
+    <%= f.label :start_date, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :start_date, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:start_date]) %>
   </div>
-  <div class="field">
-    <%= f.label :deadline %><br>
-    <%= f.date_select :deadline %>
+  <div class="control-group">
+    <%= f.label :deadline, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :deadline, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:deadline]) %>
   </div>
-  <div class="field">
-    <%= f.label :client_goal %><br>
-    <%= f.text_area :client_goal %>
+  <div class="control-group">
+    <%= f.label :client_goal, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :client_goal, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:client_goal]) %>
   </div>
-  <div class="field">
-    <%= f.label :time_frame_description %><br>
-    <%= f.text_area :time_frame_description %>
+  <div class="control-group">
+    <%= f.label :time_frame_description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :time_frame_description, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:time_frame_description]) %>
   </div>
-  <div class="field">
-    <%= f.label :mobilization_quantity %><br>
-    <%= f.number_field :mobilization_quantity %>
+  <div class="control-group">
+    <%= f.label :mobilization_quantity, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :mobilization_quantity, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:mobilization_quantity]) %>
   </div>
-  <div class="field">
-    <%= f.label :liquidate_damages_yn %><br>
-    <%= f.check_box :liquidate_damages_yn %>
+  <div class="control-group">
+    <%= f.label :liquidate_damages_yn, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :liquidate_damages_yn, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:liquidate_damages_yn]) %>
   </div>
-  <div class="field">
-    <%= f.label :prevailing_wages_certified_payroll_yn %><br>
-    <%= f.check_box :prevailing_wages_certified_payroll_yn %>
+  <div class="control-group">
+    <%= f.label :prevailing_wages_certified_payroll_yn, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :prevailing_wages_certified_payroll_yn, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:prevailing_wages_certified_payroll_yn]) %>
   </div>
-  <div class="field">
-    <%= f.label :permit_special_inspection_in_possession %><br>
-    <%= f.check_box :permit_special_inspection_in_possession %>
+  <div class="control-group">
+    <%= f.label :permit_special_inspection_in_possession, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :permit_special_inspection_in_possession, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:permit_special_inspection_in_possession]) %>
   </div>
-  <div class="field">
-    <%= f.label :restricted_work_hours %><br>
-    <%= f.text_area :restricted_work_hours %>
+  <div class="control-group">
+    <%= f.label :restricted_work_hours, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :restricted_work_hours, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:restricted_work_hours]) %>
   </div>
-  <div class="field">
-    <%= f.label :permit_submittal_required %><br>
-    <%= f.check_box :permit_submittal_required %>
+  <div class="control-group">
+    <%= f.label :permit_submittal_required, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :permit_submittal_required, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:permit_submittal_required]) %>
   </div>
-  <div class="field">
-    <%= f.label :permit_fees_required %><br>
-    <%= f.check_box :permit_fees_required %>
+  <div class="control-group">
+    <%= f.label :permit_fees_required, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :permit_fees_required, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:permit_fees_required]) %>
   </div>
-  <div class="field">
-    <%= f.label :permit_fees %><br>
-    <%= f.text_area :permit_fees %>
+  <div class="control-group">
+    <%= f.label :permit_fees, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :permit_fees, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:permit_fees]) %>
   </div>
-  <div class="field">
-    <%= f.label :project_budget %><br>
-    <%= f.text_field :project_budget %>
+  <div class="control-group">
+    <%= f.label :project_budget, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :project_budget, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:project_budget]) %>
   </div>
-  <div class="field">
-    <%= f.label :deal_type_id %><br>
-    <%= f.number_field :deal_type_id %>
+  <div class="control-group">
+    <%= f.label :deal_type_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :deal_type_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:deal_type_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :deal_type_description %><br>
-    <%= f.text_area :deal_type_description %>
+  <div class="control-group">
+    <%= f.label :deal_type_description, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :deal_type_description, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:deal_type_description]) %>
   </div>
-  <div class="field">
-    <%= f.label :project_setting_id %><br>
-    <%= f.number_field :project_setting_id %>
+  <div class="control-group">
+    <%= f.label :project_setting_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :project_setting_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:project_setting_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :procurement_tool_id %><br>
-    <%= f.number_field :procurement_tool_id %>
+  <div class="control-group">
+    <%= f.label :procurement_tool_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :procurement_tool_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:procurement_tool_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :sales_person_id %><br>
-    <%= f.number_field :sales_person_id %>
+  <div class="control-group">
+    <%= f.label :sales_person_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :sales_person_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:sales_person_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :project_status_id %><br>
-    <%= f.number_field :project_status_id %>
+  <div class="control-group">
+    <%= f.label :project_status_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :project_status_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:project_status_id]) %>
   </div>
-  <div class="field">
-    <%= f.label :irrigation_responsibility_id %><br>
-    <%= f.number_field :irrigation_responsibility_id %>
+  <div class="control-group">
+    <%= f.label :irrigation_responsibility_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :irrigation_responsibility_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project[:irrigation_responsibility_id]) %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            projects_path, :class => 'btn btn-default' %>
+
 <% end %>

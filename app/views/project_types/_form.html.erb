@@ -1,0 +1,31 @@
+<%= form_for @project_type, :html => { :class => "form-horizontal project_type" } do |f| %>
+
+    <% if @project_type.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@project_type.errors.count, "error") %> prohibited this project_type from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @project_type.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :project_type_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :project_type_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@project_type[:project_type_name]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            project_types_path, :class => 'btn btn-default' %>
+
+<% end %>

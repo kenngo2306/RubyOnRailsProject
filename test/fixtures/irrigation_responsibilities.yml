@@ -1,0 +1,7 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  irrigation_responsibility_name: MyString
+
+two:
+  irrigation_responsibility_name: MyString
