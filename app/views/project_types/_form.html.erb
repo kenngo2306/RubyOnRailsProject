@@ -23,6 +23,18 @@
     <%= error_span(@project_type[:project_type_name]) %>
   </div>
 
+  <%= f.fields_for :questions do |builder| %>
+	<fieldset>
+		<%= builder.label :question_name, "Question" %> <br/>
+		<%= builder.text_field :question_name %><br/>
+		<%= builder.check_box :_destroy %>
+		<%= builder.label :_destroy, "Remove Question" %>
+	</fieldset>
+  <% end %>
+
+  <%= f.fields_for :categories do |builder| %>
+	<%= render 'category_fields', f: builder %>
+  <% end %>
 
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

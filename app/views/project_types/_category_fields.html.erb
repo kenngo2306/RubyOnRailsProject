@@ -1,0 +1,9 @@
+<fieldset>
+	<%= f.label :category_name, "Category" %> <br/>
+	<%= f.text_field :category_name %><br/>
+	<%= f.check_box :_destroy %>
+	<%= f.label :_destroy, "Remove Category" %>
+	<%= f.fields_for :category_options do |builder| %>
+		<%= render 'category_option_fields', f: builder %>
+	<% end %>
+</fieldset>
