@@ -11,6 +11,10 @@
       <th><%= model_class.human_attribute_name(:contact_email) %></th>
       <th><%= model_class.human_attribute_name(:contact_cell) %></th>
       <th><%= model_class.human_attribute_name(:contact_work) %></th>
+      <th><%= model_class.human_attribute_name(:contact_address) %></th>
+      <th><%= model_class.human_attribute_name(:contact_city) %></th>
+      <th><%= model_class.human_attribute_name(:contact_zip) %></th>
+      <th><%= model_class.human_attribute_name(:state_id) %></th>
       <th><%= model_class.human_attribute_name(:client_id) %></th>
       <th><%= model_class.human_attribute_name(:contact_type_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -26,6 +30,10 @@
         <td><%= contact.contact_email %></td>
         <td><%= contact.contact_cell %></td>
         <td><%= contact.contact_work %></td>
+        <td><%= contact.contact_address %></td>
+        <td><%= contact.contact_city %></td>
+        <td><%= contact.contact_zip %></td>
+        <td><%= contact.state_id %></td>
         <td><%= contact.client_id %></td>
         <td><%= contact.contact_type_id %></td>
         <td><%=l contact.created_at %></td>
