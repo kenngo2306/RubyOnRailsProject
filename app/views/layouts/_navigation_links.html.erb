@@ -1,0 +1,37 @@
+<li>
+	<a href="#">Dashboard </a>
+</li>
+<li>
+	<%= link_to 'Create Project', controller: 'projects', action: 'new' %>
+</li>
+<li>
+	<%= link_to 'Project Workbench', controller: 'projects', action: 'index' %>
+</li>
+<li>
+	<a href="#">Clients </a>
+</li>
+<li>
+	<a href="#">Reports </a>
+</li>
+
+<li><%= link_to 'Admin', '#' %></li>
+<li><%= link_to 'Users', users_path %></li>
+
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="menu">Account<span class="caret"></span></a>
+<ul class="dropdown-menu navbuttons" style ="text-align:center" role="menu">
+<li>
+<p><span class="glyphicon glyphicon-cog"></span>
+<%= link_to('Settings', edit_user_registration_path) %></p>
+</li>
+<li class="divider"></li>
+<li style ="text-align:center">
+<p><span class="glyphicon glyphicon-envelope"></span> <%= current_user.email %></p>
+</li>
+</ul>
+</li>
+<li>
+<div id="user_nav" class="form-group">
+<%= link_to('Logout', destroy_user_session_path, :method => 'delete', :class => 'btn-default navbar-brand glyphicon glyphicon-log-out') %>
+</div>
+</li>

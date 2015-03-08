@@ -1,0 +1,59 @@
+<%= form_for @installer, :html => { :class => "form-horizontal installer" } do |f| %>
+
+    <% if @installer.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@installer.errors.count, "error") %> prohibited this installer from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @installer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :installer_first_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :installer_first_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@installer[:installer_first_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :installer_last_name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :installer_last_name, :class => 'form-control' %>
+    </div>
+    <%= error_span(@installer[:installer_last_name]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :installer_email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :installer_email, :class => 'form-control' %>
+    </div>
+    <%= error_span(@installer[:installer_email]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :installer_phone, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :installer_phone, :class => 'form-control' %>
+    </div>
+    <%= error_span(@installer[:installer_phone]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :user_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :user_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@installer[:user_id]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            installers_path, :class => 'btn btn-default' %>
+
+<% end %>
