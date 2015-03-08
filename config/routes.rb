@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users do
+    get "/users/sign_out" => "devise/session#destroy", :as => :destroy_user_session
+  end
   resources :utilities
 
   resources :project_utilities
