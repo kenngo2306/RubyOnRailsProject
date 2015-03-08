@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Testapp</title>
+  <title>fun abounds</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -19,10 +19,10 @@
 					<a href="#">Dashboard </a>
 				</li>
 				<li>
-					<a href="#">Create Project </a>
+					<%= link_to 'Create Project', controller: 'projects', action: 'new' %>
 				</li>
 				<li>
-					<a href="#">Project Workbench </a>
+					<%= link_to 'Project Workbench', controller: 'projects', action: 'index' %>
 				</li>
 				<li>
 					<a href="#">Clients </a>
