@@ -1,37 +1,55 @@
-<li>
-	<a href="#">Dashboard </a>
-</li>
-<li>
-	<%= link_to 'Create Project', controller: 'projects', action: 'new' %>
-</li>
-<li>
-	<%= link_to 'Project Workbench', controller: 'projects', action: 'index' %>
-</li>
-<li>
-	<a href="#">Clients </a>
-</li>
-<li>
-	<a href="#">Reports </a>
-</li>
+<%# add navigation links to this file %>
 
-<li><%= link_to 'Admin', '#' %></li>
-<li><%= link_to 'Users', users_path %></li>
+<% if current_user.admin? %>
+	<li><%= link_to 'Users', users_path, id: "usernav" %></li>
+	<li><%= link_to 'Create Project', new_project_path, id: "projnav" %></li>
+	<li><%= link_to 'Project Workbench', projects_path, id: "workbench" %></li>
+	<li><%= link_to 'Create Client', new_client_path, id: "clientnav" %></li>
+	<li class="dropdown">
+	  <a href="#" class="dropdown-toggle account" data-toggle="dropdown" role="menu">Account<span class="caret"></span></a>
+	  <ul class="dropdown-menu navbuttons" style ="text-align:center" role="menu">
+		<li>
+		  <p><span class="glyphicon glyphicon-cog"></span>
+			<%= link_to('Settings', edit_user_registration_path) %></p>
+		</li>
+		<li class="divider"></li>
+		<li style ="text-align:center">
+		  <p><span class="glyphicon glyphicon-envelope"></span> <%= current_user.email %></p>
+		</li>
+	  </ul>
+	</li>
+	<li>
+	  <div id="user_nav" class="form-group">
+		<%= link_to('Logout', destroy_user_session_path, :method => 'delete', :class => 'btn-default navbar-brand glyphicon glyphicon-log-out') %>
+	  </div>
+	</li>
+<% elsif (current_user.physician? || current_user.patient? || current_user.employee?)%>
+	<li class="dropdown">
+	  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<span class="caret"></span></a>
+	  <ul class="dropdown-menu" style ="text-align:center" role="menu">
+		<li>
+		  <p><span class="glyphicon glyphicon-cog"></span>
+			<%= link_to('Settings', edit_user_registration_path) %></p>
+		</li>
+		<li class="divider"></li>
+		<li style ="text-align:center">
+		  <p><span class="glyphicon glyphicon-envelope"></span> <%= current_user.email %></p>
+		</li>
+	  </ul>
+	</li>
+	<li>
+	  <div id="user_nav" class="form-group">
+		<%= link_to('Logout', destroy_user_session_path, :method => 'delete', :class => 'btn-default navbar-brand glyphicon glyphicon-log-out') %>
+	  </div>
+	</li>
+<% else%>
+	<li>
+	  <div id="user_nav" class="form-group">
+		<%= link_to('Sign Up', new_user_registration_path, :class => 'btn btn-default navbar-brand' ) %>
+	  </div>
+	</li>
+<% end %>
 
-<li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="menu">Account<span class="caret"></span></a>
-<ul class="dropdown-menu navbuttons" style ="text-align:center" role="menu">
-<li>
-<p><span class="glyphicon glyphicon-cog"></span>
-<%= link_to('Settings', edit_user_registration_path) %></p>
-</li>
-<li class="divider"></li>
-<li style ="text-align:center">
-<p><span class="glyphicon glyphicon-envelope"></span> <%= current_user.email %></p>
-</li>
-</ul>
-</li>
-<li>
-<div id="user_nav" class="form-group">
-<%= link_to('Logout', destroy_user_session_path, :method => 'delete', :class => 'btn-default navbar-brand glyphicon glyphicon-log-out') %>
-</div>
-</li>
+
+
+

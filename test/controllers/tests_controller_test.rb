@@ -16,15 +16,15 @@ class TestsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create test" do
+  test "should create dashboard" do
     assert_difference('Test.count') do
-      post :create, test: { name: @test.name }
+      post :create, dashboard: { name: @test.name }
     end
 
-    assert_redirected_to test_path(assigns(:test))
+    assert_redirected_to test_path(assigns(:dashboard))
   end
 
-  test "should show test" do
+  test "should show dashboard" do
     get :show, id: @test
     assert_response :success
   end
@@ -34,12 +34,12 @@ class TestsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update test" do
-    patch :update, id: @test, test: { name: @test.name }
-    assert_redirected_to test_path(assigns(:test))
+  test "should update dashboard" do
+    patch :update, id: @test, dashboard: { name: @test.name }
+    assert_redirected_to test_path(assigns(:dashboard))
   end
 
-  test "should destroy test" do
+  test "should destroy dashboard" do
     assert_difference('Test.count', -1) do
       delete :destroy, id: @test
     end

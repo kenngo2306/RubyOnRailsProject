@@ -73,7 +73,7 @@ group :development, :test do
   gem 'web-console', '~> 2.0'
 
 
-  #this is a test for syncing
+  #this is a dashboard for syncing
 
   gem 'twitter-bootstrap-rails'
   gem 'therubyracer'
