@@ -1,5 +1,8 @@
 <%# add navigation links to this file %>
 
+
+
+
 <% if current_user.admin? %>
 	<li><%= link_to 'Users', users_path, id: "usernav" %></li>
 	<li><%= link_to 'Create Project', new_project_path, id: "projnav" %></li>
@@ -9,12 +12,12 @@
 	  <a href="#" class="dropdown-toggle account" data-toggle="dropdown" role="menu">Account<span class="caret"></span></a>
 	  <ul class="dropdown-menu navbuttons" style ="text-align:center" role="menu">
 		<li>
-		  <p><span class="glyphicon glyphicon-cog"></span>
+		  <p><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
 			<%= link_to('Settings', edit_user_registration_path) %></p>
 		</li>
 		<li class="divider"></li>
 		<li style ="text-align:center">
-		  <p><span class="glyphicon glyphicon-envelope"></span> <%= current_user.email %></p>
+		  <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <%= current_user.email %></p>
 		</li>
 	  </ul>
 	</li>
