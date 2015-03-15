@@ -3,6 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
+  $('.datepicker').datepicker(
+    dateFormat: 'mm/dd/yy'
+  )
   $('#projects_table').DataTable()
   return
 
@@ -10,8 +13,6 @@ ready = ->
 $(document).ready(ready)
 $(document).on('page:load', ready)
 
-jQuery ->
-  $('.datepicker').datepicker(
-    dateFormat: 'mm/dd/yy'
-  )
+
+
 
