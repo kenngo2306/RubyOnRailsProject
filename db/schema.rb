@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310155237) do
+ActiveRecord::Schema.define(version: 20150315190751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -147,6 +147,7 @@ ActiveRecord::Schema.define(version: 20150310155237) do
     t.integer  "project_type_information_id"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
+    t.string   "soil_condition"
   end
 
   create_table "project_sites", force: :cascade do |t|
@@ -158,13 +159,6 @@ ActiveRecord::Schema.define(version: 20150310155237) do
     t.integer  "state_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
-  end
-
-  create_table "project_soil_conditions", force: :cascade do |t|
-    t.integer  "soil_condition_id"
-    t.integer  "project_site_information_id"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
   end
 
   create_table "project_statuses", force: :cascade do |t|
@@ -242,12 +236,6 @@ ActiveRecord::Schema.define(version: 20150310155237) do
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
     t.integer  "user_id"
-  end
-
-  create_table "soil_conditions", force: :cascade do |t|
-    t.string   "soil_condition_name"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
   end
 
   create_table "states", force: :cascade do |t|
