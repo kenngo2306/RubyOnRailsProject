@@ -9,25 +9,8 @@
       <th><%= model_class.human_attribute_name(:project_name) %></th>
       <th><%= model_class.human_attribute_name(:start_date) %></th>
       <th><%= model_class.human_attribute_name(:deadline) %></th>
-      <th><%= model_class.human_attribute_name(:client_goal) %></th>
-      <th><%= model_class.human_attribute_name(:time_frame_description) %></th>
-      <th><%= model_class.human_attribute_name(:mobilization_quantity) %></th>
-      <th><%= model_class.human_attribute_name(:liquidate_damages_yn) %></th>
-      <th><%= model_class.human_attribute_name(:prevailing_wages_certified_payroll_yn) %></th>
-      <th><%= model_class.human_attribute_name(:permit_special_inspection_in_possession) %></th>
-      <th><%= model_class.human_attribute_name(:restricted_work_hours) %></th>
-      <th><%= model_class.human_attribute_name(:permit_submittal_required) %></th>
-      <th><%= model_class.human_attribute_name(:permit_fees_required) %></th>
-      <th><%= model_class.human_attribute_name(:permit_fees) %></th>
-      <th><%= model_class.human_attribute_name(:project_budget) %></th>
-      <th><%= model_class.human_attribute_name(:deal_type_id) %></th>
-      <th><%= model_class.human_attribute_name(:deal_type_description) %></th>
-      <th><%= model_class.human_attribute_name(:project_setting_id) %></th>
-      <th><%= model_class.human_attribute_name(:procurement_tool_id) %></th>
       <th><%= model_class.human_attribute_name(:sales_person_id) %></th>
       <th><%= model_class.human_attribute_name(:project_status_id) %></th>
-      <th><%= model_class.human_attribute_name(:irrigation_responsibility_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -38,25 +21,8 @@
         <td><%= project.project_name %></td>
         <td><%= project.start_date %></td>
         <td><%= project.deadline %></td>
-        <td><%= project.client_goal %></td>
-        <td><%= project.time_frame_description %></td>
-        <td><%= project.mobilization_quantity %></td>
-        <td><%= project.liquidate_damages_yn %></td>
-        <td><%= project.prevailing_wages_certified_payroll_yn %></td>
-        <td><%= project.permit_special_inspection_in_possession %></td>
-        <td><%= project.restricted_work_hours %></td>
-        <td><%= project.permit_submittal_required %></td>
-        <td><%= project.permit_fees_required %></td>
-        <td><%= project.permit_fees %></td>
-        <td><%= project.project_budget %></td>
-        <td><%= project.deal_type_id %></td>
-        <td><%= project.deal_type_description %></td>
-        <td><%= project.project_setting_id %></td>
-        <td><%= project.procurement_tool_id %></td>
         <td><%= project.sales_person_id %></td>
         <td><%= project.project_status_id %></td>
-        <td><%= project.irrigation_responsibility_id %></td>
-        <td><%=l project.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_project_path(project), :class => 'btn btn-default btn-xs' %>
