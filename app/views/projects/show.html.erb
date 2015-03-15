@@ -4,47 +4,47 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:project_name) %>:</strong></dt>
+  <dt><strong>Project Name:</strong></dt>
   <dd><%= @project.project_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:start_date) %>:</strong></dt>
-  <dd><%= @project.start_date %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:deadline) %>:</strong></dt>
-  <dd><%= @project.deadline %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:client_goal) %>:</strong></dt>
+  <dt><strong>Start Date:</strong></dt>
+  <dd><%= @project.start_date.strftime('%A, %B %d, %Y') %></dd>
+  <dt><strong>Deadline:</strong></dt>
+  <dd><%= @project.deadline.strftime('%A, %B %d, %Y') %></dd>
+  <dt><strong>Client Goal:</strong></dt>
   <dd><%= @project.client_goal %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:time_frame_description) %>:</strong></dt>
+  <dt><strong>Time Frame Desc:</strong></dt>
   <dd><%= @project.time_frame_description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:mobilization_quantity) %>:</strong></dt>
+  <dt><strong>Mobilization Quantity:</strong></dt>
   <dd><%= @project.mobilization_quantity %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:liquidate_damages_yn) %>:</strong></dt>
+  <dt><strong>Liquidate Damages?:</strong></dt>
   <dd><%= @project.liquidate_damages_yn %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:prevailing_wages_certified_payroll_yn) %>:</strong></dt>
+  <dt><strong>Wages & Certified Payroll?:</strong></dt>
   <dd><%= @project.prevailing_wages_certified_payroll_yn %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:permit_special_inspection_in_possession) %>:</strong></dt>
+  <dt><strong>Permit Special Possessed? %>:</strong></dt>
   <dd><%= @project.permit_special_inspection_in_possession %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:restricted_work_hours) %>:</strong></dt>
+  <dt><strong>Restricted Work Hours?:</strong></dt>
   <dd><%= @project.restricted_work_hours %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:permit_submittal_required) %>:</strong></dt>
+  <dt><strong>Permit Submittal Required?</strong></dt>
   <dd><%= @project.permit_submittal_required %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:permit_fees_required) %>:</strong></dt>
+  <dt><strong>Permit Fees Required?:</strong></dt>
   <dd><%= @project.permit_fees_required %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:permit_fees) %>:</strong></dt>
+  <dt><strong>Permit Fees:</strong></dt>
   <dd><%= @project.permit_fees %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:project_budget) %>:</strong></dt>
+  <dt><strong>Project Budget:</strong></dt>
   <dd><%= @project.project_budget %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:deal_type_id) %>:</strong></dt>
+  <dt><strong>Deal Type:</strong></dt>
   <dd><%= @project.deal_type_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:deal_type_description) %>:</strong></dt>
+  <dt><strong>Deal Type Desc:</strong></dt>
   <dd><%= @project.deal_type_description %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:project_setting_id) %>:</strong></dt>
+  <dt><strong>Project Setting:</strong></dt>
   <dd><%= @project.project_setting_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:procurement_tool_id) %>:</strong></dt>
+  <dt><strong>Procurement Tool:</strong></dt>
   <dd><%= @project.procurement_tool_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:sales_person_id) %>:</strong></dt>
+  <dt><strong>Sales Person:</strong></dt>
   <dd><%= @project.sales_person_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:project_status_id) %>:</strong></dt>
+  <dt><strong>Project Status:</strong></dt>
   <dd><%= @project.project_status_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:irrigation_responsibility_id) %>:</strong></dt>
+  <dt><strong>Irrigation Responsibility:</strong></dt>
   <dd><%= @project.irrigation_responsibility_id %></dd>
 </dl>
 

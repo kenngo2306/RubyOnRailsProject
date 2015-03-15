@@ -8,12 +8,12 @@
 
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:project_name) %></th>
-      <th><%= model_class.human_attribute_name(:start_date) %></th>
-      <th><%= model_class.human_attribute_name(:deadline) %></th>
-      <th><%= model_class.human_attribute_name(:sales_person_id) %></th>
-      <th><%= model_class.human_attribute_name(:project_status_id) %></th>
+      <th>ID</th>
+      <th>Project Name</th>
+      <th>Start Date</th>
+      <th>Deadline</th>
+      <th>Sales Person</th>
+      <th>Status</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -22,11 +22,13 @@
       <tr>
         <td><%= link_to project.id, project_path(project) %></td>
         <td><%= project.project_name %></td>
-        <td><%= project.start_date %></td>
-        <td><%= project.deadline %></td>
+        <td><%= project.start_date.strftime('%A, %B %d, %Y') %></td>
+        <td><%= project.deadline.strftime('%A, %B %d, %Y') %></td>
         <td><%= project.sales_person_id %></td>
         <td><%= project.project_status_id %></td>
         <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      project_path(project), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_project_path(project), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
