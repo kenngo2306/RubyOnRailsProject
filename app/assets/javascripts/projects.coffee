@@ -2,16 +2,21 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+
 ready = ->
+  $('.datepicker').datepicker(
+    dateFormat: 'mm/dd/yy'
+  )
+  
   $('#projects_table').DataTable()
   return
+
+
+
 
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
 
-jQuery ->
-  $('.datepicker').datepicker(
-    dateFormat: 'mm/dd/yy'
-  )
+
 
