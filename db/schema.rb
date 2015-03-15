@@ -161,6 +161,13 @@ ActiveRecord::Schema.define(version: 20150315190751) do
     t.datetime "updated_at",   null: false
   end
 
+  create_table "project_soil_conditions", force: :cascade do |t|
+    t.integer  "soil_condition_id"
+    t.integer  "project_site_information_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
   create_table "project_statuses", force: :cascade do |t|
     t.string   "project_status_name"
     t.datetime "created_at",          null: false
