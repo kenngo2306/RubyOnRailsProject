@@ -79,6 +79,8 @@ group :development, :test do
   gem 'twitter-bootstrap-rails'
   gem 'therubyracer'
   gem 'less-rails'
+  gem 'jquery-ui-rails'
+  
 
 end
 

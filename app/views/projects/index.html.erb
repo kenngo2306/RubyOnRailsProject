@@ -3,8 +3,9 @@
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 
-
+<div class="table-responsive">
 <table class="table table-striped" id="projects_table">
+
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
@@ -38,7 +39,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_project_path,
             :class => 'btn btn-primary' %>
