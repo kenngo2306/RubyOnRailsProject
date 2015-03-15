@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
 
+
   belongs_to :procurement_tool
   belongs_to :deal_type
   belongs_to :project_setting
