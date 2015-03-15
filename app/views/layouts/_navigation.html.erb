@@ -1,22 +1,24 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
 	<!-- Brand and toggle get grouped for better mobile display -->
 	
 	<div class="navbar-header">
-	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 		<span class="sr-only">Toggle navigation</span>
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>
 	  </button>
+	  
       <span>
 		<%= link_to image_tag("funabounds.png", :class => "funabounds"), root_path %>
 	  </span>
+	  
 	</div>
 
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	
-	<div class="collapse navbar-collapse" id="myNavbar">
+	<div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="active"><%= link_to 'Users', users_path, id: "usernav" %></li>
 		<li><%= link_to 'Create Project', new_project_path, id: "projnav" %></li>
@@ -43,23 +45,6 @@
       </ul>
 	
 	
-	
-	
-
-	  <ul class="nav navbar-nav navbar-right">
-		<div class="collapse navbar-collapse">
-		  <ul class="nav navbar-nav">
-
-			<% if user_signed_in? %>
-				<%= render 'layouts/navigation_links' %>
-			<% else %>
-				<%= link_to('Sign Up', new_user_registration_path, :class => 'pull-right need-help login-label btn btn-default left navbar-brand' ) %>
-			<% end %>
-		  </ul>
-		</div>
-
-
-	  </ul>
 	</div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
-</nav>
+</div>
