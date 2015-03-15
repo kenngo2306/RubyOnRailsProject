@@ -10,5 +10,8 @@ ready = ->
 $(document).ready(ready)
 $(document).on('page:load', ready)
 
-
+jQuery ->
+  $('.datepicker').datepicker(
+    dateFormat: 'mm/dd/yy'
+  )
 
