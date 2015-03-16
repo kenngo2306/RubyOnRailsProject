@@ -2,10 +2,8 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
-
 <div class="table-responsive">
-<table class="table table-striped" id="projects_table">
-
+<table class="table table-striped">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
@@ -25,7 +23,7 @@
         <td><%= project.start_date %></td>
         <td><%= project.deadline %></td>
         <td><%= project.sales_person_id %></td>
-        <td><%= project.project_status_id %></td>
+        <td><%= project.project_status.project_status_name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_project_path(project), :class => 'btn btn-default btn-xs' %>
