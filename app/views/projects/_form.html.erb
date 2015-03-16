@@ -23,14 +23,14 @@
     <%= error_span(@project[:project_name]) %>
   </div>
   <div class="control-group">
-    <%= f.label :start_date, :class => 'control-label datepicker' %>
+    <%= f.label :start_date, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :start_date, :class => 'form-control datepicker' %>
     </div>
     <%= error_span(@project[:start_date]) %>
   </div>
   <div class="control-group">
-    <%= f.label :deadline, :class => 'control-label datepicker' %>
+    <%= f.label :deadline, :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :deadline, :class => 'form-control datepicker' %>
     </div>
@@ -151,7 +151,7 @@
   <div class="control-group">
     <%= f.label :project_status_id, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :project_status_id, :class => 'form-control' %>
+      <%= f.collection_select :project_status_id,ProjectStatus.all, :id, :project_status_name, :class => 'form-control' %>
     </div>
     <%= error_span(@project[:project_status_id]) %>
   </div>

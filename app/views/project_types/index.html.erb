@@ -5,9 +5,8 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:project_type_name) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>Project Type Name</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -16,7 +15,7 @@
       <tr>
         <td><%= link_to project_type.id, project_type_path(project_type) %></td>
         <td><%= project_type.project_type_name %></td>
-        <td><%=l project_type.created_at %></td>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_project_type_path(project_type), :class => 'btn btn-default btn-xs' %>

@@ -5,13 +5,13 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:installer_first_name) %></th>
-      <th><%= model_class.human_attribute_name(:installer_last_name) %></th>
-      <th><%= model_class.human_attribute_name(:installer_email) %></th>
-      <th><%= model_class.human_attribute_name(:installer_phone) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>Installer First Name</th>
+      <th>Installer Last Name</th>
+      <th>Installer Email</th>
+      <th>Installer Phone</th>
+      <th>User ID</th>
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -24,7 +24,7 @@
         <td><%= installer.installer_email %></td>
         <td><%= installer.installer_phone %></td>
         <td><%= installer.user_id %></td>
-        <td><%=l installer.created_at %></td>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_installer_path(installer), :class => 'btn btn-default btn-xs' %>

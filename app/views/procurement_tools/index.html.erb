@@ -5,9 +5,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:procurement_tool_name) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>Procurement Tool Name</th>
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -16,7 +16,6 @@
       <tr>
         <td><%= link_to procurement_tool.id, procurement_tool_path(procurement_tool) %></td>
         <td><%= procurement_tool.procurement_tool_name %></td>
-        <td><%=l procurement_tool.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_procurement_tool_path(procurement_tool), :class => 'btn btn-default btn-xs' %>

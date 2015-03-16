@@ -5,12 +5,12 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:proposal_number) %></th>
-      <th><%= model_class.human_attribute_name(:revision_number) %></th>
-      <th><%= model_class.human_attribute_name(:project_id) %></th>
-      <th><%= model_class.human_attribute_name(:project_type_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>Proposal Number</th>
+      <th>Revision Number</th>
+      <th>Project ID</th>
+      <th>Project Type ID</th>
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -22,7 +22,7 @@
         <td><%= project_type_information.revision_number %></td>
         <td><%= project_type_information.project_id %></td>
         <td><%= project_type_information.project_type_id %></td>
-        <td><%=l project_type_information.created_at %></td>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_project_type_information_path(project_type_information), :class => 'btn btn-default btn-xs' %>
