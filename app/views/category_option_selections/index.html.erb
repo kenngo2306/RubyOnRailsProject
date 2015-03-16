@@ -5,11 +5,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:category_option_selection_name) %></th>
-      <th><%= model_class.human_attribute_name(:category_option_id) %></th>
-      <th><%= model_class.human_attribute_name(:project_type_information_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>Category Option Selection Name</th>
+      <th>Category Option</th>
+      <th>Project Type Information</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -20,8 +19,9 @@
         <td><%= category_option_selection.category_option_selection_name %></td>
         <td><%= category_option_selection.category_option_id %></td>
         <td><%= category_option_selection.project_type_information_id %></td>
-        <td><%=l category_option_selection.created_at %></td>
         <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      category_option_selection, :class => 'btn btn-default btn-xs'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_category_option_selection_path(category_option_selection), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

@@ -16,14 +16,14 @@
   <% end %>
 
   <div class="control-group">
-    <%= f.label :category_name, :class => 'control-label' %>
+    <%= f.label :category_name, 'Category Name', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :category_name, :class => 'form-control' %>
     </div>
     <%= error_span(@category[:category_name]) %>
   </div>
   <div class="control-group">
-    <%= f.label :project_type_id, :class => 'control-label' %>
+    <%= f.label :project_type_id, 'Project Type', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :project_type_id, :class => 'form-control' %>
     </div>

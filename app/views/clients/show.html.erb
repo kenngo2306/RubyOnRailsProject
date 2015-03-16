@@ -4,17 +4,18 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:client_name) %>:</strong></dt>
+  <dt><strong>Client Name:</strong></dt>
   <dd><%= @client.client_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:billing_address) %>:</strong></dt>
+  <dt><strong>Billing Address:</strong></dt>
   <dd><%= @client.billing_address %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:billing_city) %>:</strong></dt>
+  <dt><strong>Billing City:</strong></dt>
   <dd><%= @client.billing_city %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:billing_zip) %>:</strong></dt>
+  <dt><strong>Billing Zip:</strong></dt>
   <dd><%= @client.billing_zip %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:state_id) %>:</strong></dt>
+  <dt><strong>State:</strong></dt>
   <dd><%= @client.state_id %></dd>
 </dl>
+
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               clients_path, :class => 'btn btn-default'  %>

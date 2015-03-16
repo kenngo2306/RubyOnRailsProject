@@ -5,13 +5,12 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:client_name) %></th>
-      <th><%= model_class.human_attribute_name(:billing_address) %></th>
-      <th><%= model_class.human_attribute_name(:billing_city) %></th>
-      <th><%= model_class.human_attribute_name(:billing_zip) %></th>
-      <th><%= model_class.human_attribute_name(:state_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>Client Name</th>
+      <th>Billing Address</th>
+      <th>Billing City</th>
+      <th>Billing Zip</th>
+      <th>State</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -24,8 +23,9 @@
         <td><%= client.billing_city %></td>
         <td><%= client.billing_zip %></td>
         <td><%= client.state_id %></td>
-        <td><%=l client.created_at %></td>
         <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      client, :class => 'btn btn-default btn-xs'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_client_path(client), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

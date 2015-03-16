@@ -16,21 +16,21 @@
   <% end %>
 
   <div class="control-group">
-    <%= f.label :answer_text, :class => 'control-label' %>
+    <%= f.label :answer_text, 'Answer Text', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :answer_text, :class => 'form-control' %>
     </div>
     <%= error_span(@answer[:answer_text]) %>
   </div>
   <div class="control-group">
-    <%= f.label :question_id, :class => 'control-label' %>
+    <%= f.label :question_id, 'Question', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :question_id, :class => 'form-control' %>
     </div>
     <%= error_span(@answer[:question_id]) %>
   </div>
   <div class="control-group">
-    <%= f.label :project_type_information_id, :class => 'control-label' %>
+    <%= f.label :project_type_information_id, 'Project Type', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :project_type_information_id, :class => 'form-control' %>
     </div>

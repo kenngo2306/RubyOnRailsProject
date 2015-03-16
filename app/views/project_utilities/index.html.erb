@@ -5,10 +5,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:utility_id) %></th>
-      <th><%= model_class.human_attribute_name(:project_site_information_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>Utility ID</th>
+      <th>Project Site Information ID</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -18,8 +17,9 @@
         <td><%= link_to project_utility.id, project_utility_path(project_utility) %></td>
         <td><%= project_utility.utility_id %></td>
         <td><%= project_utility.project_site_information_id %></td>
-        <td><%=l project_utility.created_at %></td>
         <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      project_utility, :class => 'btn btn-default btn-xs'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_project_utility_path(project_utility), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
