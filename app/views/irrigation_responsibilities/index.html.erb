@@ -5,9 +5,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:irrigation_responsibility_name) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>Irrigation Resposibility Name</th>
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -16,7 +16,7 @@
       <tr>
         <td><%= link_to irrigation_responsibility.id, irrigation_responsibility_path(irrigation_responsibility) %></td>
         <td><%= irrigation_responsibility.irrigation_responsibility_name %></td>
-        <td><%=l irrigation_responsibility.created_at %></td>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_irrigation_responsibility_path(irrigation_responsibility), :class => 'btn btn-default btn-xs' %>

@@ -5,9 +5,8 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:requested_sales_document_name) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>Requested Sales Document Name</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -16,7 +15,6 @@
       <tr>
         <td><%= link_to requested_sales_document.id, requested_sales_document_path(requested_sales_document) %></td>
         <td><%= requested_sales_document.requested_sales_document_name %></td>
-        <td><%=l requested_sales_document.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_requested_sales_document_path(requested_sales_document), :class => 'btn btn-default btn-xs' %>

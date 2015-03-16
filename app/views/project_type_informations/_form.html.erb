@@ -16,28 +16,28 @@
   <% end %>
 
   <div class="control-group">
-    <%= f.label :proposal_number, :class => 'control-label' %>
+    <%= f.label :proposal_number,'Proposal Number', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :proposal_number, :class => 'form-control' %>
     </div>
     <%= error_span(@project_type_information[:proposal_number]) %>
   </div>
   <div class="control-group">
-    <%= f.label :revision_number, :class => 'control-label' %>
+    <%= f.label :revision_number, 'Revision Number', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :revision_number, :class => 'form-control' %>
     </div>
     <%= error_span(@project_type_information[:revision_number]) %>
   </div>
   <div class="control-group">
-    <%= f.label :project_id, :class => 'control-label' %>
+    <%= f.label :project_id, 'Project ID', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :project_id, :class => 'form-control' %>
     </div>
     <%= error_span(@project_type_information[:project_id]) %>
   </div>
   <div class="control-group">
-    <%= f.label :project_type_id, :class => 'control-label' %>
+    <%= f.label :project_type_id, 'Project Type ID', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :project_type_id, :class => 'form-control' %>
     </div>

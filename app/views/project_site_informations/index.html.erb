@@ -2,29 +2,30 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+<div class="table-responsive">
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:area_length) %></th>
-      <th><%= model_class.human_attribute_name(:area_width) %></th>
-      <th><%= model_class.human_attribute_name(:area_description) %></th>
-      <th><%= model_class.human_attribute_name(:geotech_report_in_position) %></th>
-      <th><%= model_class.human_attribute_name(:bobcat_accessible) %></th>
-      <th><%= model_class.human_attribute_name(:construction_fence_required) %></th>
-      <th><%= model_class.human_attribute_name(:client_fence_dismantle_reinstall_required) %></th>
-      <th><%= model_class.human_attribute_name(:rock_excavation_required) %></th>
-      <th><%= model_class.human_attribute_name(:hand_dig_required) %></th>
-      <th><%= model_class.human_attribute_name(:dirt_haul_off_required) %></th>
-      <th><%= model_class.human_attribute_name(:tree_vegetation_removal_required) %></th>
-      <th><%= model_class.human_attribute_name(:area_is_sloped) %></th>
-      <th><%= model_class.human_attribute_name(:site_survey_required) %></th>
-      <th><%= model_class.human_attribute_name(:surface_protection_required) %></th>
-      <th><%= model_class.human_attribute_name(:under_ground_obstacles_yn) %></th>
-      <th><%= model_class.human_attribute_name(:structural_removal_required) %></th>
-      <th><%= model_class.human_attribute_name(:pvt_locator_required) %></th>
-      <th><%= model_class.human_attribute_name(:project_type_information_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>Area Length</th>
+      <th>Area Width</th>
+      <th>Area Description</th>
+      <th>Geotech Report in Position</th>
+      <th>Bobcat Accessible</th>
+      <th>Construction Fence Required</th>
+      <th>Client Fence Dismantle Reinstall Required</th>
+      <th>Rock Excavation Required</th>
+      <th>Hand Dig Required</th>
+      <th>Dirt Haul Off Required</th>
+      <th>Tree Vegetation Removal Required</th>
+      <th>Area Is Sloped</th>
+      <th>Site Survey Required</th>
+      <th>Surface Protection Required</th>
+      <th>Under Ground Obstacles</th>
+      <th>Structural Removal Required</th>
+      <th>PVT Locator Required</th>
+      <th>Project Type Information ID</th>
+
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -50,7 +51,7 @@
         <td><%= project_site_information.structural_removal_required %></td>
         <td><%= project_site_information.pvt_locator_required %></td>
         <td><%= project_site_information.project_type_information_id %></td>
-        <td><%=l project_site_information.created_at %></td>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_project_site_information_path(project_site_information), :class => 'btn btn-default btn-xs' %>
@@ -64,7 +65,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_project_site_information_path,
             :class => 'btn btn-primary' %>

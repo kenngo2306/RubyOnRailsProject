@@ -2,12 +2,12 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
+<div class ="table-responsive">
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:deal_type_name) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th> ID</th>
+      <th> Deal Type Name </th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -16,7 +16,7 @@
       <tr>
         <td><%= link_to deal_type.id, deal_type_path(deal_type) %></td>
         <td><%= deal_type.deal_type_name %></td>
-        <td><%=l deal_type.created_at %></td>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_deal_type_path(deal_type), :class => 'btn btn-default btn-xs' %>
@@ -30,7 +30,7 @@
     <% end %>
   </tbody>
 </table>
-
+</div>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_deal_type_path,
             :class => 'btn btn-primary' %>
