@@ -33,10 +33,6 @@ Rails.application.routes.draw do
 
   resources :procurement_tools
 
-  resources :soil_conditions
-
-  resources :project_soil_conditions
-
   resources :states
 
   resources :project_sites

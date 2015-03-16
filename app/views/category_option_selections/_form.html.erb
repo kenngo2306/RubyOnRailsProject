@@ -16,21 +16,21 @@
   <% end %>
 
   <div class="control-group">
-    <%= f.label :category_option_selection_name, :class => 'control-label' %>
+    <%= f.label :category_option_selection_name, 'Category Option Selection', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :category_option_selection_name, :class => 'form-control' %>
     </div>
     <%= error_span(@category_option_selection[:category_option_selection_name]) %>
   </div>
   <div class="control-group">
-    <%= f.label :category_option_id, :class => 'control-label' %>
+    <%= f.label :category_option_id, 'Category Option', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :category_option_id, :class => 'form-control' %>
     </div>
     <%= error_span(@category_option_selection[:category_option_id]) %>
   </div>
   <div class="control-group">
-    <%= f.label :project_type_information_id, :class => 'control-label' %>
+    <%= f.label :project_type_information_id, 'Project Type Information', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :project_type_information_id, :class => 'form-control' %>
     </div>

@@ -5,19 +5,18 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:contact_first_name) %></th>
-      <th><%= model_class.human_attribute_name(:contact_last_name) %></th>
-      <th><%= model_class.human_attribute_name(:contact_email) %></th>
-      <th><%= model_class.human_attribute_name(:contact_cell) %></th>
-      <th><%= model_class.human_attribute_name(:contact_work) %></th>
-      <th><%= model_class.human_attribute_name(:contact_address) %></th>
-      <th><%= model_class.human_attribute_name(:contact_city) %></th>
-      <th><%= model_class.human_attribute_name(:contact_zip) %></th>
-      <th><%= model_class.human_attribute_name(:state_id) %></th>
-      <th><%= model_class.human_attribute_name(:client_id) %></th>
-      <th><%= model_class.human_attribute_name(:contact_type_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Cell</th>
+      <th>Work</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Zip</th>
+      <th>State</th>
+      <th>Client Name</th>
+      <th>Contact Type</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -36,8 +35,9 @@
         <td><%= contact.state_id %></td>
         <td><%= contact.client_id %></td>
         <td><%= contact.contact_type_id %></td>
-        <td><%=l contact.created_at %></td>
         <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      contact, :class => 'btn btn-default btn-xs'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_contact_path(contact), :class => 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),

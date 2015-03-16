@@ -16,14 +16,14 @@
   <% end %>
 
   <div class="control-group">
-    <%= f.label :state_name, :class => 'control-label' %>
+    <%= f.label :state_name, 'State Name', :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :state_name, :class => 'form-control' %>
+      <%= f.text_field :state_name,  :class => 'form-control' %>
     </div>
     <%= error_span(@state[:state_name]) %>
   </div>
   <div class="control-group">
-    <%= f.label :state_abbreviation, :class => 'control-label' %>
+    <%= f.label :state_abbreviation, 'State Abbreviation', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :state_abbreviation, :class => 'form-control' %>
     </div>
