@@ -5,9 +5,9 @@
 
 <dl class="dl-horizontal">
   <dt><strong>Project Name:</strong></dt>
-  <dd><%= @project_contact.project_id %></dd>
+  <dd><%= @project_contact.project.project_name %></dd>
   <dt><strong>Contact Name:</strong></dt>
-  <dd><%= @project_contact.contact_id %></dd>
+  <dd><%= @project_contact.contact.full_contact_name %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

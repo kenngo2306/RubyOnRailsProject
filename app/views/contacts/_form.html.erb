@@ -14,7 +14,20 @@
       </div>
     </div>
   <% end %>
-
+    <div class="control-group">
+      <%= f.label :contact_type_id, 'Contact Type', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.collection_select :contact_type_id, ContactType.all, :id,:contact_type_name, class: 'select2 form-control' %><br/>
+      </div>
+      <%= error_span(@contact[:contact_type_id]) %>
+    </div>
+    <div class="control-group">
+      <%= f.label :client_id, 'Client Name', :class => 'control-label' %>
+      <div class="controls">
+        <%= f.collection_select :client_id, Client.all, :id,:client_name, class: 'select2 form-control' %><br/>
+      </div>
+      <%= error_span(@contact[:client_id]) %>
+    </div>
   <div class="control-group">
     <%= f.label :contact_first_name, 'First Name', :class => 'control-label' %>
     <div class="controls">
@@ -50,20 +63,8 @@
     </div>
     <%= error_span(@contact[:contact_work]) %>
   </div>
-  <div class="control-group">
-    <%= f.label :client_id, 'Client Name', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :client_id, :class => 'form-control' %>
-    </div>
-    <%= error_span(@contact[:client_id]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :contact_type_id, 'Contact Type', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :contact_type_id, :class => 'form-control' %>
-    </div>
-    <%= error_span(@contact[:contact_type_id]) %>
-  </div>
+
+
 
 
   <%= f.submit nil, :class => 'btn btn-primary' %>

@@ -33,8 +33,8 @@
         <td><%= contact.contact_city %></td>
         <td><%= contact.contact_zip %></td>
         <td><%= contact.state_id %></td>
-        <td><%= contact.client_id %></td>
-        <td><%= contact.contact_type_id %></td>
+        <td><%= contact.client.client_name %></td>
+        <td><%= contact.contact_type.contact_type_name %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       contact, :class => 'btn btn-default btn-xs'  %>

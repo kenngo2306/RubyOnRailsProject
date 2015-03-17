@@ -24,7 +24,9 @@ gem 'sendgrid'
 # gem 'simple_form'
 gem 'kaminari'
 gem 'prawn-rails'
-gem 'chosen-rails'
+gem "select2-rails"
+
+
 group :development do
   gem 'spring'
   gem 'better_errors'
@@ -81,8 +83,6 @@ group :development, :test do
   gem 'therubyracer'
   gem 'less-rails'
   gem 'jquery-ui-rails'
-
-  
 
 end
 
