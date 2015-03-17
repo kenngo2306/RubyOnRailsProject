@@ -51,7 +51,8 @@
                     <%= error_span(@contact[:client_id]) %>
                   </div>
 
-                  <input type="button" name="next" class="next" value="Next" />
+                  <input type="button" name="next" class="next btn btn-default" value="Next" />
+                  <br>
               <%end%>
 
               <%=field_set_tag nil, class: 'fieldset_Contact_Information' do%>
@@ -93,8 +94,9 @@
                     <%= error_span(@contact[:contact_work]) %>
                   </div>
 
-
-                  <input type="button" name="next" class="next" value="Next" />
+                  <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+                  <input type="button" name="next" class="next btn btn-default" value="Next" />
+                  <br>
                   </fieldset>
               <% end %>
               <%= field_set_tag nil, class: 'fieldset_Contact_Location' do%>
@@ -129,6 +131,9 @@
                     </div>
                     <%= error_span(@contact[:contact_work]) %>
                   </div>
+
+                  <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+                  <br>
               <% end %>
               <!-- jQuery -->
               <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
