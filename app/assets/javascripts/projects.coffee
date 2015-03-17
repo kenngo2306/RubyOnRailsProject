@@ -4,13 +4,15 @@
 
 
 ready = ->
+  $('.projects_table').DataTable()
+  
+
   $('.datepicker').datepicker(
     dateFormat: 'yy-mm-dd'
   )
   return
 
-  $('#projects_table').DataTable()
-  return
+
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

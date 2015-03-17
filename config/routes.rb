@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'project_type_specifications/new'
 
+
   get 'project_type_specifications/edit'
 
   get 'home/index'
