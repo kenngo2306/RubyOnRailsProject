@@ -20,7 +20,7 @@
   <dd><%= @project.liquidate_damages_yn %></dd>
   <dt><strong>Wages & Certified Payroll?:</strong></dt>
   <dd><%= @project.prevailing_wages_certified_payroll_yn %></dd>
-  <dt><strong>Permit Special Possessed? %>:</strong></dt>
+  <dt><strong>Permit Special Possessed?:</strong></dt>
   <dd><%= @project.permit_special_inspection_in_possession %></dd>
   <dt><strong>Restricted Work Hours?:</strong></dt>
   <dd><%= @project.restricted_work_hours %></dd>
@@ -43,7 +43,7 @@
   <dt><strong>Sales Person:</strong></dt>
   <dd><%= @project.sales_person_id %></dd>
   <dt><strong>Project Status:</strong></dt>
-  <dd><%= @project.project_status_id %></dd>
+  <dd><%= @project.project_status.project_status_name %></dd>
   <dt><strong>Irrigation Responsibility:</strong></dt>
   <dd><%= @project.irrigation_responsibility_id %></dd>
 </dl>

@@ -18,14 +18,14 @@
   <div class="control-group">
     <%= f.label :project_id, 'Project Name', :class => 'control-label' %>
     <div class="controls">
-      <%= f.collection_select :project_id, Project.all, :id,:project_name, class: 'chzn-select form-control btn btn-default' %><br/>
+      <%= f.collection_select :project_id, Project.all, :id,:project_name, class: 'form-control' %><br/>
     </div>
     <%= error_span(@project_contact[:project_id]) %>
   </div>
   <div class="control-group">
     <%= f.label :contact_id, 'Contact Name',:class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :contact_id, :class => 'form-control' %>
+      <%= f.collection_select :contact_id, Contact.all, :id,:full_contact_name, class: 'form-control' %><br/>
     </div>
     <%= error_span(@project_contact[:contact_id]) %>
   </div>

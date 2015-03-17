@@ -14,9 +14,11 @@
  *= require_self
  *= require jquery-ui
  *= require bootstrap_and_overrides
- *= require chosen.scss
+ *= require select2
+ *= require select2-bootstrap
  */
 
 body {
     padding-top: 70px;
 }
+

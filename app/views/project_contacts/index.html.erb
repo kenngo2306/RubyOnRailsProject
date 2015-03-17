@@ -15,8 +15,8 @@
     <% @project_contacts.each do |project_contact| %>
       <tr>
         <td><%= link_to project_contact.id, project_contact_path(project_contact) %></td>
-        <td><%= project_contact.project_id %></td>
-        <td><%= project_contact.contact_id %></td>
+        <td><%= project_contact.project.project_name %></td>
+        <td><%= project_contact.contact.full_contact_name %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       project_contact, :class => 'btn btn-default btn-xs'  %>
