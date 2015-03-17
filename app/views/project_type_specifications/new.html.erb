@@ -1,2 +1,30 @@
-<h1>ProjectTypeSpecifications#new</h1>
-<p>Find me in app/views/project_type_specifications/new.html.erb</p>
+<p>Testing</p>
+<% @project_types.each do |project_type| %>
+    <% project_type.categories.each do |category| %>
+        <h3><%=  category.category_name  %></h3>
+        <% category.category_options.each do |category_option| %>
+            <br/>
+            <%= radio_button_tag(category.category_name,category_option.id) %>
+            <%= label_tag(category_option.category_option_name + '_' + category_option.id.to_s, category_option.category_option_name) %>
+            <br/>
+        <% end %>
+    <% end %>
+<% end %>
+
+
+    <% @project_types.each do |project_type| %>
+        <% project_type.questions.each do |question| %>
+
+            <div class="control-group">
+              <label class="control-label">
+                <%= question.question_name %>
+              </label>
+              <div class="controls">
+                <input class="form-control" type="text" name="<%= question.id %>">
+              </div>
+            </div>
+
+        <% end %>
+    <% end %>
+
+
