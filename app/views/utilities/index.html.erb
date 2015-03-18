@@ -14,7 +14,8 @@
     <% @utilities.each do |utility| %>
       <tr>
         <td><%= link_to utility.id, utility_path(utility) %></td>
-        <td><%=l utility.utility_name %></td>
+
+        <td><%=utility.utility_name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_utility_path(utility), :class => 'btn btn-default btn-xs' %>
