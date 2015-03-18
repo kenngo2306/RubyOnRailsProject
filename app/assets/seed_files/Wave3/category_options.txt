@@ -1,0 +1,121 @@
+6-23 month|1
+2-5 years|1
+5-12 years|1
+2-12 years|1
+10+ Year|1
+Steel|2
+Aluminum|2
+Yes|3
+No|3
+Nucleus|4
+Nucleus-Intensity|4
+Little Buddies|4
+Intensity|4
+Voltage|4
+Early Play Centers|4
+Intensity 2-5|4
+Nature Play|4
+HealthQuest Fitness Stations|4
+Slides|5
+Sand/Water Tables|5
+Overhead Events|5
+Spinning Play Events|5
+Climbers|5
+See-saws|5
+Activitie Panels|5
+Rock-N-Rides|5
+Swings|5
+Little Digger|5
+Benches|6
+Grills|6
+Picnic Tables|6
+Stone Boarders|6
+Trash Receptacles|6
+Custom Signs|6
+Bike Racks|6
+Basketball|7
+Volleyball|7
+Soccer|7
+Tetherball|7
+Funnel Ball|7
+Burke Turf|8
+English Wood Fiber|8
+Shredded Rubber|8
+Poured-in-place|8
+Rubber Tiles|8
+Bonded Rubber|8
+EWF-Top off|8
+Grass|9
+Concrete|9
+Aggregate|9
+Plastic|10
+Concrete|10
+Other|10
+Drain Away(DA)|11
+WTS|11
+Retain and Reuse(RNR)|11
+WTS(other)|11
+City|12
+Well|12
+Storm|13
+Sewer|13
+Unknown|13
+120 VAC Single phase|14
+208 VAC 3-phase|14
+Wall-mount Manifold|15
+Above-grade Vault(enhanced)|15
+Above-grade Kiosk|15
+Below-grade Vault(enhanced)|15
+Below-grade Vault|15
+UV|16
+DSS|16
+Tank(RNR may need)|16
+Manifold|16
+Low|17
+High|17
+Circle|18
+Oval|18
+Rectangle|18
+Amoeba|18
+Other|18
+Yes|19
+No|19
+Brush-broomed|20
+Integrated|20
+Cool Decking|20
+Toddler(0-4)|21
+Child(5-8)|21
+Youth|21
+New|22
+Repair|22
+Wood Chips|23
+Concrete/Asphalt|23
+Dirt/Grass|23
+Specialty/Rubber|23
+Yes|24
+No|24
+Yes|25
+No|25
+Yes|26
+No|26
+Yes|27
+No|27
+Yes|28
+No|28
+Yes|29
+No|29
+Drilled Footings|30
+Spread Footings|30
+Special Footings (See additional Notes)|30
+Yes|31
+No|31
+Yes|32
+No|32
+Yes|33
+No|33
+Yes|34
+No|34
+Yes|35
+No|35
+Freight/Elevator to site|36
+Client Unload|36

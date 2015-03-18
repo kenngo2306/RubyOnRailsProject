@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :category_types
+
   get 'project_type_specifications/new'
 
 
