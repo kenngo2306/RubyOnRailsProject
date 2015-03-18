@@ -4,6 +4,7 @@
 
 ready = ->
   $('.DataTables').DataTable()
+
   return
 
 $(document).ready(ready)

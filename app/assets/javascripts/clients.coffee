@@ -4,8 +4,8 @@
 
 
 ready = ->
+  $('.DataTables').DataTable()
 
-  $('.select2').select2()
   return
 
 $(document).ready(ready)

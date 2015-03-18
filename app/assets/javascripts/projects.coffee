@@ -4,7 +4,7 @@
 
 
 ready = ->
-  $('.Datatables').DataTable()
+  $('.DataTables').DataTable()
 
   $('.datepicker').datepicker(
     dateFormat: 'yy-mm-dd'
