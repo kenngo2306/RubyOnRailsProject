@@ -1,0 +1,36 @@
+Age Group|1|2
+post_type|1|1
+Coastal Primer|1|1
+Play Series|1|2
+Free standing Play Activities|1|2
+Site Amenities|1|2
+Sports Equipment|1|2
+Safety Surfacing|1|2
+Subsurface Material|1|1
+Boarders|1|1
+Water System Type|2|1
+Water Source|2|1
+Drainage|2|1
+Electrical|2|1
+Required for DA/RNR|2|1
+Required for WTS|2|2
+Nozzles|2|1
+Shape|2|1
+Include Overspray Zone|2|1
+Splashpad Surfacing|2|2
+Zoned Required|2|2
+Shading Type|3|1
+Shade Surfacing|3|2
+Add 12" or 18" for wood chips|3|1
+Concrete Cutting and Removal Required|3|1
+Concrete Pour-back similar to existing|3|1
+Special Surface Cutting and Removal Required|3|1
+Special Surface Pour-back similar to existing|3|1
+Crane Required|3|1
+Footing|3|1
+Fabric only install/recover|3|1
+Fabric Removal and return to manufacturer|3|1
+Superspan Access|3|1
+Quick Release|3|1
+Sloped|3|1
+Delivery|3|1

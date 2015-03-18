@@ -1,0 +1,5 @@
+Pool
+Park
+School
+Church
+Daycare
