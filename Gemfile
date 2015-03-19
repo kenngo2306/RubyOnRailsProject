@@ -25,6 +25,7 @@ gem 'sendgrid'
 gem 'kaminari'
 gem 'prawn-rails'
 gem "select2-rails"
+sudo gem install bleak_house
 
 
 group :development do

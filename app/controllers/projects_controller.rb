@@ -10,6 +10,15 @@ end
   # GET /projects/1
   # GET /projects/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        pdf = Pif.new(@project, view_context)
+        send_data pdf.render, filename: "PIF ##{@project.id}.pdf",
+                  type: "application/pdf",
+                  disposition: "inline"
+      end
+    end
   end
 
   # GET /projects/new
