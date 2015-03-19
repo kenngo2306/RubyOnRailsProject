@@ -81,6 +81,17 @@
 // Example:
 // @link-color: #ff0000;
 
+
+/*global changes*/
+a:visited {
+  color: #FFFFFF;
+}
+
+a:hover {
+  color: black;
+}
+
+
 /* NAVBAR Design */
 
 .navbar-default {
@@ -191,6 +202,10 @@
   align-items: center;
 }
 
+.row-margin{
+  margin-left:0
+}
+
 .panel-green {
   border-color: #5cb85c;
 }
@@ -245,6 +260,41 @@
   color: #df8a13;
 }
 
+.panel-primary {
+  border-color: #428bca;
+}
+
+.panel-primary .panel-heading{
+  border-color: #428bca;
+  color: #fff;
+  background-color: #428bca;
+}
+
+.panel-primary a{
+  color: #428bca;
+}
+
+.panel-primary a:hover{
+  color: #428bca;
+}
+
+.panel-loop{
+  border-color: mediumaquamarine;
+}
+
+.panel-loop .panel-heading{
+  border-color: mediumaquamarine;
+  color: #fff;
+  background-color: mediumaquamarine;
+}
+
+.panel-loop a{
+  color: mediumaquamarine;
+}
+
+.panel-loop a:hover{
+  color: #df8a13;
+}
 body{
   padding-top: 50px;
   padding-bottom: 50px;
@@ -285,6 +335,65 @@ body{
 .fieldset_Contact_Location {
   display: none;
 }
+
+#project_status_1{
+   display:none;
+ }
+
+#project_status_2{
+  display:none;
+}
+#project_status_3{
+  display:none;
+}
+#project_status_4{
+  display:none;
+}
+#project_status_5{
+  display:none;
+}
+#project_status_6{
+  display:none;
+}
+#project_status_7{
+  display:none;
+}
+#project_status_8{
+  display:none;
+}
+#project_status_9{
+  display:none;
+}
+#project_status_10{
+  display:none;
+}
+#project_status_11{
+  display:none;
+}
+#project_status_12{
+  display:none;
+}
+#project_status_13{
+  display:none;
+}
+#project_status_14{
+  display:none;
+}
+#project_status_15{
+  display:none;
+}
+#project_status_16{
+  display:none;
+}
+#project_status_17{
+  display:none;
+}
+#project_status_18{
+  display:none;
+}
+
+
+
 /*inputs*/
 #msform input, #msform textarea {
   padding: 15px;
@@ -312,6 +421,38 @@ body{
 #msform .action-button:hover, #msform .action-button:focus {
   box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
+
+.btn {
+  display: inline-block;
+  margin-left: 12px;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #428bca;
+  border-color: #357ebd;
+}
+
+
+
+
+
 /*headings*/
 .fs-title {
   font-size: 15px;
@@ -375,3 +516,10 @@ body{
   color: white;
 }
 
+/*dataTables*/
+
+.dataTables_wrapper
+{
+  margin: 10px;
+  padding: 10px;
+}

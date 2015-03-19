@@ -3,6 +3,7 @@ class DashboardController < ApplicationController
 
   def index
     @project_statuses = ProjectStatus.all
+
   end
 
 end
