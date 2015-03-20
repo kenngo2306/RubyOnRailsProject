@@ -69,6 +69,6 @@ class ProjectTypeInformationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_type_information_params
-      params.require(:project_type_information).permit(:proposal_number, :revision_number, :project_id, :project_type_id)
+      params.require(:project_type_information).permit(:proposal_number, :revision_number, :project_id, :project_type_id, :category_option_ids => [])
     end
 end

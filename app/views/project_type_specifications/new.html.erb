@@ -1,13 +1,27 @@
-<p>Testing</p>
+
+<h1>Project Type: <%= @project_type_information.project_type.project_type_name %> </h1>
 
 <% @project_type.categories.each do |category| %>
     <h3><%=  category.category_name  %></h3>
+
+    <% if category.category_type_id == 1 %>
+        <% category.category_options.each do |category_option| %>
+            <br/>
+            <%= radio_button_tag(category.category_name,category_option.id) %>
+            <%= label_tag(category_option.category_option_name + '_' + category_option.id.to_s, category_option.category_option_name) %>
+            <br/>
+        <% end %>
+
+
+
+    <% elsif category.category_type_id == 2 %>
     <% category.category_options.each do |category_option| %>
         <br/>
-        <%= radio_button_tag(category.category_name,category_option.id) %>
+        <%= check_box_tag (category_option.id) %>
         <%= label_tag(category_option.category_option_name + '_' + category_option.id.to_s, category_option.category_option_name) %>
         <br/>
     <% end %>
+        <% end %>
 <% end %>
 
 
@@ -25,5 +39,9 @@
 
 <% end %>
 
+<input type="submit" value="Submit This Form">
 
-<h1>Project Type Information <%= @project_type_information.id %> </h1>
+
+
+
+
