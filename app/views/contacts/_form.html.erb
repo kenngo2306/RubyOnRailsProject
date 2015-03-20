@@ -1,5 +1,4 @@
-<script src="parallax.js"></script>
-<html>
+
 <body class="main" style="background-image: url(<%= asset_path 'island.jpg' %>)" >
 <div class="container">
   <div class="row vertical-offset-100">
@@ -35,18 +34,18 @@
               </ul>
               <%=field_set_tag nil, class: 'fieldset_Contact_Type' do %>
 
-                  <h3 class="fs-subtitle"> Contact Type</h3>
+                  <h3 class="fs-subtitle"></h3>
                   <div class="control-group">
                     <%= f.label :contact_type_id, 'Contact Type', :class => 'control-label' %>
                     <div class="controls">
-                      <%= f.text_field :contact_type_id, :class => 'form-control' %>
+                      <%= f.collection_select :contact_type_id, ContactType.all, :id, :contact_type_name, :class => 'form-control' %>
                     </div>
                     <%= error_span(@contact[:contact_type_id]) %>
                   </div>
                   <div class="control-group">
                     <%= f.label :client_id, 'Client Name', :class => 'control-label' %>
                     <div class="controls">
-                      <%= f.text_field :client_id, :class => 'form-control' %>
+                      <%= f.collection_select :client_id, Client.all, :id, :client_name, input_html: { class: 'chosen-select' } %>
                     </div>
                     <%= error_span(@contact[:client_id]) %>
                   </div>
@@ -110,16 +109,16 @@
                     <%= error_span(@contact[:contact_work]) %>
                   </div>
                   <div class="control-group">
-                    <%= f.label :state_id, 'State', :class => 'control-label' %>
+                    <%= f.label :contact_city, 'City', :class => 'control-label' %>
                     <div class="controls">
-                      <%= f.text_field :state_id, :class => 'form-control' %>
+                      <%= f.text_field :contact_city, :class => 'form-control' %>
                     </div>
                     <%= error_span(@contact[:contact_work]) %>
                   </div>
                   <div class="control-group">
-                    <%= f.label :contact_city, 'City', :class => 'control-label' %>
+                    <%= f.label :state_id, 'State', :class => 'control-label' %>
                     <div class="controls">
-                      <%= f.text_field :contact_city, :class => 'form-control' %>
+                      <%= f.collection_select :state_id, State.all, :id, :state_name, :class => 'form-control' %>
                     </div>
                     <%= error_span(@contact[:contact_work]) %>
                   </div>
@@ -243,6 +242,3 @@
   </div>
 </div>
 </body>
-</div>
-</div>
-</html>

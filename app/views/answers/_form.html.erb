@@ -25,14 +25,14 @@
   <div class="control-group">
     <%= f.label :question_id, 'Question', :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :question_id, :class => 'form-control' %>
+      <%= f.collection_select :question_id, Question.all, :id, :question_name, :class => 'form-control' %>
     </div>
     <%= error_span(@answer[:question_id]) %>
   </div>
   <div class="control-group">
-    <%= f.label :project_type_information_id, 'Project Type', :class => 'control-label' %>
+    <%= f.label :project_type_information_id, 'Project Type Information', :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :project_type_information_id, :class => 'form-control' %>
+      <%= f.collection_select :project_type_information_id, ProjectTypeInformation.all, :id, :class => 'form-control' %>
     </div>
     <%= error_span(@answer[:project_type_information_id]) %>
   </div>

@@ -4,4 +4,3 @@ require File.expand_path('../application', __FILE__)
 # Initialize the Rails application.
 Rails.application.initialize!
 
-require 'bleak_house' if ENV['BLEAK_HOUSE']
