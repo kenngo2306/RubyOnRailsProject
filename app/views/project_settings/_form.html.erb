@@ -1,3 +1,15 @@
+<body class="main" style="background-image: url(<%= asset_path 'island.jpg' %>)" >
+<div class="container">
+  <div class="row vertical-offset-100">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row-fluid user-row">
+            <img src="/app/assets/images/funabounds-login.png"/>
+          </div>
+        </div>
+        <div class="panel-body">
+
 <%= form_for @project_setting, :html => { :class => "form-horizontal project_setting" } do |f| %>
 
     <% if @project_setting.errors.any? %>
@@ -29,3 +41,9 @@
             project_settings_path, :class => 'btn btn-default' %>
 
 <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
