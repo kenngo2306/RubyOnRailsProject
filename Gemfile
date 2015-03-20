@@ -24,7 +24,8 @@ gem 'sendgrid'
 # gem 'simple_form'
 gem 'kaminari'
 gem 'prawn-rails'
-gem "select2-rails"
+gem 'chosen-rails'
+
 
 
 group :development do

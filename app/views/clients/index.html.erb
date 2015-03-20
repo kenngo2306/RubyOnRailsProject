@@ -22,7 +22,7 @@
         <td><%= client.billing_address %></td>
         <td><%= client.billing_city %></td>
         <td><%= client.billing_zip %></td>
-        <td><%= client.state_id %></td>
+        <td><%= client.state.state_name %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       client, :class => 'btn btn-default btn-xs'  %>

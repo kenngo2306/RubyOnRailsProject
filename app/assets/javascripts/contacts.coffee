@@ -13,5 +13,12 @@ $(document).ready ->
     $('.fieldset_Contact_Information').hide()
     $('.fieldset_Contact_Location').show()
     return
+      # enable chosen js
+  $('.chosen-select').chosen
+    allow_single_deselect: true
+    no_results_text: 'No results matched'
+    width: '200px'
   return
+
+
 
