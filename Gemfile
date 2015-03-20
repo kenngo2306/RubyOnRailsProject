@@ -21,7 +21,7 @@ gem 'pg'
 gem 'devise'
 gem 'pundit'
 gem 'sendgrid'
-# gem 'simple_form'
+gem 'simple_form'
 gem 'kaminari'
 gem 'prawn-rails'
 gem "select2-rails"

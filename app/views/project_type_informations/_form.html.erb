@@ -1,53 +1,27 @@
-<%= form_for @project_type_information, :html => { :class => "form-horizontal project_type_information" } do |f| %>
+<%= simple_form_for(@project_type_information)do |f| %>
 
-    <% if @project_type_information.errors.any? %>
-    <div id="error_expl" class="panel panel-danger">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= pluralize(@project_type_information.errors.count, "error") %> prohibited this project_type_information from being saved:</h3>
-      </div>
-      <div class="panel-body">
-        <ul>
-        <% @project_type_information.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    </div>
-  <% end %>
-
-  <div class="control-group">
-    <%= f.label :proposal_number,'Proposal Number', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :proposal_number, :class => 'form-control' %>
-    </div>
-    <%= error_span(@project_type_information[:proposal_number]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :revision_number, 'Revision Number', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :revision_number, :class => 'form-control' %>
-    </div>
-    <%= error_span(@project_type_information[:revision_number]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :project_id, 'Project ID', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.collection_select :project_id,Project.all,:id,:project_name, :class => 'form-control' %>
-    </div>
-    <%= error_span(@project_type_information[:project_id]) %>
-  </div>
-  <div class="control-group">
-    <%= f.label :project_type_id, 'Project Type ID', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.collection_select :project_type_id,ProjectType.all,:id,:project_type_name, :class => 'form-control' %>
-    </div>
-    <%= error_span(@project_type_information[:project_type_id]) %>
-  </div>
+    <%= f.input :proposal_number %>
+    <%= f.input :revision_number %>
+    <%= f.association :project_type, label_method: :project_type_name %>
 
 
-  <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            project_type_informations_path, :class => 'btn btn-default' %>
+    <input class="check_boxes optional" type="checkbox" value="25" name="project_type_information[category_option_ids][]"
+           id = "project_type_information_category_option_ids_25">
 
+    <div class="control-group">
+      <% Category.where('project_type_id = 2').each do |category| %>
+
+              <h3> <%= category.category_name %> </h3> <br/>
+              <% category.category_options.each do |category_option|  %>
+                  <%= check_box_tag "project_type_information[category_option_ids][]", category_option.id, @project_type_information.category_option_ids.include?(category_option.id) %>
+                  <%= label_tag(category_option.category_option_name + '_' + category_option.id.to_s, category_option.category_option_name) %>
+                  <br/>
+
+          <% end %>
+
+
+      <% end %>
+    </div>
+    <%= f.button :submit %>
 
 <% end %>
