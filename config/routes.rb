@@ -32,7 +32,9 @@ Rails.application.routes.draw do
 
   resources :sales_people
 
-  resources :project_statuses
+  resources :project_statuses do
+    resources :projects
+  end
 
   resources :project_settings
 

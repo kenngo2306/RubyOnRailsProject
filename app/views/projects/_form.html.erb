@@ -131,7 +131,7 @@
   </div>
   <div class="control-group">
     <%= f.label :deal_type_id, :class => 'control-label' %>
-    <div class="controls">
+    <div class="controls deal-type-dropdown">
       <%= f.collection_select :deal_type_id, DealType.all, :id, :deal_type_name, :class => 'form-control' %>
     </div>
     <%= error_span(@project[:deal_type_id]) %>
@@ -166,7 +166,7 @@
   </div>
   <div class="control-group">
     <%= f.label :project_status_id, :class => 'control-label' %>
-    <div class="controls">
+    <div class="controls project-status-dropdown">
       <%= f.collection_select :project_status_id,ProjectStatus.all, :id, :project_status_name, :class => 'form-control' %>
     </div>
     <%= error_span(@project[:project_status_id]) %>
