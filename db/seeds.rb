@@ -1,6 +1,8 @@
 
 
-#---------------Wave 1-------------------------------------------
+
+# ---------------Wave 1-------------------------------------------
+
 open(Rails.root.join('app','assets','seed_files','Wave1','category_types.txt')) do |category_types|
   category_types.read.each_line do |category_type|
     category_type_name = category_type
@@ -71,7 +73,8 @@ open(Rails.root.join('app','assets','seed_files','Wave1','states.txt')) do |stat
   end
 end
 
-#---------------Wave 2-------------------------------------------
+# ---------------Wave 2-------------------------------------------
+
 
 open(Rails.root.join('app','assets','seed_files','Wave2','categories.txt')) do |categories|
   categories.read.each_line do |category|
@@ -108,7 +111,8 @@ open(Rails.root.join('app','assets','seed_files','Wave2','sales_people.txt')) do
   end
 end
 
-#---------------Wave 3-------------------------------------------
+
+# ---------------Wave 3-------------------------------------------
 open(Rails.root.join('app','assets','seed_files','Wave3','category_options.txt')) do |category_options|
   category_options.read.each_line do |category_option|
     category_option_name,category_id = category_option.chomp.split("|")
