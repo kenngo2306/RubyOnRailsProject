@@ -27,8 +27,9 @@
     <div class="control-group">
       <% Question.where('project_type_id = 2').each do |question| %>
         <h3><%= question.question_name %></h3>
-        <%= hidden_field_tag "answers[question_id][]", question.id %>
-        <%= text_field_tag "answers[answer_text][]" %>
+        <%= hidden_field_tag "[question_ids][]", question.id %>
+        <%= text_area_tag "[answer_texts][]", Answer.where('project_type_information_id = ? and question_id = ?',@project_type_information.id, question.id).any? ? Answer.where('project_type_information_id = ? and question_id = ?',@project_type_information.id, question.id).first.answer_text : "" %>
+
       <% end %>
     </div>
 
