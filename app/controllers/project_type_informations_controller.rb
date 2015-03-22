@@ -5,6 +5,7 @@ class ProjectTypeInformationsController < ApplicationController
   # GET /project_type_informations.json
   def index
     @project_type_informations = ProjectTypeInformation.all
+
   end
 
   # GET /project_type_informations/1
@@ -42,16 +43,15 @@ class ProjectTypeInformationsController < ApplicationController
   def update
 
     respond_to do |format|
-      Answer.where('project_type_information_id = ' + @project_type_information.id.to_s).destroy_all
-      i = 0
-      while i < params[:question_ids].size do
-        a = Answer.create(:question_id => params[:question_ids][i], :project_type_information_id => @project_type_information.id , :answer_text => params[:answer_texts][i])
-        a.save
-        i = i + 1
+      if (!params[:question_ids].nil?)
+            Answer.where('project_type_information_id = ' + @project_type_information.id.to_s).destroy_all
+            i = 0
+            while i < params[:question_ids].size do
+              a = Answer.create(:question_id => params[:question_ids][i], :project_type_information_id => @project_type_information.id , :answer_text => params[:answer_texts][i])
+              a.save
+              i = i + 1
+            end
       end
-
-
-
       if @project_type_information.update(project_type_information_params)
         format.html { redirect_to @project_type_information, notice: 'Project type information was successfully updated.' }
         format.json { render :show, status: :ok, location: @project_type_information }
