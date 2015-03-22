@@ -13,6 +13,7 @@
 
               <h3> <%= category.category_name %> </h3> <br/>
               <% category.category_options.each do |category_option|  %>
+
                   <%= check_box_tag "project_type_information[category_option_ids][]", category_option.id, @project_type_information.category_option_ids.include?(category_option.id) %>
                   <%= label_tag(category_option.category_option_name + '_' + category_option.id.to_s, category_option.category_option_name) %>
                   <br/>
@@ -22,6 +23,15 @@
 
       <% end %>
     </div>
+
+    <div class="control-group">
+      <% Question.where('project_type_id = 2').each do |question| %>
+        <h3><%= question.question_name %></h3>
+        <%= hidden_field_tag "answers[question_id][]", question.id %>
+        <%= text_field_tag "answers[answer_text][]" %>
+      <% end %>
+    </div>
+
     <%= f.button :submit %>
 
 <% end %>
