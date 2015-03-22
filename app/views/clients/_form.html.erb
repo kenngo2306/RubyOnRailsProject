@@ -59,17 +59,19 @@
   </div>
   <div class="control-group">
     <%= f.label :state_id, 'State', :class => 'control-label' %>
-    <div class="controls">
+    <div class="controls state-controls">
       <%= f.collection_select :state_id, State.all, :id,:state_name, class: 'select2' %><br/>
     </div>
     <%= error_span(@client[:state_id]) %>
   </div>
 
-
+<div>
+  <br>
+  <br>
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
             clients_path, :class => 'btn btn-default' %>
-
+</div>
 <% end %>
         </div>
       </div>
