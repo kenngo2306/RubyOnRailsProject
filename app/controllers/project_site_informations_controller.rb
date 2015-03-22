@@ -69,6 +69,6 @@ class ProjectSiteInformationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_site_information_params
-      params.require(:project_site_information).permit(:area_length, :area_width, :area_description, :geotech_report_in_position, :bobcat_accessible, :construction_fence_required, :client_fence_dismantle_reinstall_required, :rock_excavation_required, :hand_dig_required, :dirt_haul_off_required, :tree_vegetation_removal_required, :area_is_sloped, :site_survey_required, :surface_protection_required, :under_ground_obstacles_yn, :structural_removal_required, :pvt_locator_required, :project_type_information_id)
+      params.require(:project_site_information).permit(:area_length, :area_width, :area_description, :geotech_report_in_position, :bobcat_accessible, :construction_fence_required, :client_fence_dismantle_reinstall_required, :rock_excavation_required, :hand_dig_required, :dirt_haul_off_required, :tree_vegetation_removal_required, :area_is_sloped, :site_survey_required, :surface_protection_required, :under_ground_obstacles_yn, :structural_removal_required, :pvt_locator_required, :project_id, :project_site_id)
     end
 end
