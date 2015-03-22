@@ -57,3 +57,32 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+
+
+<table class="DataTables">
+  <thead>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @project.project_sites.each do |psi| %>
+      <tr>
+        <td><%= psi.project_site.site_name %></td>
+        <td><%= psi.project_site_information.area_length %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= link_to 'Show', psi %></td>
+        <td><%= link_to 'Edit', edit_project_site_informations_path(psi) %></td>
+        <td><%= link_to 'Destroy', psi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <%end %>
+  </tbody>
+</table>

@@ -9,5 +9,6 @@ class Project < ActiveRecord::Base
   belongs_to :irrigation_responsibility
   has_many :requested_sales_documents, through: :project_requested_sales_documents
   has_many :contacts, through: :project_contacts
+  has_many :project_site_informations
   has_many :project_sites, through: :project_site_informations
 end
