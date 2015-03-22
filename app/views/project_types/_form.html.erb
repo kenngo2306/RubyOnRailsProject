@@ -23,14 +23,27 @@
     <%= error_span(@project_type[:project_type_name]) %>
   </div>
 
+    <%= f.label :question_name, "Text Fields" %> <br/>
   <%= f.fields_for :questions do |builder| %>
-	<fieldset>
-		<%= builder.label :question_name, "Question" %> <br/>
-		<%= builder.text_field :question_name %><br/>
+
+        <div class = "control-group">
+        <span class ="controls">
+
+		<%= builder.text_field :question_name, :class => 'form-control'%>
+
 		<%= builder.check_box :_destroy %>
 		<%= builder.label :_destroy, "Remove Question" %>
-	</fieldset>
+      </span>
+
+
+        </div>
   <% end %>
+
+
+
+
+
+
 
   <%= f.fields_for :categories do |builder| %>
 	<%= render 'category_fields', f: builder %>
