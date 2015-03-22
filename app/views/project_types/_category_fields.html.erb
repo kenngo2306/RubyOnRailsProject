@@ -1,10 +1,21 @@
-<fieldset>
-	<%= f.label :category_name, "Category" %> <br/>
-	<%= f.text_field :category_name %><br/>
-	<%= f.check_box :_destroy %>
-	<%= f.label :_destroy, "Remove Category" %>
+
+<div class = "control-group">
+
+  <%= f.label :category_name, "Multiple Selection Question", :class => 'control-label' %><br>
+
+  <span class ="controls text-fields-questions">
+
+	<%= f.text_field :category_name , :class => 'text-fields'%>
+	<%= f.check_box :_destroy , :class => 'text-fields-checkbox'%>
+	<%= f.label :_destroy, "Remove Selection Question" , :class => 'text-fields-label'%>
+    <br>
+  </span>
+
+  <%= f.label :category_option_name, "Selection Option" , :class => ' option-fields-label'%>
+
 	<%= f.fields_for :category_options do |builder| %>
 		<%= render 'category_option_fields', f: builder %>
+        <br>
 	<% end %>
 
-</fieldset>
+</div>

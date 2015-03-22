@@ -1,6 +1,9 @@
-<fieldset>
-	<%= f.label :category_option_name, "Category Option" %>
-	<%= f.text_field :category_option_name %>
-	<%= f.check_box :_destroy %>
-	<%= f.label :_destroy, "Remove" %>
-</fieldset>
+<div class = "control-group">
+
+	<%= f.text_field :category_option_name, :class => 'option-fields' %>
+	<%= f.check_box :_destroy, :class => 'option-fields-checkbox' %>
+	<%= f.label :_destroy, "Remove Option", :class => 'text-fields-label' %>
+
+</div>
+
+
