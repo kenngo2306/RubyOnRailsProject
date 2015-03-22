@@ -147,13 +147,23 @@
     </div>
     <%= error_span(@project_site_information[:pvt_locator_required]) %>
   </div>
-  <div class="control-group">
-    <%= f.label :project_type_information_id, 'Project Type Information', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :project_type_information_id, :class => 'form-control' %>
-    </div>
-    <%= error_span(@project_site_information[:project_type_information_id]) %>
-  </div>
+
+              <div class="control-group">
+                <%= f.label :project_id, 'Project ID', :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :project_id, :class => 'form-control' %>
+                </div>
+                <%= error_span(@project_site_information[:project_id]) %>
+              </div>
+
+              <div class="control-group">
+                <%= f.label :project_site_id, 'Project Site ID', :class => 'control-label' %>
+                <div class="controls">
+                  <%= f.text_field :project_site_id, :class => 'form-control' %>
+                </div>
+                <%= error_span(@project_site_information[:project_site_id]) %>
+              </div>
+
 
 
   <%= f.submit nil, :class => 'btn btn-primary' %>

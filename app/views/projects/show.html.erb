@@ -7,9 +7,9 @@
   <dt><strong>Project Name:</strong></dt>
   <dd><%= @project.project_name %></dd>
   <dt><strong>Start Date:</strong></dt>
-  <dd><%= @project.start_date.to_formatted_s(:long_ordinal)%></dd>
+  <dd><%= @project.start_date%></dd>
   <dt><strong>Deadline:</strong></dt>
-  <dd><%= @project.deadline.to_formatted_s(:long_ordinal)%></dd>
+  <dd><%= @project.deadline%></dd>
   <dt><strong>Client Goal:</strong></dt>
   <dd><%= @project.client_goal %></dd>
   <dt><strong>Time Frame Desc:</strong></dt>
@@ -28,8 +28,7 @@
   <dd><%= @project.permit_submittal_required %></dd>
   <dt><strong>Permit Fees Required?:</strong></dt>
   <dd><%= @project.permit_fees_required %></dd>
-  <dt><strong>Permit Fees:</strong></dt>
-  <dd><%= @project.permit_fees %></dd>
+
   <dt><strong>Project Budget:</strong></dt>
   <dd><%= @project.project_budget %></dd>
   <dt><strong>Deal Type:</strong></dt>
@@ -57,3 +56,32 @@
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
               :class => 'btn btn-danger' %>
+
+
+<table class="DataTables">
+  <thead>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @project.project_sites.each do |psi| %>
+      <tr>
+        <td><%= psi.project_site.site_name %></td>
+        <td><%= psi.project_site_information.area_length %></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><%= link_to 'Show', psi %></td>
+        <td><%= link_to 'Edit', edit_project_site_informations_path(psi) %></td>
+        <td><%= link_to 'Destroy', psi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+  <%end %>
+  </tbody>
+</table>

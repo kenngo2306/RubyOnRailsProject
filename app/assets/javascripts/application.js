@@ -16,5 +16,7 @@
 //= require turbolinks
 //= require jquery-ui
 //= require chosen-jquery
+//= require raphael
+//= require morris
 //= require_tree .
 

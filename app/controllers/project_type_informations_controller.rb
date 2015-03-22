@@ -40,7 +40,18 @@ class ProjectTypeInformationsController < ApplicationController
   # PATCH/PUT /project_type_informations/1
   # PATCH/PUT /project_type_informations/1.json
   def update
+
     respond_to do |format|
+      Answer.where('project_type_information_id = ' + @project_type_information.id.to_s).destroy_all
+      i = 0
+      while i < params[:question_ids].size do
+        a = Answer.create(:question_id => params[:question_ids][i], :project_type_information_id => @project_type_information.id , :answer_text => params[:answer_texts][i])
+        a.save
+        i = i + 1
+      end
+
+
+
       if @project_type_information.update(project_type_information_params)
         format.html { redirect_to @project_type_information, notice: 'Project type information was successfully updated.' }
         format.json { render :show, status: :ok, location: @project_type_information }
@@ -69,6 +80,6 @@ class ProjectTypeInformationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_type_information_params
-      params.require(:project_type_information).permit(:proposal_number, :revision_number, :project_id, :project_type_id, :category_option_ids => [])
+      params.require(:project_type_information).permit(:proposal_number, :revision_number, :project_id, :project_type_id, :category_option_ids => [], :question_ids => [], :answer_texts =>[])
     end
 end

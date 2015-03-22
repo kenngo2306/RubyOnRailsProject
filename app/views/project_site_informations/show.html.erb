@@ -38,8 +38,12 @@
   <dd><%= @project_site_information.structural_removal_required %></dd>
   <dt><strong>PVT Locator Required:</strong></dt>
   <dd><%= @project_site_information.pvt_locator_required %></dd>
-  <dt><strong>Project Type Information ID:</strong></dt>
-  <dd><%= @project_site_information.project_type_information_id %></dd>
+
+  <dt><strong>Project ID</strong></dt>
+  <dd><%= @project_site_information.project_id %></dd>
+  <dt><strong>Project Site ID</strong></dt>
+  <dd><%= @project_site_information.project_site_id %></dd>
+
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
