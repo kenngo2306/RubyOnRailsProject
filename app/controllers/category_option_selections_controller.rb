@@ -69,6 +69,6 @@ class CategoryOptionSelectionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_option_selection_params
-      params.require(:category_option_selection).permit(:category_option_selection_name, :category_option_id, :project_type_information_id)
+      params.require(:category_option_selection).permit(:category_option_id, :project_type_information_id)
     end
 end

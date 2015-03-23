@@ -5,7 +5,6 @@ class ProjectTypeInformationsController < ApplicationController
   # GET /project_type_informations.json
   def index
     @project_type_informations = ProjectTypeInformation.all
-
   end
 
   # GET /project_type_informations/1

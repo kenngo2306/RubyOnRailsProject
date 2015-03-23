@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150322185456) do
+ActiveRecord::Schema.define(version: 20150323012936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,11 +33,10 @@ ActiveRecord::Schema.define(version: 20150322185456) do
   end
 
   create_table "category_option_selections", force: :cascade do |t|
-    t.string   "category_option_selection_name"
     t.integer  "category_option_id"
     t.integer  "project_type_information_id"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "category_options", force: :cascade do |t|
@@ -134,10 +133,9 @@ ActiveRecord::Schema.define(version: 20150322185456) do
   end
 
   create_table "project_site_informations", force: :cascade do |t|
-    t.decimal  "area_length"
-    t.decimal  "area_width"
+    t.string   "area_length"
+    t.string   "area_width"
     t.text     "area_description"
-    t.boolean  "geotech_report_in_position"
     t.boolean  "bobcat_accessible"
     t.boolean  "construction_fence_required"
     t.boolean  "client_fence_dismantle_reinstall_required"
@@ -159,6 +157,8 @@ ActiveRecord::Schema.define(version: 20150322185456) do
     t.boolean  "skytrack_boomlift_access"
     t.integer  "project_id"
     t.integer  "project_site_id"
+    t.boolean  "geotech_report_in_possession"
+    t.boolean  "crane_access"
   end
 
   create_table "project_sites", force: :cascade do |t|
@@ -188,10 +188,10 @@ ActiveRecord::Schema.define(version: 20150322185456) do
   create_table "project_type_informations", force: :cascade do |t|
     t.string   "proposal_number"
     t.string   "revision_number"
-    t.integer  "project_id"
     t.integer  "project_type_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "project_site_information_id"
   end
 
   create_table "project_types", force: :cascade do |t|
@@ -210,7 +210,6 @@ ActiveRecord::Schema.define(version: 20150322185456) do
   create_table "projects", force: :cascade do |t|
     t.string   "project_name"
     t.date     "start_date"
-    t.date     "deadline"
     t.text     "client_goal"
     t.text     "time_frame_description"
     t.integer  "mobilization_quantity"
@@ -220,8 +219,7 @@ ActiveRecord::Schema.define(version: 20150322185456) do
     t.text     "restricted_work_hours"
     t.boolean  "permit_submittal_required"
     t.boolean  "permit_fees_required"
-    t.text     "permit_fees"
-    t.decimal  "project_budget"
+    t.string   "project_budget"
     t.integer  "deal_type_id"
     t.text     "deal_type_description"
     t.integer  "project_setting_id"
@@ -231,6 +229,8 @@ ActiveRecord::Schema.define(version: 20150322185456) do
     t.integer  "irrigation_responsibility_id"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
+    t.string   "procurement_tool_description"
+    t.date     "proposal_deadline"
   end
 
   create_table "questions", force: :cascade do |t|
