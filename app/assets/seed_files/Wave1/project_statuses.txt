@@ -1,8 +1,11 @@
+Gathering Requirements
 Design Request Submitted
 3D Request Submitted
 Design Request Returned
 3D Request Returned
 Proposal to Client
+Design Change Requested
+Modify Proposal
 Approved Proposal
 Invoice
 Deposit Received
