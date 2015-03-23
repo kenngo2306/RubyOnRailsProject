@@ -16,7 +16,7 @@
     <% @category_option_selections.each do |category_option_selection| %>
       <tr>
         <td><%= link_to category_option_selection.id, category_option_selection_path(category_option_selection) %></td>
-        <td><%= category_option_selection.category_option_selection_name %></td>
+
         <td><%= category_option_selection.category_option_id %></td>
         <td><%= category_option_selection.project_type_information_id %></td>
         <td>

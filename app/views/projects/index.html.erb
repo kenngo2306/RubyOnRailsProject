@@ -11,7 +11,7 @@
       <th>ID</th>
       <th>Project Name</th>
       <th>Start Date</th>
-      <th>Deadline</th>
+      <th>Proposal Deadline</th>
       <th>Sales Person</th>
       <th>Status</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -23,7 +23,7 @@
         <td><%= link_to project.id, project_path(project) %></td>
         <td><%= project.project_name %></td>
         <td><%= project.start_date%></td>
-        <td><%= project.deadline%></td>
+        <td><%= project.proposal_deadline%></td>
         <td><%= project.sales_person_id %></td>
         <td>
         <%= form_for(project) do |f| %>

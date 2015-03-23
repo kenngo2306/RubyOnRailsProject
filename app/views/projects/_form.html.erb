@@ -61,11 +61,11 @@
     <%= error_span(@project[:start_date]) %>
   </div>
   <div class="control-group">
-    <%= f.label :deadline, 'Deadline', :class => 'control-label' %>
+    <%= f.label :proposal_deadline, 'Proposal Deadline', :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :deadline, :class => 'form-control datepicker' %>
+      <%= f.text_field :proposal_deadline, :class => 'form-control datepicker' %>
     </div>
-    <%= error_span(@project[:deadline]) %>
+    <%= error_span(@project[:proposal_deadline]) %>
   </div>
               <div class="control-group">
                 <%= f.label :project_status_id, 'Project Status', :class => 'control-label' %>
