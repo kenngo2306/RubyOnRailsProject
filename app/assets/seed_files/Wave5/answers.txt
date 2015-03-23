@@ -1,0 +1,327 @@
+54|3|1
+Burke|3|2
+Blue and green|3|3
+2 slides |3|4
+1 climber|3|5
+N/A|3|6
+3 activity panels|3|7
+2 overhead events|3|8
+N/A|3|9
+N/A|3|10
+N/A|3|11
+61|4|1
+Burke|4|2
+Red and blue|4|3
+3 slides|4|4
+2 climbers|4|5
+N/A|4|6
+2 activity panels|4|7
+3 overhead events|4|8
+N/A|4|9
+N/A|4|10
+N/A|4|11
+46|5|1
+Burke|5|2
+blue, Green, Yellow|5|3
+4 slides|5|4
+2 climbers|5|5
+N/A|5|6
+1 activity panel|5|7
+2 overhead events|5|8
+N/A|5|9
+N/A|5|10
+N/A|5|11
+55|6|1
+Burke|6|2
+teal, purple|6|3
+1 slide|6|4
+1 climber|6|5
+N/A|6|6
+N/A|6|7
+3 overhead events|6|8
+N/A|6|9
+N/A|6|10
+N/A|6|11
+42|7|1
+Burke|7|2
+Yellow, Green, black|7|3
+4 slides|7|4
+2 climbers|7|5
+N/A|7|6
+1 activity panel|7|7
+2 overhead events|7|8
+N/A|7|9
+N/A|7|10
+N/A|7|11
+34|8|1
+Burke|8|2
+Blue and green|8|3
+3 slides|8|4
+2 climbers|8|5
+N/A|8|6
+3 activity panels|8|7
+3 overhead events|8|8
+N/A|8|9
+N/A|8|10
+N/A|8|11
+56|9|1
+Burke|9|2
+Green, dark green, white|9|3
+1 slide|9|4
+1 climber|9|5
+N/A|9|6
+3 activity panels|9|7
+2 overhead events|9|8
+N/A|9|9
+N/A|9|10
+N/A|9|11
+54|10|1
+Burke|10|2
+Red and blue|10|3
+3 slides|10|4
+1 climber|10|5
+N/A|10|6
+2 activity panels|10|7
+3 overhead events|10|8
+N/A|10|9
+N/A|10|10
+N/A|10|11
+30|11|1
+Burke|11|2
+teal, purple|11|3
+2 slides |11|4
+1 climber|11|5
+N/A|11|6
+2 activity panels|11|7
+3 overhead events|11|8
+N/A|11|9
+N/A|11|10
+N/A|11|11
+53|12|1
+Burke|12|2
+Blue and green|12|3
+2 slides |12|4
+2 climbers|12|5
+N/A|12|6
+1 activity panel|12|7
+2 overhead events|12|8
+N/A|12|9
+N/A|12|10
+N/A|12|11
+52|13|1
+Burke|13|2
+Yellow, Green, black|13|3
+1 slide|13|4
+2 climbers|13|5
+N/A|13|6
+N/A|13|7
+2 overhead events|13|8
+N/A|13|9
+N/A|13|10
+N/A|13|11
+31|14|1
+Burke|14|2
+Blue and green|14|3
+2 slides |14|4
+1 climber|14|5
+N/A|14|6
+3 activity panels|14|7
+2 overhead events|14|8
+N/A|14|9
+N/A|14|10
+N/A|14|11
+31|15|1
+Burke|15|2
+Blue and green|15|3
+2 slides |15|4
+1 climber|15|5
+N/A|15|6
+3 activity panels|15|7
+2 overhead events|15|8
+N/A|15|9
+N/A|15|10
+N/A|15|11
+1|16|12
+1|16|13
+3|16|14
+96|16|15
+40 gal/min|16|16
+N/A|16|17
+3|16|18
+blue, Green, yellow|16|19
+N/A|16|20
+ocean|16|21
+45x35|16|22
+2|1|12
+N/A|16|23
+1|1|13
+64|17|1
+4|1|14
+Burke|17|2
+68|1|15
+Red and blue|17|3
+50 gal/min|1|16
+2 slides |17|4
+N/A|1|17
+2 climbers|17|5
+1|1|18
+N/A|17|6
+Blue and green|1|19
+2 activity panels|17|7
+N/A|1|20
+3 overhead events|17|8
+Sports|1|21
+N/A|17|9
+43x45|1|22
+N/A|17|10
+N/A|17|11
+N/A|1|23
+over a playground|18|24
+3|2|12
+1861|18|25
+1|2|13
+21|18|26
+4|2|14
+3|18|27
+85|2|15
+2|18|28
+30 gal/min|2|16
+N/A|18|29
+N/A|2|17
+3|19|12
+4|2|18
+2|19|13
+Red and blue|2|19
+3|19|14
+N/A|2|20
+115|19|15
+Jungle|2|21
+20 gal/min|19|16
+51x60|2|22
+N/A|19|17
+1|19|18
+N/A|2|23
+teal, purple|19|19
+N/A|19|20
+oasis|19|21
+50x30|19|22
+N/A|19|23
+39|20|1
+Burke|20|2
+Green, dark green, white|20|3
+1 slide|20|4
+1 climber|20|5
+N/A|20|6
+N/A|20|7
+2 overhead events|20|8
+N/A|20|9
+N/A|20|10
+N/A|20|11
+over a splash pad|21|24
+2413|21|25
+19|21|26
+4|21|27
+3|21|28
+N/A|21|29
+over a pool|22|24
+1890|22|25
+23|22|26
+4|22|27
+4|22|28
+N/A|22|29
+over a bench|23|24
+2236|23|25
+16|23|26
+5|23|27
+2|23|28
+N/A|23|29
+over a playground|24|24
+1848|24|25
+20|24|26
+4|24|27
+4|24|28
+N/A|24|29
+over a splash pad|25|24
+1532|25|25
+18|25|26
+4|25|27
+4|25|28
+N/A|25|29
+over a pool|26|24
+2018|26|25
+25|26|26
+4|26|27
+4|26|28
+N/A|26|29
+over a bench|27|24
+2047|27|25
+19|27|26
+4|27|27
+2|27|28
+N/A|27|29
+over a playground|28|24
+2420|28|25
+18|28|26
+3|28|27
+4|28|28
+N/A|28|29
+over a splash pad|29|24
+1183|29|25
+16|29|26
+4|29|27
+2|29|28
+N/A|29|29
+over a pool|30|24
+2088|30|25
+24|30|26
+4|30|27
+2|30|28
+N/A|30|29
+3|31|12
+3|31|13
+4|31|14
+149|31|15
+30 gal/min|31|16
+N/A|31|17
+3|31|18
+Yellow, Green, black|31|19
+N/A|31|20
+Sports|31|21
+32x21|31|22
+N/A|31|23
+2|32|12
+1|32|13
+4|32|14
+139|32|15
+40 gal/min|32|16
+N/A|32|17
+4|32|18
+Blue and green|32|19
+N/A|32|20
+Jungle|32|21
+34x40|32|22
+N/A|32|23
+3|33|12
+2|33|13
+3|33|14
+110|33|15
+20 gal/min|33|16
+N/A|33|17
+2|33|18
+Green, dark green, white|33|19
+N/A|33|20
+ocean|33|21
+45x57|33|22
+N/A|33|23
+2|34|12
+2|34|13
+5|34|14
+95|34|15
+50 gal/min|34|16
+N/A|34|17
+4|34|18
+Red and blue|34|19
+N/A|34|20
+oasis|34|21
+25x40|34|22
+N/A|34|23

@@ -20,7 +20,6 @@ Colors|2
 Custom Feature Request|2
 Theme|2
 Play Pad Dimensions|2
-Theme|2
 Additional Notes|2
 Shade Location|3
 RMA#|3
