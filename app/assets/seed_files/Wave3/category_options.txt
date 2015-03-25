@@ -22,7 +22,7 @@ Overhead Events|5
 Spinning Play Events|5
 Climbers|5
 See-saws|5
-Activitie Panels|5
+Activities Panels|5
 Rock-N-Rides|5
 Swings|5
 Little Digger|5

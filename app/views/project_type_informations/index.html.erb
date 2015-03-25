@@ -1,6 +1,6 @@
 <%- model_class = ProjectTypeInformation -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+  <h1>Design Information</h1>
 </div>
 <table class="table table-striped DataTables">
   <thead>
@@ -8,7 +8,6 @@
       <th>ID</th>
       <th>Proposal Number</th>
       <th>Revision Number</th>
-      <th>Project ID</th>
       <th>Project Type ID</th>
 
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -20,7 +19,7 @@
         <td><%= link_to project_type_information.id, project_type_information_path(project_type_information) %></td>
         <td><%= project_type_information.proposal_number %></td>
         <td><%= project_type_information.revision_number %></td>
-        <td><%= project_type_information.project_id %></td>
+
         <td><%= project_type_information.project_type_id %></td>
 
         <td>

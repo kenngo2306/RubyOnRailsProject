@@ -1,9 +1,28 @@
-<%= simple_form_for(@project_type_information)do |f| %>
+<body class="main" style="background-image: url(<%= asset_path 'island.jpg' %>)" >
+<div class="container">
+  <div class="row vertical-offset-100">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row-fluid user-row">
 
+          </div>
+        </div>
+        <div class="panel-body">
+
+<%= simple_form_for(@project_type_information)do |f| %>
+    <%= f.association :project_site_information, :include_blank => false%>
+    <%= f.association :project_type, label_method: :project_type_name ,:include_blank => false%>
     <%= f.input :proposal_number %>
     <%= f.input :revision_number %>
-    <%= f.association :project_type, label_method: :project_type_name %>
+
 
     <%= f.button :submit %>
 
 <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>

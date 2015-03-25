@@ -200,7 +200,7 @@ open(Rails.root.join('app','assets','seed_files','Wave5','answers.txt')) do |ans
 end
 
 open(Rails.root.join('app','assets','seed_files','Wave5','category_option_selections.txt')) do |category_option_selections|
-  CATEGORY_OPTION_SELECTIONS.read.each_line do |category_option_selection|
+  category_option_selections.read.each_line do |category_option_selection|
     category_option_id,project_type_information_id = category_option_selection.chomp.split("|")
     CategoryOptionSelection.create(:category_option_id => category_option_id, :project_type_information_id => project_type_information_id)
   end
