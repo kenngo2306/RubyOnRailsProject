@@ -11,7 +11,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'thin'
 #PostgeSQL gem
 gem 'pg'
-
+gem 'cocoon'
 #---Extra Gems-----
 
 
