@@ -46,6 +46,37 @@
 
 </dl>
 
+<table class="DataTables">
+  <thead>
+    <tr>
+      <th>Project Type</th>
+      <th>Proposal Number</th>
+      <th>Revision Number</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @project_site_information.project_type_informations.each do |project_type_information| %>
+        <tr>
+          <td>
+            <%= project_type_information.project_type.project_type_name %>
+          </td>
+          <td>
+            <%= project_type_information.proposal_number %>
+          </td>
+          <td>
+            <%= project_type_information.revision_number %>
+          </td>
+          <td>
+            <%= link_to('Manage Project Type Information', new_project_type_information_path, :class => 'btn btn-default btn-xs') %>
+
+          </td>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 <%= link_to t('.back', :default => t("helpers.links.back")),
               project_site_informations_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
