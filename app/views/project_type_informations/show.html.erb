@@ -41,55 +41,38 @@
             <li>Step 2 - Open-Ended Questions</li>
 
           </ul>
+  <%= simple_form_for(@project_type_information)do |f| %>
+      <%= field_set_tag nil, class: 'fieldset_ProjectType_Information' do%>
 
-          <%= field_set_tag nil, class: 'fieldset_ProjectType_Information' do%>
+            <div class="control-group">
+                <% Category.where('project_type_id = ?',@project_type_information.project_type_id).each do |category| %>
+                    <h3> <%= category.category_name %> </h3> <br/>
+                    <% category.category_options.each do |category_option|  %>
+                        <%= check_box_tag "project_type_information[category_option_ids][]", category_option.id, @project_type_information.category_option_ids.include?(category_option.id) %>
+                        <%= label_tag(category_option.category_option_name + '_' + category_option.id.to_s, category_option.category_option_name) %>
+                        <br/>
+                    <% end %>
+                <% end %>
+            </div>
 
-<%= simple_form_for(@project_type_information)do |f| %>
+        <input type="button" name="next" class="next btn btn-default" value="Next" /> <br>
+      <%end%>
 
+      <%= field_set_tag nil, class: 'fieldset_ProjectType_Information2' do%>
 
+            <div class="control-group">
+                <% Question.where('project_type_id = ?',@project_type_information.project_type_id).each do |question| %>
+                      <h3><%= question.question_name %></h3>
+                      <%= hidden_field_tag "[question_ids][]", question.id %>
+                      <%= text_area_tag "[answer_texts][]", Answer.where('project_type_information_id = ? and question_id = ?',@project_type_information.id, question.id).any? ? Answer.where('project_type_information_id = ? and question_id = ?',@project_type_information.id, question.id).first.answer_text : "" , :size => '40x5'%>
+                <% end %>
+            </div>
 
-    <div class="control-group">
-      <% Category.where('project_type_id = ?',@project_type_information.project_type_id).each do |category| %>
+        <input type="button" name="previous" class="previous btn btn-default" value="Previous" /><br>
 
-          <h3> <%= category.category_name %> </h3> <br/>
-          <% category.category_options.each do |category_option|  %>
-
-              <%= check_box_tag "project_type_information[category_option_ids][]", category_option.id, @project_type_information.category_option_ids.include?(category_option.id) %>
-              <%= label_tag(category_option.category_option_name + '_' + category_option.id.to_s, category_option.category_option_name) %>
-              <br/>
-
-          <% end %>
-
-
-      <% end %>
-    </div>
-<%end%>
-
-              <input type="button" name="next" class="next btn btn-default" value="Next" />
-              <br>
-              <%end%>
-
-
-          <%= field_set_tag nil, class: 'fieldset_ProjectType_Information2' do%>
-
-              <%= simple_form_for(@project_type_information)do |f| %>
-
-
-        <div class="control-group">
-      <% Question.where('project_type_id = ?',@project_type_information.project_type_id).each do |question| %>
-          <h3><%= question.question_name %></h3>
-          <%= hidden_field_tag "[question_ids][]", question.id %>
-          <%= text_area_tag "[answer_texts][]", Answer.where('project_type_information_id = ? and question_id = ?',@project_type_information.id, question.id).any? ? Answer.where('project_type_information_id = ? and question_id = ?',@project_type_information.id, question.id).first.answer_text : "" , :size => '40x5'%>
-
-      <% end %>
-    </div>
-
-    <%= f.button :submit %>
-
-<% end %>
-              <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
-              <br>
-<%end%>
+      <%end%>
+      <%= f.button :submit %>
+  <% end %>
 
           <!-- jQuery -->
           <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>

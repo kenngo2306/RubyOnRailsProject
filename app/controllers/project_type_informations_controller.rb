@@ -51,7 +51,7 @@ class ProjectTypeInformationsController < ApplicationController
               i = i + 1
             end
       end
-      if @project_type_information.update(project_type_information_params)
+      if (@project_type_information.update(project_type_information_params))
         format.html { redirect_to @project_type_information, notice: 'Project type information was successfully updated.' }
         format.json { render :show, status: :ok, location: @project_type_information }
       else

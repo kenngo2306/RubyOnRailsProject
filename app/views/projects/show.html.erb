@@ -61,27 +61,36 @@
 <table class="DataTables">
   <thead>
   <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Site Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Action</th>
     <th colspan="3"></th>
   </tr>
   </thead>
   <tbody>
   <% @project.project_sites.each do |psi| %>
       <tr>
-        <td><%= psi.project_site.site_name %></td>
-        <td><%= psi.project_site_information.area_length %></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td><%= psi.site_name %></td>
+        <td><%= psi.site_address  %></td>
+        <td><%= psi.site_city %></td>
+        <td><%= psi.site_zip %></td>
+        <td><%= psi.state_id %></td>
+
         <td><%= link_to 'Show', psi %></td>
-        <td><%= link_to 'Edit', edit_project_site_informations_path(psi) %></td>
-        <td><%= link_to 'Destroy', psi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
   <%end %>
   </tbody>
 </table>
+
+<% simple_form_for @project do |f| %>
+
+    <% f.simple_fields_for :project_site_informations do |project_site_information| %>
+      <%= render 'project_site_information_fields', :f => project_site_information %>
+      <%= link_to_add_association 'add a site' , f, :project_site_informations %>
+    <% end %>
+    <%= f.button :submit %>
+<% end %>

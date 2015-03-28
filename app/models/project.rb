@@ -11,4 +11,7 @@ class Project < ActiveRecord::Base
   has_many :contacts, through: :project_contacts
   has_many :project_site_informations
   has_many :project_sites, through: :project_site_informations
+
+  accepts_nested_attributes_for :project_site_informations
+  accepts_nested_attributes_for :project_sites
 end
