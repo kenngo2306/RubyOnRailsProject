@@ -3,49 +3,96 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong>Project Name:</strong></dt>
-  <dd><%= @project.project_name %></dd>
-  <dt><strong>Start Date:</strong></dt>
-  <dd><%= @project.start_date%></dd>
-  <dt><strong>Proposal Deadline:</strong></dt>
-  <dd><%= @project.proposal_deadline%></dd>
-  <dt><strong>Client Goal:</strong></dt>
-  <dd><%= @project.client_goal %></dd>
-  <dt><strong>Time Frame Desc:</strong></dt>
-  <dd><%= @project.time_frame_description %></dd>
-  <dt><strong>Mobilization Quantity:</strong></dt>
-  <dd><%= @project.mobilization_quantity %></dd>
-  <dt><strong>Liquidate Damages?:</strong></dt>
-  <dd><%= @project.liquidate_damages_yn %></dd>
-  <dt><strong>Wages & Certified Payroll?:</strong></dt>
-  <dd><%= @project.prevailing_wages_certified_payroll_yn %></dd>
-  <dt><strong>Permit Special Possessed?:</strong></dt>
-  <dd><%= @project.permit_special_inspection_in_possession %></dd>
-  <dt><strong>Restricted Work Hours?:</strong></dt>
-  <dd><%= @project.restricted_work_hours %></dd>
-  <dt><strong>Permit Submittal Required?</strong></dt>
-  <dd><%= @project.permit_submittal_required %></dd>
-  <dt><strong>Permit Fees Required?:</strong></dt>
-  <dd><%= @project.permit_fees_required %></dd>
+<fieldset>
+  <dl class="dl-horizontal">
+    <legend> General Information</legend>
 
-  <dt><strong>Project Budget:</strong></dt>
-  <dd><%= @project.project_budget %></dd>
-  <dt><strong>Deal Type:</strong></dt>
-  <dd><%= @project.deal_type_id %></dd>
-  <dt><strong>Deal Type Desc:</strong></dt>
-  <dd><%= @project.deal_type_description %></dd>
-  <dt><strong>Project Setting:</strong></dt>
-  <dd><%= @project.project_setting_id %></dd>
-  <dt><strong>Procurement Tool:</strong></dt>
-  <dd><%= @project.procurement_tool_id %></dd>
-  <dt><strong>Sales Person:</strong></dt>
-  <dd><%= @project.sales_person_id %></dd>
-  <dt><strong>Project Status:</strong></dt>
-  <dd><%= @project.project_status.project_status_name %></dd>
-  <dt><strong>Irrigation Responsibility:</strong></dt>
-  <dd><%= @project.irrigation_responsibility_id %></dd>
-</dl>
+    <dt><strong>Project Name:</strong></dt>
+    <dd><%= @project.project_name %></dd>
+
+    <dt><strong>Project Budget:</strong></dt>
+    <dd><%= @project.project_budget %></dd>
+
+    <dt><strong>Start Date:</strong></dt>
+    <dd><%= @project.start_date%></dd>
+
+    <dt><strong>Proposal Deadline:</strong></dt>
+    <dd><%= @project.proposal_deadline%></dd>
+
+    <dt><strong>Project Status:</strong></dt>
+    <dd><%= @project.project_status.project_status_name %></dd>
+
+    <dt><strong>Project Setting:</strong></dt>
+    <dd><%= @project.project_setting.project_setting_name %></dd>
+
+    <dt><strong>Sales Person:</strong></dt>
+    <dd><%= @project.sales_person.sales_person_fullname %></dd>
+      </dl>
+
+</fieldset>
+
+<fieldset>
+  <legend>Client Information</legend>
+  <dl class="dl-horizontal">
+
+    <dt><strong>Client Goal:</strong></dt>
+    <dd><%= @project.client_goal %>
+
+    <dt><strong>Deal Type:</strong></dt>
+    <dd><%= @project.deal_type.deal_type_name %></dd>
+
+    <dt><strong>Deal Type Desc:</strong></dt>
+    <dd><%= @project.deal_type_description %></dd>
+
+    <dt><strong>Mobilization Quantity:</strong></dt>
+    <dd><%= @project.mobilization_quantity %></dd>
+
+    <dt><strong>Time Frame Desc:</strong></dt>
+    <dd><%= @project.time_frame_description %></dd>
+
+
+    <dt><strong>Procurement Tool:</strong></dt>
+    <dd><%= @project.procurement_tool.procurement_tool_name %></dd>
+
+
+    <dt><strong>Irrigation Responsibility:</strong></dt>
+    <dd><%= @project.irrigation_responsibility.irrigation_responsibility_name %></dd>
+
+      </dl>
+
+
+</fieldset>
+
+<fieldset>
+  <legend>Additional Project Information</legend>
+  <dl class="dl-horizontal">
+
+    <dt><strong>Restricted Work Hours?:</strong></dt>
+    <dd><%= @project.restricted_work_hours %></dd>
+
+    <dt><strong>Liquidate Damages?:</strong></dt>
+    <dd><%= @project.liquidate_damages_yn %></dd>
+    <dt><strong>Wages & Certified Payroll?:</strong></dt>
+    <dd><%= @project.prevailing_wages_certified_payroll_yn %></dd>
+    <dt><strong>Permit Special Possessed?:</strong></dt>
+    <dd><%= @project.permit_special_inspection_in_possession %></dd>
+
+    <dt><strong>Permit Submittal Required?</strong></dt>
+    <dd><%= @project.permit_submittal_required %></dd>
+    <dt><strong>Permit Fees Required?:</strong></dt>
+    <dd><%= @project.permit_fees_required %></dd>
+
+
+
+
+  </dl>
+
+</fieldset>
+
+
+
+
+
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               projects_path, :class => 'btn btn-default'  %>
@@ -81,16 +128,103 @@
 
         <td><%= link_to 'Show', psi %></td>
 
+        <!-- Button trigger modal -->
+        <tr>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          Add Site
+        </button></tr>
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add Site</h4>
+              </div>
+              <div class="modal-body">
+                <%= form_for @project_site, :html => { :class => "form-horizontal project_site" } do |f| %>
+
+                    <% if @project_site.errors.any? %>
+                        <div id="error_expl" class="panel panel-danger">
+                          <div class="panel-heading">
+                            <h3 class="panel-title"><%= pluralize(@project_site.errors.count, "error") %> prohibited this project_site from being saved:</h3>
+                          </div>
+                          <div class="panel-body">
+                            <ul>
+                              <% @project_site.errors.full_messages.each do |msg| %>
+                                  <li><%= msg %></li>
+                              <% end %>
+                            </ul>
+                          </div>
+                        </div>
+                    <% end %>
+
+                    <div class="control-group">
+                      <%= f.label :site_name, 'Site Name', :class => 'control-label' %>
+                      <div class="controls">
+                        <%= f.text_field :site_name, :class => 'form-control' %>
+                      </div>
+                      <%= error_span(@project_site[:site_name]) %>
+                    </div>
+                    <div class="control-group">
+                      <%= f.label :site_address, 'Site Address', :class => 'control-label' %>
+                      <div class="controls">
+                        <%= f.text_field :site_address, :class => 'form-control' %>
+                      </div>
+                      <%= error_span(@project_site[:site_address]) %>
+                    </div>
+                    <div class="control-group">
+                      <%= f.label :site_city, 'Site City', :class => 'control-label' %>
+                      <div class="controls">
+                        <%= f.text_field :site_city, :class => 'form-control' %>
+                      </div>
+                      <%= error_span(@project_site[:site_city]) %>
+                    </div>
+                    <div class="control-group">
+                      <%= f.label :site_zip, 'Site Zip', :class => 'control-label' %>
+                      <div class="controls siteZip">
+                        <%= f.text_field :site_zip, :class => 'form-control' %>
+                      </div>
+                      <%= error_span(@project_site[:site_zip]) %>
+                    </div>
+                    <div class="control-group">
+                      <%= f.label :site_access, 'Site Access',:class => 'control-label' %>
+                      <div class="controls funabounds">
+                        <%= f.text_field :site_access, :class => 'form-control' %>
+                      </div>
+                      <%= error_span(@project_site[:site_access]) %>
+                    </div>
+                    <div class="control-group">
+                      <%= f.label :state_id, 'State', :class => 'control-label' %>
+                      <div class="controls funabounds">
+                        <%= f.collection_select :state_id, State.all, :id, :state_name, {}, :class => 'form-control' %>
+                      </div>
+                      <%= error_span(@project_site[:state_id]) %>
+                    </div>
+                    <br>
+
+                    <%= f.submit nil, :class => 'btn btn-primary' %>
+                    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                                project_sites_path, :class => 'btn btn-default' %>
+
+                <% end %>
+
+
+
+
+
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </tr>
   <%end %>
   </tbody>
 </table>
 
-<% simple_form_for @project do |f| %>
-
-    <% f.simple_fields_for :project_site_informations do |project_site_information| %>
-      <%= render 'project_site_information_fields', :f => project_site_information %>
-      <%= link_to_add_association 'add a site' , f, :project_site_informations %>
-    <% end %>
-    <%= f.button :submit %>
-<% end %>
