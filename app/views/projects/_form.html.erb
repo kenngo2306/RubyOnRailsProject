@@ -40,14 +40,14 @@
               <%=field_set_tag nil, class: 'fieldset_project_general_info' do %>
   <div class="control-group">
     <%= f.label :project_name,'Project Name', :class => 'control-label' %>
-    <div class="controls">
+    <div class="controls projectName">
       <%= f.text_field :project_name, :class => 'form-control' %>
     </div>
     <%= error_span(@project[:project_name]) %>
   </div>
               <div class="control-group">
                 <%= f.label :project_budget, 'Project Budget', :class => 'control-label' %>
-                <div class="controls">
+                <div class="controls projectBudget">
                   <%= f.text_field :project_budget, :class => 'form-control' %>
                 </div>
                 <%= error_span(@project[:project_budget]) %>
@@ -55,38 +55,38 @@
 
   <div class="control-group">
     <%= f.label :start_date,'Start Date', :class => 'control-label' %>
-    <div class="controls">
+    <div class="controls startDate">
       <%= f.text_field :start_date, :class => 'form-control datepicker' %>
     </div>
     <%= error_span(@project[:start_date]) %>
   </div>
   <div class="control-group">
     <%= f.label :proposal_deadline, 'Proposal Deadline', :class => 'control-label' %>
-    <div class="controls">
+    <div class="controls proposalDeadline">
       <%= f.text_field :proposal_deadline, :class => 'form-control datepicker' %>
     </div>
     <%= error_span(@project[:proposal_deadline]) %>
   </div>
               <div class="control-group">
                 <%= f.label :project_status_id, 'Project Status', :class => 'control-label' %>
-                <div class="controls project-status-dropdown">
-                  <%= f.collection_select :project_status_id,ProjectStatus.all, :id, :project_status_name, :class => 'form-control' %>
+                <div class="controls funabounds">
+                  <%= f.collection_select :project_status_id,ProjectStatus.all, :id, :project_status_name,{}, :class => 'form-control' %>
                 </div>
                 <%= error_span(@project[:project_status_id]) %>
               </div>
 
               <div class="control-group">
                 <%= f.label :project_setting_id,'Project Setting',:class => 'control-label' %>
-                <div class="controls dropdown-margin">
-                  <%= f.collection_select :project_setting_id, ProjectSetting.all, :id, :project_setting_name, :class => 'form-control ' %>
+                <div class="controls funabounds">
+                  <%= f.collection_select :project_setting_id, ProjectSetting.all, :id, :project_setting_name,{}, :class => 'form-control ' %>
                 </div>
                 <%= error_span(@project[:project_setting_id]) %>
               </div>
 
               <div class="control-group">
                 <%= f.label :sales_person_id, 'Sales Person', :class => 'control-label' %>
-                <div class="controls dropdown-margin">
-                  <%= f.collection_select :sales_person_id, SalesPerson.all, :id, :sales_person_fullname, :class => 'form-control ' %>
+                <div class="controls funabounds">
+                  <%= f.collection_select :sales_person_id, SalesPerson.all, :id, :sales_person_fullname, {}, :class => 'form-control ' %>
                 </div>
                 <%= error_span(@project[:sales_person_id]) %>
               </div>
@@ -103,15 +103,15 @@
                   <div class="control-group">
                     <%= f.label :client_goal, 'Client Goal', :class => 'control-label' %>
                     <div class="controls">
-                      <%= f.text_area :client_goal, size: '10x7', :class => 'form-control' %>
+                      <%= f.text_area :client_goal, :size => '10x7', :class => 'form-control' %>
                     </div>
                     <%= error_span(@project[:client_goal]) %>
                   </div>
 
               <div class="control-group">
                 <%= f.label :deal_type_id, 'Deal Type', :class => 'control-label' %>
-                <div class="controls deal-type-dropdown">
-                  <%= f.collection_select :deal_type_id, DealType.all, :id, :deal_type_name, :class => 'form-control' %>
+                <div class="controls funabounds">
+                  <%= f.collection_select :deal_type_id, DealType.all, :id, :deal_type_name, {}, :class => 'form-control' %>
                 </div>
                 <%= error_span(@project[:deal_type_id]) %>
               </div>
@@ -125,7 +125,7 @@
 
                   <div class="control-group">
           <%= f.label :mobilization_quantity, 'Mobilization Quantity', :class => 'control-label' %>
-          <div class="controls">
+          <div class="controls mobilizationQuantity">
             <%= f.text_field :mobilization_quantity, :class => 'form-control' %>
           </div>
           <%= error_span(@project[:mobilization_quantity]) %>
@@ -140,8 +140,8 @@
 
                   <div class="control-group">
                     <%= f.label :procurement_tool_id, 'Procurement Tool', :class => 'control-label' %>
-                    <div class="controls">
-                      <%= f.text_field :procurement_tool_id, :class => 'form-control' %>
+                    <div class="controls funabounds">
+                      <%= f.collection_select :procurement_tool_id, ProcurementTool.all, :id, :procurement_tool_name, {}, :class => 'form-control' %>
                     </div>
                     <%= error_span(@project[:procurement_tool_id]) %>
                   </div>
@@ -149,8 +149,8 @@
 
                   <div class="control-group">
                     <%= f.label :irrigation_responsibility_id, 'Irrigation Responsibility', :class => 'control-label' %>
-                    <div class="controls">
-                      <%= f.text_field :irrigation_responsibility_id, :class => 'form-control' %>
+                    <div class="controls funabounds">
+                      <%= f.collection_select :irrigation_responsibility_id, IrrigationResponsibility.all, :id, :irrigation_responsibility_name, {}, :class => 'form-control' %>
                     </div>
                     <%= error_span(@project[:irrigation_responsibility_id]) %>
                   </div>
