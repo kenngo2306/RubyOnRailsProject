@@ -17,6 +17,7 @@ end
   # GET /projects/1
   # GET /projects/1.json
   def show
+    @project_site = ProjectSite.new
     @project = Project.find(params[:id])
     respond_to do |format|
       format.html
@@ -25,6 +26,7 @@ end
         send_data pdf.render, filename: "PIF ##{@project.id}.pdf", type: "application/pdf", disposition: "inline"
       end
     end
+
   end
 
   # GET /projects/new
