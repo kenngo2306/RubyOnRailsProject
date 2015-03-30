@@ -20,10 +20,15 @@
 	
 	<div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-
-	  <%= render 'layouts/navigation_links' %>
-
-     
+	  <% if current_user.admin? %>
+	  	<%= render 'layouts/admin_navigation_links' %>
+	  <% elsif current_user.salesrep? %>
+		<%= render 'layouts/salesrep_navigation_links' %>
+	  <% elsif current_user.insidesales? %>
+		<%= render 'layouts/insidesales_navigation_links' %>
+	  <% elsif current_user.installer? %>
+		<%= render 'layouts/installer_navigation_links' %>
+	  <% end %>
       </ul>
 	
 	
