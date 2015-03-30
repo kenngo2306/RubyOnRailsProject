@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 	belongs_to :installer
 	belongs_to :salesperson
 	
-	enum role: [:admin, :sales, :installer]
+	enum role: [:admin, :salesrep, :insidesales, :installer]
 	after_initialize :set_default_role, :if => :new_record?
 	
 	
