@@ -105,7 +105,7 @@
               :class => 'btn btn-danger' %>
 
 
-<table class="DataTables">
+<table class="DataTables" id ="sites_table">
   <thead>
   <tr>
     <th>Site Name</th>
@@ -114,25 +114,29 @@
     <th>State</th>
     <th>Zip</th>
     <th>Action</th>
-    <th colspan="3"></th>
+
   </tr>
   </thead>
-  <tbody>
-  <% @project.project_sites.each do |psi| %>
-      <tr>
-        <td><%= psi.site_name %></td>
-        <td><%= psi.site_address  %></td>
-        <td><%= psi.site_city %></td>
-        <td><%= psi.site_zip %></td>
-        <td><%= psi.state_id %></td>
+      <tbody>
+          <% @project.project_sites.each do |psi| %>
 
-        <td><%= link_to 'Show', psi %></td>
+                <%= render partial: 'project_site_information_row', locals: {psi: psi} %>
 
-        <!-- Button trigger modal -->
-        <tr>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-          Add Site
-        </button></tr>
+          <%end %>
+      </tbody>
+  </table>
+<button id="delete">Delete Table</button>
+
+
+
+
+  <!-- Button trigger modal to create a new site -->
+
+
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+              Add Site
+            </button>
+
 
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -143,8 +147,10 @@
                 <h4 class="modal-title" id="myModalLabel">Add Site</h4>
               </div>
               <div class="modal-body">
-                <%= form_for @project_site, :html => { :class => "form-horizontal project_site" } do |f| %>
-
+                <%= form_for @project_site, :remote => true, :html => { :class => "form-horizontal project_site" } do |f| %>
+                    <%= f.fields_for :project_site_informations, @project_site.project_site_informations.build do |project_site_information| %>
+                        <%= project_site_information.hidden_field :project_id, :value => @project.id %>
+                    <% end %>
                     <% if @project_site.errors.any? %>
                         <div id="error_expl" class="panel panel-danger">
                           <div class="panel-heading">
@@ -204,27 +210,26 @@
                     </div>
                     <br>
 
-                    <%= f.submit nil, :class => 'btn btn-primary' %>
-                    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                                project_sites_path, :class => 'btn btn-default' %>
 
+
+
+                    <%= f.submit nil, :class => 'btn btn-primary' %>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 <% end %>
 
-
-
-
-
-
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
+
             </div>
           </div>
         </div>
-      </tr>
-  <%end %>
-  </tbody>
-</table>
+
+
+
+
+
+
+
+
+
+
 
