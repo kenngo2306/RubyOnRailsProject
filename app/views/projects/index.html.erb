@@ -24,7 +24,7 @@
         <td><%= project.project_name %></td>
         <td><%= project.start_date%></td>
         <td><%= project.proposal_deadline%></td>
-        <td><%= project.sales_person_id %></td>
+        <td><%= project.sales_person.sales_person_fullname %></td>
         <td>
         <%= form_for(project) do |f| %>
               <%= f.collection_select :project_status_id, ProjectStatus.all, :id,:project_status_name, class: 'btn btn-default' %><br/>

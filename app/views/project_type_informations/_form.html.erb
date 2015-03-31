@@ -10,8 +10,10 @@
         </div>
         <div class="panel-body">
 
-<%= simple_form_for(@project_type_information)do |f| %>
-    <%= f.association :project_site_information, :include_blank => false%>
+<%= simple_form_for(@project_type_information, )do |f| %>
+
+
+    <%= f.association :project_site_information, label_method: :id ,:include_blank => false%>
     <%= f.association :project_type, label_method: :project_type_name ,:include_blank => false%>
     <%= f.input :proposal_number %>
     <%= f.input :revision_number %>

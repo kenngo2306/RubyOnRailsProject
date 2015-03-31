@@ -356,6 +356,10 @@ body{
   display:none;
 }
 
+.fieldset_site_info_check{
+  display: none;
+}
+
 .fieldset_Contact_Location {
   display: none;
 }
@@ -546,6 +550,7 @@ body{
 #progressbar li:first-child:after {
   /*connector not needed before the first step*/
   content: none;
+
 }
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
@@ -688,7 +693,7 @@ body{
 
 .funabounds .form-control{
   display: block;
-  width: 250px;
+  width: 320px;
   height:40px;
   padding: 5px;
   margin: 12px;
@@ -712,6 +717,14 @@ body{
   width: 100px;
 }
 
+.areaLength .form-control{
+  width: 100px;
+}
+
+.areaWidth .form-control {
+  width: 100px;
+}
+
 .mobilizationQuantity .form-control{
   width: 200px;
 }
@@ -725,3 +738,23 @@ body{
   width: 100px;
 }
 
+
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  margin-left: 12px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.btn-default {
+  color: #333333;
+  background-color: lightblue;
+  border-color: lightblue;
+}
