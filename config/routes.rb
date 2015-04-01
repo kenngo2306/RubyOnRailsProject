@@ -6,7 +6,6 @@ Rails.application.routes.draw do
 
   get 'project_type_specifications/new'
 
-
   get 'project_type_specifications/edit'
 
   get 'home/index'
@@ -16,6 +15,9 @@ Rails.application.routes.draw do
   devise_for :users do
     get "/users/sign_out" => "devise/session#destroy", :as => :destroy_user_session
   end
+
+  resources :users
+
   resources :utilities
 
   resources :project_utilities
@@ -72,7 +74,7 @@ Rails.application.routes.draw do
 
   resources :tests
 
-  resources :users
+
 
   get 'dashboard/index'
 
