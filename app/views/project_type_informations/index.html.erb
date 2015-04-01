@@ -8,7 +8,7 @@
       <th>ID</th>
       <th>Proposal Number</th>
       <th>Revision Number</th>
-      <th>Project Type ID</th>
+      <th>Project Type Name</th>
 
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -20,7 +20,7 @@
         <td><%= project_type_information.proposal_number %></td>
         <td><%= project_type_information.revision_number %></td>
 
-        <td><%= project_type_information.project_type_id %></td>
+        <td><%= project_type_information.project_type.project_type_name %></td>
 
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

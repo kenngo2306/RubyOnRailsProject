@@ -16,7 +16,7 @@
   <dt><strong>Site Access:</strong></dt>
   <dd><%= @project_site.site_access %></dd>
   <dt><strong>State:</strong></dt>
-  <dd><%= @project_site.state_id %></dd>
+  <dd><%= @project_site.state.state_name %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

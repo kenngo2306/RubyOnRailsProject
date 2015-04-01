@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Project ID</th>
-      <th>Requested Sales Document ID</th>
+      <th>Project Name</th>
+      <th>Requested Sales Document Name</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -15,8 +15,8 @@
     <% @project_requested_sales_documents.each do |project_requested_sales_document| %>
       <tr>
         <td><%= link_to project_requested_sales_document.id, project_requested_sales_document_path(project_requested_sales_document) %></td>
-        <td><%= project_requested_sales_document.project_id %></td>
-        <td><%= project_requested_sales_document.requested_sales_document_id %></td>
+        <td><%= project_requested_sales_document.project.project_name %></td>
+        <td><%= project_requested_sales_document.requested_sales_document.requested_sales_document_name %></td>
         <td><%=l project_requested_sales_document.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

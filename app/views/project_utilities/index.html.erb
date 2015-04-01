@@ -6,8 +6,8 @@
   <thead>
     <tr>
       <th>ID</th>
-      <th>Utility ID</th>
-      <th>Project Site Information ID</th>
+      <th>Utility Name</th>
+      <th>Project Site Information Name</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -15,7 +15,7 @@
     <% @project_utilities.each do |project_utility| %>
       <tr>
         <td><%= link_to project_utility.id, project_utility_path(project_utility) %></td>
-        <td><%= project_utility.utility_id %></td>
+        <td><%= project_utility.utility.utility_name %></td>
         <td><%= project_utility.project_site_information_id %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),

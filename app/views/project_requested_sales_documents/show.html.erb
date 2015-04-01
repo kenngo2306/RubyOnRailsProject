@@ -4,10 +4,10 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong>Project ID:</strong></dt>
-  <dd><%= @project_requested_sales_document.project_id %></dd>
-  <dt><strong>Requested Sales Document ID:</strong></dt>
-  <dd><%= @project_requested_sales_document.requested_sales_document_id %></dd>
+  <dt><strong>Project Name:</strong></dt>
+  <dd><%= @project_requested_sales_document.project.project_name%></dd>
+  <dt><strong>Sales Document Name:</strong></dt>
+  <dd><%= @project_requested_sales_document.requested_sales_document.requested_sales_document_name %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

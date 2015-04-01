@@ -18,6 +18,20 @@
   <dd><%= @contact.contact_cell %></dd>
   <dt><strong>Work:</strong></dt>
   <dd><%= @contact.contact_work %></dd>
+  <dt><strong>Address:</strong></dt>
+  <dd><%= @contact.contact_address %></dd>
+  <dt><strong>City:</strong></dt>
+  <dd><%= @contact.contact_city %></dd>
+  <dt><strong>Zip:</strong></dt>
+  <dd><%= @contact.contact_zip %></dd>
+  <dt><strong>State:</strong></dt>
+  <dd><%= @contact.state.state_name %></dd>
+  <dt><strong>Client:</strong></dt>
+  <dd><%=@contact.client.client_name %></dd>
+  <dt><strong>Contact Type:</strong></dt>
+  <dd><%= @contact.contact_type.contact_type_name %></dd>
+
+
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
