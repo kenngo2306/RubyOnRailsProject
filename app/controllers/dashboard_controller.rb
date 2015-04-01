@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
 
   def index
     @project_statuses = ProjectStatus.all
-
+    @status_categories = StatusCategory.all
   end
 
 end

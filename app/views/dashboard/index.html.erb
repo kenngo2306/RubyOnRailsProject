@@ -8,6 +8,10 @@
     $(document).ready(function() {
         $('.toggle_1').click(function() {
 
+            if($('.huge2').text() == "Pre-Proposal")
+            {
+                
+            }
 
             $('#project_status_5').hide();
             $('#project_status_6').hide();
@@ -101,6 +105,49 @@
 </script>
 <div class="dashboard-container">
 <div class="row">
+<% color_array = ["panel panel-primary",  "panel panel-yellow",  "panel panel-green", "panel panel-primary",  "panel panel-yellow",  "panel panel-green","panel panel-primary",  "panel panel-yellow",  "panel panel-green" ]%>
+  <% class_array = ["fa fa-plus-square fa-5x", "fa fa-exclamation-triangle fa-5x", "fa fa-check-square fa-5x", "fa fa-plus-square fa-5x", "fa fa-exclamation-triangle fa-5x", "fa fa-check-square fa-5x", "fa fa-plus-square fa-5x", "fa fa-exclamation-triangle fa-5x", "fa fa-check-square fa-5x"] %>
+  <% toggle_array = ["toggle_1", "toggle_2", "toggle_3", "toggle_4", "toggle_5", "toggle_6","toggle_7", "toggle_8", "toggle_9"] %>
+<% color_counter = 0%>
+  <% class_counter = 0%>
+  <% toggle_counter = 0 %>
+
+
+
+
+
+  <% @status_categories.each do |status_category| %>
+      <div class="col-lg-3 col-md-6">
+        <div class= "<%= color_array[color_counter]%>">
+          <% color_counter += 1%>
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-3">
+                <i class= "<%=class_array[class_counter]%>"></i>
+                <%class_counter +=1 %>
+              </div>
+              <div class="col-xs-9 text-right">
+                <div class="huge"></div>
+                <br>
+                <div class="huge2"><%=status_category.status_category_name%></div>
+              </div>
+            </div>
+          </div>
+          <a href="#"  >
+            <div  class="panel-footer <%=toggle_array[toggle_counter]%> " >
+              <% toggle_counter +=1 %>
+              <span  class="pull-left" >Click to Toggle</span>
+              <span class="pull-right"><i class="fa fa-arrows-v"></i></span>
+              <div class="clearfix" ></div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+
+  <%end%>
+
+
   <div class="col-lg-3 col-md-6">
     <div class="panel panel-primary">
       <div class="panel-heading">
