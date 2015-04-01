@@ -1,0 +1,17 @@
+Gathering Requirements|1
+Waiting on Color Selections|1
+Design Request Submitted|1
+3D Request Submitted|1
+Design Request Returned|1
+3D Request Returned|1
+Proposal to Client|1
+Design Change Requested|1
+Modify Proposal|1
+Approved Proposal|2
+Invoice|2
+Deposit Received|2
+Order Entered|2
+Order Shipped|2
+Install|2
+Complete|3
+Archived|3

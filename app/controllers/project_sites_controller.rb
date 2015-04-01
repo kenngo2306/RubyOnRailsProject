@@ -33,6 +33,9 @@ class ProjectSitesController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @project_site.errors, status: :unprocessable_entity }
+        #added:
+        format.js {render json: @project_site.errors, status: :unprocessable_entity}
+
       end
     end
   end

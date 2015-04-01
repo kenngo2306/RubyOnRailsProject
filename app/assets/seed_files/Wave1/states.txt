@@ -49,3 +49,8 @@ Washington|WA
 West Virginia|WV
 Wisconsin|AI
 Wyoming|WY
+American Samoa|AS
+Guam|GU
+Northern Mariana Islands| MP
+Puerto Rico|PR
+US Virgin Island|VI
