@@ -8,7 +8,7 @@
 <td>
     <%= f.submit 'Change Role', :class => 'button-xs' %>
 </td>
-  <% end %>
 <td>
-  <%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs btn-danger sidelink') unless user == current_user %>
+  <%= link_to("Delete User", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs btn-danger sidelink') unless user == current_user %>
 </td>
+  <% end %>

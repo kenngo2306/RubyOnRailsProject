@@ -15,9 +15,12 @@
               <div class="row-fluid user-row" style="text-align:center">
                 <p>Name: <%= @user.name if @user.name %></p>
                 <p>Email: <%= @user.email if @user.email %></p>
-                <p>Encrypted Password: <%= @user.encrypted_password if @user.encrypted_password %></p>
+                <p>Role: <%= @user.role if @user.role %></p>
                 <p>Last Login: <%= @user.last_sign_in_at if @user.last_sign_in_at %></p>
                 <p>Current Login IP: <%= @user.current_sign_in_ip if @user.current_sign_in_ip %></p>
+                <br/>
+                <%= link_to('User List',users_path, class: 'button-xs') %>
+
               </div>
             </div>
           </div>
