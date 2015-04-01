@@ -45,13 +45,6 @@ open(Rails.root.join('app','assets','seed_files','Wave1','project_settings.txt')
   end
 end
 
-open(Rails.root.join('app','assets','seed_files','Wave1','project_statuses.txt')) do |project_statuses|
-  project_statuses.read.each_line do |project_status|
-    project_status_name = project_status
-    ProjectStatus.create(:project_status_name => project_status_name)
-  end
-end
-
 open(Rails.root.join('app','assets','seed_files','Wave1','project_types.txt')) do |project_types|
   project_types.read.each_line do |project_type|
     project_type_name = project_type
@@ -70,6 +63,13 @@ open(Rails.root.join('app','assets','seed_files','Wave1','states.txt')) do |stat
   states.read.each_line do |state|
     state_name,state_abbreviation = state.chomp.split("|")
     State.create(:state_name => state_name, :state_abbreviation => state_abbreviation)
+  end
+end
+
+open(Rails.root.join('app','assets','seed_files','Wave1','status_categories.txt')) do |status_categories|
+  status_categories.read.each_line do |status_category|
+    status_category_name = status_category
+    StatusCategory.create(:status_category_name => status_category_name)
   end
 end
 
@@ -101,6 +101,13 @@ open(Rails.root.join('app','assets','seed_files','Wave2','installers.txt')) do |
   installers.read.each_line do |installer|
     installer_first_name,installer_last_name,installer_email,installer_phone = installer.chomp.split("|")
     Installer.create(:installer_first_name => installer_first_name, :installer_last_name => installer_last_name, :installer_email => installer_email, :installer_phone => installer_phone)
+  end
+end
+
+open(Rails.root.join('app','assets','seed_files','Wave2','project_statuses.txt')) do |project_statuses|
+  project_statuses.read.each_line do |project_status|
+    project_status_name, status_category_id = project_status.chomp.split("|")
+    ProjectStatus.create(:project_status_name => project_status_name,:status_category_id => status_category_id)
   end
 end
 
@@ -161,8 +168,6 @@ open(Rails.root.join('app','assets','seed_files','Wave3','project_site_informati
     ProjectSiteInformation.create(:project_site_id => project_site_id,:area_length => area_length,:area_width => area_width,:area_description => area_description,:geotech_report_in_possession => geotech_report_in_possession,:bobcat_accessible => bobcat_accessible,:drill_rig_access => drill_rig_access,:concrete_truck_access => concrete_truck_access,:crane_access => crane_access,:skytrack_boomlift_access => skytrack_boomlift_access,:construction_fence_required => construction_fence_required,:client_fence_dismantle_reinstall_required => client_fence_dismantle_reinstall_required,:soil_condition => soil_condition,:rock_excavation_required => rock_excavation_required,:hand_dig_required => hand_dig_required,:dirt_haul_off_required => dirt_haul_off_required,:tree_vegetation_removal_required => tree_vegetation_removal_required,:area_is_sloped => area_is_sloped,:site_survey_required => site_survey_required,:surface_protection_required => surface_protection_required,:under_ground_obstacles_yn => under_ground_obstacles_yn,:structural_removal_required => structural_removal_required,:pvt_locator_required => pvt_locator_required,:project_id => project_id)
   end
 end
-
-
 
 
 
