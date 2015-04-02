@@ -4,8 +4,10 @@
 
 ready = ->
   $('.DataTables').DataTable()
-
   return
+$(document).ready ->
+  $("#new_project_site").on("ajax:success", (e, data, status, xhr) ->
+    alert data
+  ).on "ajax:error", (e, xhr, status, error) ->
+    console.log(e, xhr,status, error)
 
-$(document).ready(ready)
-$(document).on('page:load', ready)

@@ -321,12 +321,7 @@
 
 
 
-  <div id="sites">
-    <%= f.fields_for :project_sites do |project_site| %>
-        <%= render 'project_site_fields', :f => project_site %>
-        <%= link_to_add_association 'add a site', f, :project_sites %>
-    <% end %>
-  </div>
+
 
 
 
