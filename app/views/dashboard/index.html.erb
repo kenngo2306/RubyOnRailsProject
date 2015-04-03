@@ -7,97 +7,67 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('.toggle_1').click(function() {
-
-            if($('.huge2').text() == "Pre-Proposal")
-            {
-                
-            }
-
-            $('#project_status_5').hide();
-            $('#project_status_6').hide();
-            $('#project_status_7').hide();
-            $('#project_status_8').hide();
-            $('#project_status_9').hide();
-            $('#project_status_10').hide();
-            $('#project_status_11').hide();
-            $('#project_status_12').hide();
-            $('#project_status_13').hide();
-            $('#project_status_18').hide();
-
-
-
-            $('#project_status_14').toggle();
-            $('#project_status_15').toggle();
-            $('#project_status_2').toggle(  );
-            $('#project_status_4').toggle( );
-            $('#project_status_16').toggle( );
-            $('#project_status_17').toggle(  );
-            $('#project_status_1').toggle(  );
-            $('#project_status_3').toggle(  );
-
-
-
-
+            $('.status_category_1').toggle();
         });
     });
-
     $(document).ready(function() {
         $('.toggle_2').click(function() {
-
-
-            $('#project_status_1').hide();
-            $('#project_status_2').hide();
-            $('#project_status_3').hide();
-            $('#project_status_4').hide();
-            $('#project_status_12').hide();
-            $('#project_status_13').hide();
-            $('#project_status_14').hide();
-            $('#project_status_15').hide();
-            $('#project_status_16').hide();
-            $('#project_status_17').hide();
-            $('#project_status_18').hide();
-
-
-            $('#project_status_7').toggle();
-            $('#project_status_8').toggle();
-            $('#project_status_9').toggle();
-            $('#project_status_10').toggle();
-            $('#project_status_11').toggle();
-            $('#project_status_5').toggle();
-            $('#project_status_6').toggle();
-
+            $('.status_category_2').toggle();
         });
     });
 
     $(document).ready(function() {
         $('.toggle_3').click(function() {
-
-
-            $('#project_status_1').hide();
-            $('#project_status_2').hide();
-            $('#project_status_3').hide();
-            $('#project_status_4').hide();
-            $('#project_status_5').hide();
-            $('#project_status_6').hide();
-            $('#project_status_7').hide();
-            $('#project_status_8').hide();
-            $('#project_status_9').hide();
-            $('#project_status_10').hide();
-            $('#project_status_11').hide();
-            $('#project_status_14').hide();
-            $('#project_status_15').hide();
-            $('#project_status_16').hide();
-            $('#project_status_17').hide();
-
-
-
-
-            $('#project_status_18').toggle();
-            $('#project_status_12').toggle();
-            $('#project_status_13').toggle();
-
+            $('.status_category_3').toggle();
         });
     });
+
+    $(document).ready(function() {
+        $('.toggle_4').click(function() {
+            $('.status_category_4').toggle();
+        });
+    });
+    $(document).ready(function() {
+        $('.toggle_5').click(function() {
+            $('.status_category_5').toggle();
+        });
+    });
+    $(document).ready(function() {
+        $('.toggle_6').click(function() {
+            $('.status_category_6').toggle();
+        });
+    });
+    $(document).ready(function() {
+        $('.toggle_7').click(function() {
+            $('.status_category_7').toggle();
+        });
+    });
+    $(document).ready(function() {
+        $('.toggle_8').click(function() {
+            $('.status_category_8').toggle();
+        });
+    });
+    $(document).ready(function() {
+        $('.toggle_9').click(function() {
+            $('.status_category_9').toggle();
+        });
+    });
+    $(document).ready(function() {
+        $('.toggle_10').click(function() {
+            $('.status_category_10').toggle();
+        });
+    });
+    $(document).ready(function() {
+        $('.toggle_11').click(function() {
+            $('.status_category_11').toggle();
+        });
+    });
+
+
+
+
+
+
 
 
 
@@ -106,8 +76,8 @@
 <div class="dashboard-container">
 <div class="row">
 <% color_array = ["panel panel-primary",  "panel panel-yellow",  "panel panel-green", "panel panel-primary",  "panel panel-yellow",  "panel panel-green","panel panel-primary",  "panel panel-yellow",  "panel panel-green" ]%>
-  <% class_array = ["fa fa-plus-square fa-5x", "fa fa-exclamation-triangle fa-5x", "fa fa-check-square fa-5x", "fa fa-plus-square fa-5x", "fa fa-exclamation-triangle fa-5x", "fa fa-check-square fa-5x", "fa fa-plus-square fa-5x", "fa fa-exclamation-triangle fa-5x", "fa fa-check-square fa-5x"] %>
-  <% toggle_array = ["toggle_1", "toggle_2", "toggle_3", "toggle_4", "toggle_5", "toggle_6","toggle_7", "toggle_8", "toggle_9"] %>
+  <% class_array = ["fa fa-plus-square fa-5x", "fa fa-exclamation-triangle fa-5x", "fa fa-check-square fa-5x", "fa fa-dashboard fa-5x", "fa fa-dashboard fa-5x", "fa fa-dashboard fa-5x", "fa fa-dashboard fa-5x", "fa fa-dashboard fa-5x", "fa fa-dashboard fa-5x"] %>
+  <% toggle_array = ["toggle_1", "toggle_2", "toggle_3", "toggle_4", "toggle_5", "toggle_6","toggle_7", "toggle_8", "toggle_9", "toggle_10", "toggle_11"] %>
 <% color_counter = 0%>
   <% class_counter = 0%>
   <% toggle_counter = 0 %>
@@ -116,7 +86,8 @@
 
 
 
-  <% @status_categories.each do |status_category| %>
+
+  <% @status_categories.each_with_index do |status_category, index| %>
       <div class="col-lg-3 col-md-6">
         <div class= "<%= color_array[color_counter]%>">
           <% color_counter += 1%>
@@ -144,113 +115,50 @@
         </div>
       </div>
 
+      <div class = "<%=dom_id(status_category)%>">
+      <% @project_statuses.where(status_category: index+1).each do |project_status| %>
 
-  <%end%>
+          <div class="col-lg-3 col-md-6 transition">
+            <div class="panel panel-loop " >
+              <div class="panel-heading">
+                <div class="row">
+                  <div class="col-xs-3">
+                    <i class="fa fa-th-list fa-5x"></i>
+                  </div>
+                  <div class="col-xs-9 text-right">
+                    <div class="huge"><%=project_status.projects.count%></div>
+                    <br>
+                    <div class="huge3"><%= project_status.project_status_name %></div>
+                  </div>
+                </div>
+              </div>
 
 
-  <div class="col-lg-3 col-md-6">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-plus-square fa-5x"></i>
+              <div class="panel-footer">
+                <span class="pull-left"><%=link_to 'View Details', :controller => "projects", :action => "index" , :project_status_id => project_status.id %></span>
+                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                <div class="clearfix"></div>
+              </div>
+
+            </div>
           </div>
-          <div class="col-xs-9 text-right">
-            <div class="huge"></div>
-            <br>
-            <div class="huge2">Pre-Proposal Projects!</div>
-          </div>
+
+      <% end %>
         </div>
-      </div>
-      <a href="#"  >
-        <div  class="panel-footer toggle_1" >
-          <span  class="pull-left" >Click to Toggle</span>
-          <span class="pull-right"><i class="fa fa-arrows-v"></i></span>
-          <div class="clearfix" ></div>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6">
-    <div class="panel panel-yellow">
-      <div class="panel-heading">
-        <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-exclamation-triangle fa-5x"></i>
-          </div>
-          <div class="col-xs-9 text-right">
-            <div class="huge"></div>
-            <br>
-            <div class ="huge2">In Progress Projects!</div>
-          </div>
-        </div>
-      </div>
-      <a href="#" >
-        <div class="panel-footer toggle_2" >
-          <span class="pull-left ">Click to Toggle</span>
-          <span class="pull-right"><i class="fa fa-arrows-v"></i></span>
-          <div class="clearfix"></div>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6">
-    <div class="panel panel-green">
-      <div class="panel-heading">
-        <div class="row">
-          <div class="col-xs-3">
-            <i class="fa fa-check-square fa-5x"></i>
-          </div>
-          <div class="col-xs-9 text-right">
-            <div class="huge"></div>
-            <br>
-            <div class ="huge2">Completed Projects</div>
-          </div>
-        </div>
-      </div>
-      <a href="#" >
-        <div class="panel-footer toggle_3" >
-          <span class="pull-left 3">Click to Toggle</span>
-          <span class="pull-right"><i class="fa fa-arrows-v"></i></span>
-          <div class="clearfix"></div>
-        </div>
-      </a>
-    </div>
-  </div>
+
+
+
+<%end%>
+
+
+
 </div>
 </div>
 
 
 
 
-<% @project_statuses.each do |project_status| %>
 
-      <div class="col-lg-3 col-md-6 transition" id = "<%= dom_id(project_status) %>">
-        <div class="panel panel-loop " >
-          <div class="panel-heading">
-            <div class="row">
-              <div class="col-xs-3">
-                <i class="fa fa-th-list fa-5x"></i>
-              </div>
-              <div class="col-xs-9 text-right">
-                <div class="huge"><%=project_status.projects.count%></div>
-                <br>
-                <div class="huge3"><%= project_status.project_status_name %></div>
-              </div>
-            </div>
-          </div>
-
-
-            <div class="panel-footer">
-              <span class="pull-left"><%=link_to 'View Details',  {:controller => "projects", :action => "index" , :project_status_id => project_status.id } %></span>
-              <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-              <div class="clearfix"></div>
-            </div>
-
-        </div>
-      </div>
-
-<% end %>
 
 <div id ="project_status"></div>
 
