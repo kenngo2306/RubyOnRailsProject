@@ -10,6 +10,7 @@ class ProjectSitesController < ApplicationController
   # GET /project_sites/1
   # GET /project_sites/1.json
   def show
+
   end
 
   # GET /project_sites/new

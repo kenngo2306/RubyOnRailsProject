@@ -7,6 +7,12 @@
   <dt><strong>Project Status Name:</strong></dt>
   <dd><%= @project_status.project_status_name %></dd>
 </dl>
+<dl class="dl-horizontal">
+  <dt><strong>Status Category Name:</strong></dt>
+  <dd><%= @project_status.status_category.status_category_name %></dd>
+</dl>
+
+
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               project_statuses_path, :class => 'btn btn-default'  %>

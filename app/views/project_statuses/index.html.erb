@@ -15,6 +15,7 @@
       <tr>
         <td><%= link_to project_status.id, project_status_path(project_status) %></td>
         <td><%= project_status.project_status_name %></td>
+        <td><%= project_status.status_category.status_category_name%></td>
 
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

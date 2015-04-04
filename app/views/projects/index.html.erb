@@ -43,6 +43,8 @@
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn btn-xs btn-danger' %>
           <%= link_to ('PIF (PDF)'), project_path(project, format: "pdf"), :class => 'btn-default btn-sm' %>
+
+
         </td>
         <% elsif current_user.salesrep? %>
             <td><%= link_to project.id, project_path(project) %></td>
