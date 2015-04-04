@@ -11,6 +11,7 @@ class Pif < Prawn::Document
     generate_general_project_info
     generate_project_sites
     generate_project_type_informations
+    testTable
     # test_things
   end
 
@@ -48,24 +49,22 @@ class Pif < Prawn::Document
   #project type information table
   def generate_project_type_informations
     move_down 20
-    table [["Project Site Information"]]
+    a = [["Project Site Information"]]
     @project.project_site_informations.map do |psi|
-      table [["Site Name","Site Access","Site Address"]] +
-            [[psi.project_site.site_name,psi.project_site.site_access,psi.project_site.site_address]]
+      a = a + [["Site Name","Site Access","Site Address"]] +
+                [[psi.project_site.site_name,psi.project_site.site_access,psi.project_site.site_address]]
       psi.project_type_informations.map do |pti|
-        table [["Proposal Number",pti.proposal_number]] +
-              [["Revision Number",pti.revision_number]]
+        a = a + [["Proposal Number",pti.proposal_number]] +
+                  [["Revision Number",pti.revision_number]]
         pti.category_option_selections.map do |cos|
-          table [[cos.category_option.category.category_name,cos.category_option.category_option_name]]
+          a = a + [[cos.category_option.category.category_name,cos.category_option.category_option_name]]
         end
         pti.answers.map do |answer|
-          table [[answer.question.question_name,answer.answer_text]]
+          a = a + [[answer.question.question_name,answer.answer_text]]
         end
       end
     end
+    table a
   end
-
-
-
 
 end
