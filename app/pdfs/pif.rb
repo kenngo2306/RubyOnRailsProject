@@ -7,6 +7,7 @@ class Pif < Prawn::Document
     @view = view
     funabounds_logo
     project_info
+    project_general
   end
 
   def funabounds_logo
@@ -22,7 +23,18 @@ class Pif < Prawn::Document
          size:14
   end
 
-
+  def project_general
+    move_down 20
+    summary = [["General Project Information"],
+               ["Project No.: #{@project.id}"],
+               ["Project Name: #{@project.project_name}"],
+               ["Start Date: #{@project.start_date}"]
+              ]
+    table summary do
+      rows(0).font_style = :bold
+      rows(4).font_style = :bold
+    end
+  end
 
 
 end

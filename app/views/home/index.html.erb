@@ -1,5 +1,91 @@
-<body class="main" style="background-image: url(<%= asset_path 'island.jpg' %>)"  >
+<body class="main">
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-opa" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <span>
+		<a href="/"><img class="funabounds" src="/assets/funabounds-a94522f79ad2a2698e0dcf9247219a1a.png" alt="Funabounds"></a>
+      </span>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <a class="pull-right need-help login-label btn btn-default left navbar-brand" href="/users/sign_up">Sign Up</a>
+            </ul>
+          </div>
+        </li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<script src="parallax.js"></script>
+
+
 <div class="container">
+  <div class="row vertical-offset-100">
+    <div class="col-md-4 col-md-offset-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row-fluid user-row">
+            <img src="/app/assets/images/funabounds-login.png">
+          </div>
+        </div>
+        <div class="panel-body">
+          <form class="new_user" id="new_user" action="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="izJI2lnycqDkt3QbVGBPJdPGdM7k8x0/+U6RyRMlfn8qaGRfGjBYWDXnGIbmQN+2jfSkuWJPj2vHWHdBr9DqHQ==">
+            <label class="login-label" for="user_email">Email</label><br>
+            <input autofocus="autofocus" class="form-control" type="email" value="" name="user[email]" id="user_email">
+            <label class="login-label" for="user_password">Password</label><br>
+            <input autocomplete="off" class="form-control" type="password" name="user[password]" id="user_password">
+            <a class="login-label" href="/users/password/new">Forgot password?</a>
+            <br><br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <div class="checkbox">
+              <label class="remember">
+                <input type="checkbox" value="remember-me" class="character-checkbox">
+                Remember me
+              </label>
+            </div>
+
+            <a href="/users/sign_up">Sign up</a><br>
+
+            <a href="/users/password/new">Forgot your password?</a><br>
+
+
+
+            <span class="clearfix"></span></form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body><div class="container">
   <div class="row vertical-offset-100">
     <div class="col-md-4 col-md-offset-4">
       <div class="panel panel-default">

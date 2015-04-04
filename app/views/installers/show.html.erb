@@ -4,10 +4,8 @@
 </div>
 
 <dl class="dl-horizontal">
-  <dt><strong>Installer First Name<:</strong></dt>
-  <dd><%= @installer.installer_first_name %></dd>
-  <dt><strong>Installer Last Name:</strong></dt>
-  <dd><%= @installer.installer_last_name %></dd>
+  <dt><strong>Installer Name</strong></dt>
+  <dd><%= @installer.installer_name %></dd>
   <dt><strong>Installer Email:</strong></dt>
   <dd><%= @installer.installer_email %></dd>
   <dt><strong>Installer Phone:</strong></dt>
@@ -16,12 +14,13 @@
   <dd><%= @installer.user_id %></dd>
 </dl>
 
+
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              installers_path, :class => 'btn btn-default'  %>
+              installers_path, :class => 'btn-sm btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_installer_path(@installer), :class => 'btn btn-default' %>
+              edit_installer_path(@installer), :class => 'btn-sm btn-default' %>
 <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
               installer_path(@installer),
               :method => 'delete',
               :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+              :class => 'btn-sm btn-danger' %>

@@ -5,6 +5,7 @@ class ProjectContactsController < ApplicationController
   # GET /project_contacts.json
   def index
     @project_contacts = ProjectContact.all
+    #@project_contacts = ProjectContact.includes(:project).group(:project_name)
   end
 
   # GET /project_contacts/1

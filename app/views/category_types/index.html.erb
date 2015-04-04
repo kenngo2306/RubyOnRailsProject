@@ -5,9 +5,8 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:category_type_name) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>Category Type Name</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -16,7 +15,6 @@
       <tr>
         <td><%= link_to category_type.id, category_type_path(category_type) %></td>
         <td><%= category_type.category_type_name %></td>
-        <td><%=l category_type.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_category_type_path(category_type), :class => 'btn btn-default btn-xs' %>

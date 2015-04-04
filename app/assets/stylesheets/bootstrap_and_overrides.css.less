@@ -95,7 +95,7 @@ a:hover {
 /* NAVBAR Design */
 
 .navbar-default {
-  background-color:#00CCCC;
+  background-color:ghostwhite;
   /* border-top: 3px solid #f90; */
 }
 
@@ -114,26 +114,29 @@ a:hover {
   color: transparent;
 }
 
-
-
-#usernav {
-  background-color:cornflowerblue;
+.hr {
+  background-color: darkorange;
 }
+
 
 #projectnav {
-  background-color:#FC5A14;
-}
-
-#workbench {
   background-color:darkorange;
 }
 
-#clientnav {
+#workbench {
   background-color:gold;
+}
+
+#clientnav {
+  background-color:#FC5A14;
 }
 
 .navbar-default {
   background-color:lightblue;
+}
+
+#reports {
+  background-color:limegreen;
 }
 
 #account {
@@ -141,6 +144,10 @@ a:hover {
 }
 
 #admin{
+  background-color: cornflowerblue;
+}
+
+#projcontact{
   background-color: cornflowerblue;
 }
 
@@ -172,6 +179,19 @@ a:hover {
   color: white;
 }
 
+.dropdown-menu > li > a {
+  text-align:left;
+}
+
+/* Client Link Shadow */
+.clientlink {
+  text-shadow: 0.1em 0.1em black;
+}
+
+.hellomsg {
+  text-align: left;
+  margin-left: 20px;
+}
 
 
 
@@ -228,6 +248,14 @@ a:hover {
 
 .row-margin{
   margin-left:0
+}
+
+.panel-default {
+  width: 105%;
+}
+
+.btn-block {
+  width:93%;
 }
 
 .panel-green {
@@ -702,7 +730,7 @@ body{
 }
 
 .form-control{
-  width: 320px;
+  width: 93%;
 }
 
 .projectBudget .form-control{
@@ -758,3 +786,37 @@ legend {
   background-color: lightblue;
   border-color: lightblue;
 }
+
+/* Working Glyphicons */
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+
+  src: url('fonts/glyphicons-halflings-regular.eot');
+  src: url('fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('fonts/glyphicons-halflings-regular.woff') format('woff'), url('fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+
+#installericons {
+  padding-left: 3%;
+}
+
+
+/* END Glyphicons */
+
+/* User Sign In Page Background */
+
+.main {
+  background-image:url('nature.jpg')
+}
+
+/* End User Sign In Page Background */
+
+/*NAVBAR TRANSLUCENT */
+
+.navbar-opa {
+  filter: alpha(opacity=75);
+  opacity: 0.8;
+  background-color:aliceblue;
+}
+
+/* End Translucent */

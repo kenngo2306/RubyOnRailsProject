@@ -1,3 +1,13 @@
+<div class="container">
+  <div class="row vertical-offset-100">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row-fluid user-row">
+            <img src="/app/assets/images/funabounds-login.png"/>
+          </div>
+        </div>
+        <div class="panel-body">
 <%= form_for @sales_person, :html => { :class => "form-horizontal sales_person" } do |f| %>
 
     <% if @sales_person.errors.any? %>
@@ -50,3 +60,8 @@
             sales_people_path, :class => 'btn btn-default' %>
 
 <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

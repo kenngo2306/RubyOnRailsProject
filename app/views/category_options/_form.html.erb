@@ -1,4 +1,14 @@
-<%= form_for @category_option, :html => { :class => "form-horizontal category_option" } do |f| %>
+<div class="container">
+  <div class="row vertical-offset-100">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row-fluid user-row">
+
+          </div>
+        </div>
+        <div class="panel-body">
+          <%= form_for @category_option, :html => { :class => "form-horizontal category_option" } do |f| %>
 
     <% if @category_option.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -36,3 +46,8 @@
             category_options_path, :class => 'btn btn-default' %>
 
 <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

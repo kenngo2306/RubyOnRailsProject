@@ -19,4 +19,15 @@
 
 body {
     padding-top: 70px;
+    background:url('blueback.jpg') no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+html,
+body {
+    overflow-x: hidden; /* Prevent scroll on narrow devices */
+    height: 100%;
 }

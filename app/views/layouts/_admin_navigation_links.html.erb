@@ -1,6 +1,23 @@
 <%# add navigation links to this file %>
-	<li class="dropdown">
-	  <a href="#" class="dropdown-toggle" id="projectnav" data-toggle="dropdown" role="menu">Projects<span class="caret"></span></a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle clientlink" id="clientnav" data-toggle="dropdown" role="menu">Clients<span class="caret"></span></a>
+  <ul class="dropdown-menu navbuttons" style ="text-align:center" role="menu">
+	<li>
+	  <%= link_to('Client List', clients_path) %>
+	</li>
+	<li>
+	  <%= link_to('Contact List', contacts_path) %>
+	</li>
+	<li>
+	  <%= link_to('Create Client', new_client_path) %>
+	</li>
+	<li>
+	  <%= link_to('Add a Contact', new_contact_path) %>
+	</li>
+  </ul>
+</li>
+<li class="dropdown">
+	  <a href="#" class="dropdown-toggle clientlink" id="projectnav" data-toggle="dropdown" role="menu">Projects<span class="caret"></span></a>
 	  <ul class="dropdown-menu navbuttons project" style ="text-align:center" role="menu">
 		<li>
 		  <%= link_to('Create Project', new_project_path) %>
@@ -14,66 +31,72 @@
 		<li>
 		  <%= link_to('Add Project Type Information', new_project_type_information_path) %>
 		</li>
-	  </ul>
-	</li>
-	<li><%= link_to 'Project Workbench', projects_path, id: "workbench" %></li>
-	<li class="dropdown">
-	  <a href="#" class="dropdown-toggle" id="clientnav" data-toggle="dropdown" role="menu">Clients<span class="caret"></span></a>
-	  <ul class="dropdown-menu navbuttons" style ="text-align:center" role="menu">
 		<li>
-		  <%= link_to('List of Clients', clients_path) %>
+		  <%= link_to('Project Contact List', project_contacts_path) %>
 		</li>
 		<li>
-		  <%= link_to('Create Client', new_client_path) %>
-		</li>
-		<li>
-		  <%= link_to('Add a Contact', new_contact_path) %>
+		  <%= link_to('Project Site List', project_sites_path) %>
 		</li>
 	  </ul>
 	</li>
-	<li class="dropdown">
-	  <a href="#" class="dropdown-toggle" id="admin" data-toggle="dropdown" role="menu">Admin Panel<span class="caret"></span></a>
+	<li><%= link_to 'Project Workbench', projects_path, id: "workbench", :class => 'clientlink' %></li>
+
+<li><%= link_to 'Reports', reports_index_path, id: "reports", class: 'clientlink' %></li>
+<li class="dropdown">
+	  <a href="#" class="dropdown-toggle clientlink" id="admin" data-toggle="dropdown" role="menu">Admin Panel<span class="caret"></span></a>
 	  <ul class="dropdown-menu navbuttons" style ="text-align:center" role="menu">
+
 		<li>
-		  <%= link_to('Deal Type', deal_types_path) %>
+		  <%= link_to('Contact Type List', contact_types_path) %>
 		</li>
 		<li>
-		  <%= link_to('Procurement Tool', procurement_tools_path) %>
+		  <%= link_to('Deal Type List', deal_types_path) %>
 		</li>
 		<li>
-		  <%= link_to('Project Setting', project_settings_path) %>
+		  <%= link_to('Irrigation Responsibility List', irrigation_responsibilities_path) %>
 		</li>
 		<li>
-		  <%= link_to('Project Status', project_statuses_path) %>
+		  <%= link_to('Procurement Tool List', procurement_tools_path) %>
 		</li>
 		<li>
-		  <%= link_to('Irrigation Responsibility', irrigation_responsibilities_path) %>
+		  <%= link_to('Project Setting List', project_settings_path) %>
 		</li>
 		<li>
-		  <%= link_to('Utility', utilities_path) %>
+		  <%= link_to('Project Status List', project_statuses_path) %>
 		</li>
 		<li>
-		  <%= link_to('Contact Type', contact_types_path) %>
+		  <%= link_to('Project Type List', project_types_path) %>
+		</li>
+		<li>
+		  <%= link_to('State List', states_path) %>
+		</li>
+		<li>
+		  <%= link_to('Status Categories List', status_categories_path) %>
+		</li>
+		<li>
+		  <%= link_to('Utility List', utilities_path) %>
 		</li>
 		<li class="divider"></li>
-		<li><%= link_to 'Users', users_path, id: "usernav" %></li>
+		<li class="hrwhite"><%= link_to 'Installers', installers_path, class: "hr" %></li>
+		<li><%= link_to 'Sales People', sales_people_path, class: "hr" %></li>
+		<li><%= link_to 'Users', users_path, class: "hr" %></li>
 	  </ul>
 	</li>
 	<li>
 	<li class="dropdown">
-	  <a href="#" class="dropdown-toggle" id="account" data-toggle="dropdown" role="menu">Account<span class="caret"></span></a>
+	  <a href="#" class="dropdown-toggle clientlink" id="account" data-toggle="dropdown" role="menu">Account<span class="caret"></span></a>
 	  <ul class="dropdown-menu navbuttons project" style ="text-align:center" role="menu">
 		  <li>
 			<%= link_to('Settings', edit_user_registration_path) %>
 		  </li>
 		<li class="divider"></li>
-		<li style ="text-align:center">
-		  <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <%= current_user.email %></p>
+		<li class="hellomsg">
+		  <p>Hello  <%= current_user.name %>!</p>
 		</li>
 	</ul>
 
 	<li class="logout">
-		<%= link_to('Logout', destroy_user_session_path, :method => 'delete', :id => 'logout') %>
+		<%= link_to('Logout', destroy_user_session_path, :method => 'delete', :id => 'logout', :class => 'clientlink') %>
 	</li>
 
 

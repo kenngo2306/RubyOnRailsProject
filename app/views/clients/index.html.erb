@@ -23,22 +23,39 @@
         <td><%= client.billing_city %></td>
         <td><%= client.billing_zip %></td>
         <td><%= client.state.state_name %></td>
+          <% if current_user.admin? %>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
-                      client, :class => 'btn btn-default btn-xs'  %>
+                      client, :class => 'btn-default btn-sm'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_client_path(client), :class => 'btn btn-default btn-xs' %>
+                      edit_client_path(client), :class => 'btn-default btn-sm' %>
+             <% if client.id.blank? %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       client_path(client),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
-        </td>
+                      :class => 'btn-sm btn-danger' %>
+             <% end %>
+          </td>
+          <% elsif current_user.insidesales? || current_user.salesrep? %>
+          <td>
+              <%= link_to t('.show', :default => t("helpers.links.show")),
+                          client, :class => 'btn-default btn-sm'  %>
+              <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                          edit_client_path(client), :class => 'btn-default btn-sm' %>
+          </td>
+          <% elsif current_user.installer? %>
+            <td id="installericons">
+              <span class="glyphicon glyphicon-lock"></span>
+            </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_client_path,
-            :class => 'btn btn-primary' %>
+<% if current_user.admin? || current_user.salesrep? || current_user.insidesales? %>
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+                new_client_path,
+                :class => 'btn-sm btn-primary' %>
+<% end %>

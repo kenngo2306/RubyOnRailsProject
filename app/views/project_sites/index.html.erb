@@ -5,14 +5,13 @@
 <table class="table table-striped DataTables">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:site_name) %></th>
-      <th><%= model_class.human_attribute_name(:site_address) %></th>
-      <th><%= model_class.human_attribute_name(:site_city) %></th>
-      <th><%= model_class.human_attribute_name(:site_zip) %></th>
-      <th><%= model_class.human_attribute_name(:site_access) %></th>
-      <th><%= model_class.human_attribute_name(:state_id) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th>ID</th>
+      <th>Site Name</th>
+      <th>Site Address</th>
+      <th>Site City</th>
+      <th>Site Zip</th>
+      <th>Site Access</th>
+      <th>State</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -26,7 +25,6 @@
         <td><%= project_site.site_zip %></td>
         <td><%= project_site.site_access %></td>
         <td><%= project_site.state.state_name %></td>
-        <td><%=l project_site.created_at %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       project_site, :class => 'btn btn-default btn-xs'  %>

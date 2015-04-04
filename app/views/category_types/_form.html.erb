@@ -1,4 +1,14 @@
-<%= form_for @category_type, :html => { :class => "form-horizontal category_type" } do |f| %>
+<div class="container">
+  <div class="row vertical-offset-100">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row-fluid user-row">
+
+          </div>
+        </div>
+        <div class="panel-body">
+          <%= form_for @category_type, :html => { :class => "form-horizontal category_type" } do |f| %>
 
     <% if @category_type.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -16,7 +26,7 @@
   <% end %>
 
   <div class="control-group">
-    <%= f.label :category_type_name, :class => 'control-label' %>
+    <%= f.label :category_type_name, 'Category Type Nae', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :category_type_name, :class => 'form-control' %>
     </div>
@@ -29,3 +39,8 @@
             category_types_path, :class => 'btn btn-default' %>
 
 <% end %>
+</div>
+</div>
+</div>
+</div>
+</div>

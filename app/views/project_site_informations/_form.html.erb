@@ -1,4 +1,3 @@
-<body class="main" style="background-image: url(<%= asset_path 'island.jpg' %>)" >
 <div class="container">
   <div class="row vertical-offset-100">
     <div class="col-md-10 col-md-offset-1">
@@ -36,7 +35,7 @@
               <%=field_set_tag nil, class: 'fieldset_site_info' do %>
 
               <div class="control-group">
-                <%= f.label :project_id, 'Project ID', :class => 'control-label' %>
+                <%= f.label :project_id, 'Project Name', :class => 'control-label' %>
                 <div class="controls funabounds">
                   <%= f.collection_select :project_id, Project.all, :id, :project_name, {}, :class => 'form-control' %>
                 </div>
@@ -44,7 +43,7 @@
               </div>
 
               <div class="control-group">
-                <%= f.label :project_site_id, 'Project Site ID', :class => 'control-label' %>
+                <%= f.label :project_site_id, 'Project Site Name', :class => 'control-label' %>
                 <div class="controls funabounds">
                   <%= f.collection_select :project_site_id, ProjectSite.all, :id, :site_name,{}, :class => 'form-control' %>
                 </div>
@@ -102,7 +101,7 @@
       <%= f.check_box(:construction_fence_required, {}, 'true', 'false') %>
 
     </span>
-    <%= f.label :construction_fence_required, 'Construction Fence Required',  :class => 'control-label' %>
+    <%= f.label :construction_fence_required, 'Construction Fence Required?',  :class => 'control-label' %>
 
     <%= error_span(@project_site_information[:construction_fence_required]) %>
   </div>
@@ -111,7 +110,7 @@
       <%= f.check_box(:client_fence_dismantle_reinstall_required, {}, 'true', 'false') %>
 
     </span>
-    <%= f.label :client_fence_dismantle_reinstall_required, ' Client Fence Dismantle Reinstall Required', :class => 'control-label' %>
+    <%= f.label :client_fence_dismantle_reinstall_required, ' Client Fence Dismantle Reinstall Required?', :class => 'control-label' %>
 
     <%= error_span(@project_site_information[:client_fence_dismantle_reinstall_required]) %>
   </div>
@@ -120,7 +119,7 @@
       <%= f.check_box(:rock_excavation_required, {}, 'true', 'false') %>
 
     </span>
-    <%= f.label :rock_excavation_required, ' Rock Excavation Required', :class => 'control-label' %>
+    <%= f.label :rock_excavation_required, ' Rock Excavation Required?', :class => 'control-label' %>
 
     <%= error_span(@project_site_information[:rock_excavation_required]) %>
   </div>
@@ -129,7 +128,7 @@
       <%= f.check_box(:hand_dig_required, {}, 'true', 'false') %>
 
     </span>
-    <%= f.label :hand_dig_required, 'Hand Dig Required', :class => 'control-label' %>
+    <%= f.label :hand_dig_required, 'Hand Dig Required?', :class => 'control-label' %>
 
     <%= error_span(@project_site_information[:hand_dig_required]) %>
   </div>
@@ -138,7 +137,7 @@
       <%= f.check_box(:dirt_haul_off_required, {}, 'true', 'false') %>
 
     </span>
-    <%= f.label :dirt_haul_off_required, 'Dirt Haul Off Required', :class => 'control-label' %>
+    <%= f.label :dirt_haul_off_required, 'Dirt Haul Off Required?', :class => 'control-label' %>
 
     <%= error_span(@project_site_information[:dirt_haul_off_required]) %>
   </div>
@@ -147,7 +146,7 @@
       <%= f.check_box(:tree_vegetation_removal_required, {}, 'true', 'false') %>
 
     </span>
-    <%= f.label :tree_vegetation_removal_required,'Tree Vegetation Removal Required', :class => 'control-label' %>
+    <%= f.label :tree_vegetation_removal_required,'Tree Vegetation Removal Required?', :class => 'control-label' %>
 
     <%= error_span(@project_site_information[:tree_vegetation_removal_required]) %>
   </div>
@@ -165,7 +164,7 @@
       <%= f.check_box(:site_survey_required, {}, 'true', 'false') %>
 
     </span>
-    <%= f.label :site_survey_required, 'Site Survey Required', :class => 'control-label' %>
+    <%= f.label :site_survey_required, 'Site Survey Required?', :class => 'control-label' %>
 
     <%= error_span(@project_site_information[:site_survey_required]) %>
   </div>
@@ -175,7 +174,7 @@
       <%= f.check_box(:surface_protection_required, {}, 'true', 'false') %>
 
     </span>
-    <%= f.label :surface_protection_required, 'Surface Protection Required', :class => 'control-label' %>
+    <%= f.label :surface_protection_required, 'Surface Protection Required?', :class => 'control-label' %>
 
     <%= error_span(@project_site_information[:surface_protection_required]) %>
   </div>
@@ -194,7 +193,7 @@
       <%= f.check_box(:structural_removal_required, {}, 'true', 'false') %>
 
     </span>
-    <%= f.label :structural_removal_required, ' Structural Removal Required', :class => 'control-label' %>
+    <%= f.label :structural_removal_required, ' Structural Removal Required?', :class => 'control-label' %>
 
     <%= error_span(@project_site_information[:structural_removal_required]) %>
   </div>
@@ -317,4 +316,3 @@
     </div>
   </div>
 </div>
-</body>
