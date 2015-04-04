@@ -126,7 +126,6 @@
           <%end %>
       </tbody>
   </table>
-<button type = "button"  class="btn btn-primary btn-lg" id="delete">Delete Table</button>
 
 
 
@@ -136,11 +135,44 @@
 
 
             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-              Add Site
+              Add New Site
+            </button>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
+              Add Existed Site
             </button>
 <% end %>
 
         <!-- Modal -->
+        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Add Site</h4>
+              </div>
+              <div class="modal-body">
+                <%= form_for @project_site_information, :remote => true, :html => { :class => "form-horizontal project_site_information" } do |f| %>
+
+                    <div class="control-group">
+                      <%= f.label :project_site_id, 'Project Site', :class => 'control-label' %>
+                      <div class="controls funabounds">
+                        <%= f.collection_select :project_site_id,ProjectSite.all, :id, :site_name,{}, :class => 'form-control' %>
+                        <%= f.hidden_field :project_id, :value => @project.id %>
+                            </div>
+                      <%= error_span(@project_site_information[:project_site_id]) %>
+                    </div>
+
+                    <%= f.submit nil, :class => 'btn btn-primary' %>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <% end %>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
@@ -163,6 +195,7 @@
                               <% @project_site.errors.full_messages.each do |msg| %>
                                   <li><%= msg %></li>
                               <% end %>
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                             </ul>
                           </div>
                         </div>
@@ -213,7 +246,7 @@
                     <br>
 
 
-                    <button></button>
+
 
                     <%= f.submit nil, :class => 'btn btn-primary' %>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
