@@ -1,4 +1,14 @@
-<%= form_for @state, :html => { :class => "form-horizontal state" } do |f| %>
+<div class="container">
+  <div class="row vertical-offset-100">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row-fluid user-row">
+            <img src="/app/assets/images/funabounds-login.png"/>
+          </div>
+        </div>
+        <div class="panel-body">
+          <%= form_for @state, :html => { :class => "form-horizontal state" } do |f| %>
 
     <% if @state.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -36,3 +46,8 @@
             states_path, :class => 'btn btn-default' %>
 
 <% end %>
+</div>
+</div>
+</div>
+</div>
+</div>

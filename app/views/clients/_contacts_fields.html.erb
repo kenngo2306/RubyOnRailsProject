@@ -1,5 +1,5 @@
 <div class="control-group">
-    <%= f.label :contact_first_name, :class => 'control-label' %>
+    <%= f.label :contact_first_name, 'Contact First Name', :class => 'control-label' %>
 
   <div class="controls">
     <%= f.text_field :contact_first_name, :class => 'form-control' %>
@@ -7,7 +7,7 @@
 </div>
 
 <div class="control-group">
-    <%= f.label :contact_last_name, :class => 'control-label' %>
+    <%= f.label :contact_last_name, 'Contact Last Name', :class => 'control-label' %>
 
   <div class="controls">
     <%= f.text_field :contact_last_name, :class => 'form-control' %>
@@ -15,7 +15,7 @@
 </div>
 
 <div class="control-group">
-    <%= f.label :contact_email, :class => 'control-label' %>
+    <%= f.label :contact_email, 'Contact Email', :class => 'control-label' %>
 
   <div class="controls">
     <%= f.text_field :contact_email, :class => 'form-control' %>
@@ -23,7 +23,7 @@
 </div>
 
 <div class="control-group">
-    <%= f.label :contact_cell, :class => 'control-label' %>
+    <%= f.label :contact_cell, 'Contact Cell', :class => 'control-label' %>
 
   <div class="controls">
     <%= f.text_field :contact_cell, :class => 'form-control' %>
@@ -31,7 +31,7 @@
 </div>
 
 <div class="control-group">
-    <%= f.label :contact_work, :class => 'control-label' %>
+    <%= f.label :contact_work, 'Contact Work', :class => 'control-label' %>
 
   <div class="controls">
     <%= f.text_field :contact_work, :class => 'form-control' %>
@@ -39,7 +39,7 @@
 </div>
 
 <div class="control-group">
-    <%= f.label :contact_type_id, :class => 'control-label' %>
+    <%= f.label :contact_type_id, 'Contact Type',  :class => 'control-label' %>
 
   <div class="controls">
     <%= f.collection_select :contact_type_id, ContactType.all, :id, :contact_type_name, :class => 'form-control' %>
@@ -47,7 +47,7 @@
 </div>
 
 <div class="control-group">
-    <%= f.label :contact_address, :class => 'control-label' %>
+    <%= f.label :contact_address, 'Contact Address', :class => 'control-label' %>
 
   <div class="controls">
     <%= f.text_field :contact_address, :class => 'form-control' %>
@@ -55,7 +55,7 @@
 </div>
 
 <div class="control-group">
-    <%= f.label :contact_city, :class => 'control-label' %>
+    <%= f.label :contact_city, 'Contact City', :class => 'control-label' %>
 
   <div class="controls">
     <%= f.text_field :contact_city, :class => 'form-control' %>
@@ -63,7 +63,7 @@
 </div>
 
 <div class="control-group">
-    <%= f.label :contact_zip, :class => 'control-label' %>
+    <%= f.label :contact_zip, 'Contact Zip', :class => 'control-label' %>
 
   <div class="controls">
     <%= f.text_field :contact_zip, :class => 'form-control' %>
@@ -71,7 +71,7 @@
 </div>
 
 <div class="control-group">
-    <%= f.label :state_id, :class => 'control-label' %>
+    <%= f.label :state_id, 'State', :class => 'control-label' %>
 
   <div class="controls">
     <%= f.collection_select :state_id, State.all, :id, :state_name, :class => 'form-control' %>

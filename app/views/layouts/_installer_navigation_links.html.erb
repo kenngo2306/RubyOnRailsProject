@@ -1,37 +1,7 @@
 <%# add navigation links to this file %>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" id="projectnav" data-toggle="dropdown" role="menu">Projects<span class="caret"></span></a>
-  <ul class="dropdown-menu navbuttons project" style ="text-align:center" role="menu">
-    <li>
-      <%= link_to('Create Project', new_project_path) %>
-    </li>
-    <li>
-      <%= link_to('Add a Site', new_project_site_path) %>
-    </li>
-    <li>
-      <%= link_to('Add Site Information ', new_project_site_information_path) %>
-    </li>
-    <li>
-      <%= link_to('Add Project Type Information', new_project_type_information_path) %>
-    </li>
-  </ul>
-</li>
-<li><%= link_to 'Project Workbench', projects_path, id: "workbench" %></li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" id="clientnav" data-toggle="dropdown" role="menu">Clients<span class="caret"></span></a>
-  <ul class="dropdown-menu navbuttons" style ="text-align:center" role="menu">
-    <li>
-      <%= link_to('Clients List', clients_path) %>
-    </li>
-    <li>
-      <%= link_to('Create Client', new_client_path) %>
-    </li>
-    <li>
-      <%= link_to('Add a Contact', new_contact_path) %>
-    </li>
-  </ul>
-</li>
-
+<li><%= link_to 'Project List', projects_path, id: "workbench" %></li>
+<li><%= link_to 'Client List', clients_path, id: "clientnav" %></li>
+<li><%= link_to 'Project Contact List', project_contacts_path, id: "projcontact" %></li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" id="account" data-toggle="dropdown" role="menu">Account<span class="caret"></span></a>
   <ul class="dropdown-menu navbuttons project" style ="text-align:center" role="menu">
@@ -39,11 +9,10 @@
       <%= link_to('Settings', edit_user_registration_path) %>
     </li>
     <li class="divider"></li>
-    <li style ="text-align:center">
-      <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> <%= current_user.email %></p>
+    <li id="hellomsg">
+      <p>Hello  <%= current_user.name %>!</p>
     </li>
   </ul>
-
 <li class="logout">
   <%= link_to('Logout', destroy_user_session_path, :method => 'delete', :id => 'logout') %>
 </li>

@@ -10,7 +10,6 @@ class ProjectsController < ApplicationController
     else
       @projects = ProjectStatus.find(params[:project_status_id]).projects
     end
-
 end
 
 
@@ -26,7 +25,6 @@ end
         send_data pdf.render, filename: "PIF ##{@project.id}.pdf", type: "application/pdf", disposition: "inline"
       end
     end
-
   end
 
   # GET /projects/new

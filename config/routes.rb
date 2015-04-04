@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  get 'reports/index'
+
   resources :installers
 
   devise_for :users do
@@ -67,8 +69,6 @@ Rails.application.routes.draw do
   resources :categories
 
   resources :project_types
-
-  resources :phones
 
   resources :projects
 

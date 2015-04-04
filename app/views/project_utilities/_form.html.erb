@@ -1,3 +1,13 @@
+<div class="container">
+  <div class="row vertical-offset-100">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row-fluid user-row">
+
+          </div>
+        </div>
+        <div class="panel-body">
 <%= form_for @project_utility, :html => { :class => "form-horizontal project_utility" } do |f| %>
 
     <% if @project_utility.errors.any? %>
@@ -36,3 +46,8 @@
             project_utilities_path, :class => 'btn btn-default' %>
 
 <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

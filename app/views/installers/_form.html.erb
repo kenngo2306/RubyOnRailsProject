@@ -1,4 +1,14 @@
-<%= form_for @installer, :html => { :class => "form-horizontal installer" } do |f| %>
+<div class="container">
+  <div class="row vertical-offset-100">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <div class="row-fluid user-row">
+            <img src="/app/assets/images/funabounds-login.png"/>
+          </div>
+        </div>
+        <div class="panel-body">
+          <%= form_for @installer, :html => { :class => "form-horizontal installer" } do |f| %>
 
     <% if @installer.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
@@ -57,3 +67,8 @@
             installers_path, :class => 'btn btn-default' %>
 
 <% end %>
+</div>
+</div>
+</div>
+</div>
+</div>
