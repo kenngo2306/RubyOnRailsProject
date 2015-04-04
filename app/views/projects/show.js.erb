@@ -1,3 +1,5 @@
 $('#sites_table').append("<%= j render partial: 'project_site_information_row', locals: {psi: @project_site } %>");
 $('#myModal').modal('toggle');
-$('#sites_table').DataTable().ajax.reload();
+//$('#sites_table').dataTable().fnDestroy();
+//$('#sites_table').DataTable();
+//$('#sites_table').DataTable().ajax.reload();
