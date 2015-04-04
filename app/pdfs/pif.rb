@@ -11,7 +11,7 @@ class Pif < Prawn::Document
     generate_general_project_info
     generate_project_sites
     generate_project_type_informations
-    testTable
+
     # test_things
   end
 
