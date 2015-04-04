@@ -3,13 +3,13 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
-
+<div class = "backgroundContainer">
 <fieldset>
 
     <legend> General Information</legend>
 
-    <div class = "backgroundContainer">
       <dl class="dl-horizontal">
+
     <dt><strong>Project Name:</strong></dt>
     <dd><%= @project.project_name %></dd>
 
@@ -31,16 +31,18 @@
     <dt><strong>Sales Person:</strong></dt>
     <dd><%= @project.sales_person.sales_person_fullname %></dd>
       </dl>
-    </div>
-</fieldset>
 
+    </fieldset>
+    </div>
+<br>
+
+
+  <div class="backgroundContainer">
 <fieldset>
   <legend>Client Information</legend>
 
-
-
-    <div class="backgroundContainer">
       <dl class="dl-horizontal">
+
     <dt><strong>Client Goal:</strong></dt>
     <dd><%= @project.client_goal %>
 
@@ -66,15 +68,21 @@
 
       </dl>
 
-  </div>
-</fieldset>
 
+
+</fieldset>
+</div>
+<br>
+
+<div class = "backgroundContainer">
 <fieldset>
   <legend>Additional Project Information</legend>
 
 
-    <div class = "backgroundContainer">
+
+      <br>
       <dl class="dl-horizontal">
+
     <dt><strong>Restricted Work Hours?:</strong></dt>
     <dd><%= @project.restricted_work_hours %></dd>
     <dt><strong>Liquidate Damages?:</strong></dt>
@@ -92,12 +100,12 @@
 
 
   </dl>
-  </div>
+
 </fieldset>
+</div>
 
 
-
-
+<div class = "showPageButton">
 
 <% if current_user.admin? || current_user.salesrep? || current_user.insidesales? %>
 <%= link_to t('.back', :default => t("helpers.links.back")),
@@ -113,6 +121,8 @@
 <%= link_to t('.back', :default => t("helpers.links.back")),
             projects_path, :class => 'btn btn-default'  %>
 <% end %>
+
+</div>
 
 <% if current_user.admin? || current_user.salesrep? || current_user.insidesales? %>
 <table class="DataTables" id ="sites_table">

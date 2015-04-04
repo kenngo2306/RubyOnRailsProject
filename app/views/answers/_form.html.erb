@@ -34,15 +34,15 @@
   </div>
   <div class="control-group">
     <%= f.label :question_id, 'Question', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.collection_select :question_id, Question.all, :id, :question_name, :class => 'form-control' %>
+    <div class="controls funabounds">
+      <%= f.collection_select :question_id, Question.all, :id, :question_name,{}, :class => 'form-control' %>
     </div>
     <%= error_span(@answer[:question_id]) %>
   </div>
   <div class="control-group">
     <%= f.label :project_type_information_id, 'Project Type Information', :class => 'control-label' %>
-    <div class="controls">
-      <%= f.collection_select :project_type_information_id, ProjectTypeInformation.all, :id, :class => 'form-control' %>
+    <div class="controls funabounds">
+      <%= f.collection_select :project_type_information_id, ProjectTypeInformation.all, :id, :id,{}, :class => 'form-control' %>
     </div>
     <%= error_span(@answer[:project_type_information_id]) %>
   </div>
