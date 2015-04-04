@@ -18,6 +18,7 @@ end
   def show
     @project_site = ProjectSite.new
     @project = Project.find(params[:id])
+    @project_site_information = ProjectSiteInformation.new()
     respond_to do |format|
       format.html
       format.pdf do
