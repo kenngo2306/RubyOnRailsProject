@@ -26,6 +26,9 @@ end
         send_data pdf.render, filename: "PIF ##{@project.id}.pdf", type: "application/pdf", disposition: "inline"
       end
     end
+
+
+
   end
 
   # GET /projects/new

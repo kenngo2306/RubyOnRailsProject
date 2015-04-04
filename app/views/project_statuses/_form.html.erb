@@ -34,6 +34,14 @@
     <%= error_span(@project_status[:project_status_name]) %>
   </div>
 
+              <div class="control-group">
+                <%= f.label :status_category_name,'Status Category Name', :class => 'control-label' %>
+                <div class="controls funabounds">
+                  <%= f.collection_select :status_category_id, StatusCategory.all, :id, :status_category_name, {}, :class => 'form-control' %>
+                </div>
+                <%= error_span(@project_status[:status_category_name_name]) %>
+              </div>
+
 
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

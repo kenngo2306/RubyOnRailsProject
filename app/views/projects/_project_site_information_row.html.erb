@@ -4,5 +4,14 @@
   <td><%= psi.site_city %></td>
   <td><%= psi.state.state_name %></td>
   <td><%= psi.site_zip %></td>
-  <td><%= link_to 'Show', psi %></td>
+  <td><%= link_to 'Show', psi %>
+    <a href="http://maps.google.com/?q=<%=psi.get_address%>" target="_blank">View Map</a>
+    <a href="http://www.weather.com/weather/today/l/<%=psi.get_address%>" target="_blank">View Weather</a>
+  </td>
+
+
+
+
+
+
 </tr>

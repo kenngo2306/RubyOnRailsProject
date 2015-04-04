@@ -3,10 +3,13 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+
 <fieldset>
-  <dl class="dl-horizontal">
+
     <legend> General Information</legend>
 
+    <div class = "backgroundContainer">
+      <dl class="dl-horizontal">
     <dt><strong>Project Name:</strong></dt>
     <dd><%= @project.project_name %></dd>
 
@@ -28,13 +31,16 @@
     <dt><strong>Sales Person:</strong></dt>
     <dd><%= @project.sales_person.sales_person_fullname %></dd>
       </dl>
-
+    </div>
 </fieldset>
 
 <fieldset>
   <legend>Client Information</legend>
-  <dl class="dl-horizontal">
 
+
+
+    <div class="backgroundContainer">
+      <dl class="dl-horizontal">
     <dt><strong>Client Goal:</strong></dt>
     <dd><%= @project.client_goal %>
 
@@ -60,12 +66,15 @@
 
       </dl>
 
-
+  </div>
 </fieldset>
 
 <fieldset>
   <legend>Additional Project Information</legend>
-  <dl class="dl-horizontal">
+
+
+    <div class = "backgroundContainer">
+      <dl class="dl-horizontal">
     <dt><strong>Restricted Work Hours?:</strong></dt>
     <dd><%= @project.restricted_work_hours %></dd>
     <dt><strong>Liquidate Damages?:</strong></dt>
@@ -83,7 +92,7 @@
 
 
   </dl>
-
+  </div>
 </fieldset>
 
 
@@ -122,6 +131,7 @@
           <% @project.project_sites.each do |psi| %>
 
                 <%= render partial: 'project_site_information_row', locals: {psi: psi} %>
+
 
           <%end %>
       </tbody>
