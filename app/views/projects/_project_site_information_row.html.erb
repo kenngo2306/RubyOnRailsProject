@@ -4,14 +4,8 @@
   <td><%= psi.site_city %></td>
   <td><%= psi.state.state_name %></td>
   <td><%= psi.site_zip %></td>
-  <td><%= link_to 'Show', psi %>
-    <a href="http://maps.google.com/?q=<%=psi.get_address%>" target="_blank">View Map</a>
-    <a href="http://www.weather.com/weather/today/l/<%=psi.get_address%>" target="_blank">View Weather</a>
+  <td><%= link_to 'Show', psi , :class => 'btn-primary btn-sm'%>
+    <a href="http://maps.google.com/?q=<%=psi.get_address%>" target="_blank" class="btn btn-info btn-sm"><span class="fa fa-map-marker"> Map</span></a>
+    <a href="http://www.weather.com/weather/today/l/<%=psi.get_address%>" target="_blank" class="btn btn-warning btn-sm"><span class="fa fa-sun-o fa-5"> Weather</span></a>
   </td>
-
-
-
-
-
-
 </tr>
