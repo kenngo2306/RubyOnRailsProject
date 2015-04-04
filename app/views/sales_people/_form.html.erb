@@ -49,7 +49,7 @@
   <div class="control-group">
     <%= f.label :sales_person_phone, 'Phone Number', :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :sales_person_phone, :class => 'form-control' %>
+      <%= f.text_field :sales_person_phone, :class => 'form-control bfh-phone', "data-format" => "+1 (ddd) ddd-dddd" %>
     </div>
     <%= error_span(@sales_person[:sales_person_phone]) %>
   </div>
