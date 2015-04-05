@@ -59,38 +59,24 @@
 
 </div>
 
-<table class="DataTables">
+<table class="DataTables" id="project_type_informations_table">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Project Type</th>
       <th>Proposal Number</th>
       <th>Revision Number</th>
-      <th colspan="3">Actions</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @project_site_information.project_type_informations.each do |project_type_information| %>
-        <tr>
-          <td>
-            <%= project_type_information.project_type.project_type_name %>
-          </td>
-          <td>
-            <%= project_type_information.proposal_number %>
-          </td>
-          <td>
-            <%= project_type_information.revision_number %>
-          </td>
-          <td>
-            <%= link_to('Manage Project Type Information', new_project_type_information_path, :class => 'btn btn-default btn-xs') %>
-
-          </td>
-        </tr>
+      <%= render partial: 'project_type_information_row', locals: {pti: project_type_information} %>
     <% end %>
   </tbody>
 </table>
 
 
-<button type = "button"  class="btn btn-primary btn-lg" id="delete">Delete Table</button>
 
 
 
@@ -99,7 +85,7 @@
 
 
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Add Site
+  Add Project Type
 </button>
 
 
@@ -113,7 +99,7 @@
       </div>
       <div class="modal-body">
 
-        <%= form_for @project_type_information, :html => { :class => "form-horizontal project" } do |f| %>
+        <%= form_for @project_type_information, :remote => true, :html => { :class => "form-horizontal project" } do |f| %>
 
             <% if @project_type_information.errors.any? %>
                 <div id="error_expl" class="panel panel-danger">

@@ -30,6 +30,7 @@ class ProjectTypeInformationsController < ApplicationController
       if @project_type_information.save
         format.html { redirect_to @project_type_information, notice: 'Project type information was successfully created.' }
         format.json { render :show, status: :created, location: @project_type_information }
+        format.js {render :file => "/project_site_informations/show.js.erb"}
       else
         format.html { render :new }
         format.json { render json: @project_type_information.errors, status: :unprocessable_entity }
