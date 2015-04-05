@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'google_drive/index'
+
   resources :status_categories
 
   resources :category_types

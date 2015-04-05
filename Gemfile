@@ -14,7 +14,7 @@ gem 'pg'
 gem 'cocoon'
 #---Extra Gems-----
 
-
+gem 'paperclip-googledrive'
 
 
 # gem 'bootstrap-sass'
