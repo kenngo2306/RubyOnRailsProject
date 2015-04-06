@@ -17,8 +17,10 @@ end
   # GET /projects/1.json
   def show
     @project_site = ProjectSite.new
+    @contact = Contact.new
     @project = Project.find(params[:id])
     @project_site_information = ProjectSiteInformation.new()
+    @project_contact = ProjectContact.new()
     respond_to do |format|
       format.html
       format.pdf do

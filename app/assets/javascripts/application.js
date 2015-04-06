@@ -14,11 +14,12 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require jquery-ui
-//= require chosen-jquery
 //= require raphael
 //= require morris
 //= require cocoon
 
 
 //= require_tree .
+
+
 
