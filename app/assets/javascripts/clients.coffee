@@ -2,8 +2,16 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
+refreshContactTable = ->
+#  $.getJSON "/allSitesByProjectID/" + $("#project_id").val(), {}, {json, response} ->
+#    $siteTable = $("#sites_table")
+  $("#contacts_table > tbody").html("");
+  return
 
 ready = ->
+  $('#create_site_button').click ->
+    alert 'delete clicked'
+    refreshContactTable()
   $('.DataTables').DataTable()
 
   return

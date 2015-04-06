@@ -1,9 +1,11 @@
-<%- model_class = Project -%>
 <div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+  <h1><%=t '.title', :default => @project.project_name %></h1>
 </div>
 
-<div class = "backgroundContainer">
+
+ <div class="backgroundContainer" >
+
+   <div class = "column1">
 <fieldset>
 
     <legend> General Information</legend>
@@ -14,7 +16,7 @@
     <dd><%= @project.project_name %></dd>
 
     <dt><strong>Project Budget:</strong></dt>
-    <dd><%= number_to_currency(@project.project_budget) %></dd>
+    <dd><%= @project.project_budget %></dd>
 
     <dt><strong>Start Date:</strong></dt>
     <dd><%= @project.start_date.to_formatted_s(:long_ordinal)%></dd>
@@ -32,16 +34,14 @@
     <dd><%= @project.sales_person.sales_person_fullname %></dd>
       </dl>
 
-    </fieldset>
-    </div>
-<br>
+</fieldset>
+   </div>
 
-
-  <div class="backgroundContainer">
+   <div>
 <fieldset>
   <legend>Client Information</legend>
 
-      <dl class="dl-horizontal">
+  <dl class="dl-horizontal">
 
     <dt><strong>Client Goal:</strong></dt>
     <dd><%= @project.client_goal %>
@@ -58,52 +58,68 @@
     <dt><strong>Time Frame Desc:</strong></dt>
     <dd><%= @project.time_frame_description %></dd>
 
-
     <dt><strong>Procurement Tool:</strong></dt>
     <dd><%= @project.procurement_tool.procurement_tool_name %></dd>
-
 
     <dt><strong>Irrigation Responsibility:</strong></dt>
     <dd><%= @project.irrigation_responsibility.irrigation_responsibility_name %></dd>
 
-      </dl>
-
-
+  </dl>
 
 </fieldset>
-</div>
-<br>
+  </div>
 
-<div class = "backgroundContainer">
+  </div>
+
+<div class="backgroundContainer" >
+
+  <div class = "column1">
 <fieldset>
   <legend>Additional Project Information</legend>
 
-
-
-      <br>
-      <dl class="dl-horizontal">
+  <br>
+  <dl class="dl-horizontal">
 
     <dt><strong>Restricted Work Hours?:</strong></dt>
     <dd><%= @project.restricted_work_hours %></dd>
+
     <dt><strong>Liquidate Damages?:</strong></dt>
     <dd><%= @project.liquidate_damages_yn %></dd>
+
     <dt><strong>Wages & Certified Payroll?:</strong></dt>
     <dd><%= @project.prevailing_wages_certified_payroll_yn %></dd>
+
     <dt><strong>Permit Special Possessed?:</strong></dt>
     <dd><%= @project.permit_special_inspection_in_possession %></dd>
+
     <dt><strong>Permit Submittal Required?</strong></dt>
     <dd><%= @project.permit_submittal_required %></dd>
+
     <dt><strong>Permit Fees Required?:</strong></dt>
     <dd><%= @project.permit_fees_required %></dd>
-
-
-
 
   </dl>
 
 </fieldset>
 </div>
 
+  <div>
+    <fieldset>
+      <legend>Requested Sales Document Information</legend>
+
+      <dl class="dl-horizontal">
+
+        <dt><strong>Sales Documents Requested:</strong></dt>
+        <% @project.project_requested_sales_documents.each do |sales| %>
+        <dd><%= sales.requested_sales_document.requested_sales_document_name %></dd>
+        <% end %>
+
+      </dl>
+
+    </fieldset>
+  </div>
+
+</div>
 
 <div class = "showPageButton">
 
@@ -124,7 +140,14 @@
 
 </div>
 
+
+<!-- Tables --->
+
 <% if current_user.admin? || current_user.salesrep? || current_user.insidesales? %>
+<div>
+<div class="headermargins">
+    <h3><%= @project.project_name %> Sites</h3>
+</div>
 <table class="DataTables" id ="sites_table">
   <thead>
   <tr>
@@ -142,24 +165,66 @@
 
                 <%= render partial: 'project_site_information_row', locals: {psi: psi} %>
 
-
           <%end %>
       </tbody>
   </table>
 
+    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+      Add New Site
+    </button>
+    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal2">
+      Select Existing Site
+    </button>
+    <br/>
+</div>
 
+<div>
+<div class="headermargins">
+  <h3><%= @project.project_name %> Contacts</h3>
+</div>
+<table class="DataTables" id="contacts_table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Email</th>
+    <th>Cell</th>
+    <th>Work</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Zip</th>
+    <th>State</th>
+    <th>Client Name</th>
+    <th>Contact Type</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @project.project_contacts.each do |pc| %>
 
+      <%= render partial: 'project_contact_information_rows', locals: {pc: pc} %>
 
+  <%end %>
+  </tbody>
+</table>
+
+    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal3">
+      Add New Contact
+    </button>
+    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal4">
+      Select Existing Contact
+    </button>
+    <br/>
+</div>
 
   <!-- Button trigger modal to create a new site -->
 
 
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-              Add New Site
-            </button>
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
-              Add Existed Site
-            </button>
+
+
+
+
 <% end %>
 
         <!-- Modal -->
@@ -192,13 +257,12 @@
         </div>
 
 
-
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Add Site</h4>
+                <h4 class="modal-title" id="myModalLabel">Add Existing Site</h4>
               </div>
               <div class="modal-body">
                 <%= form_for @project_site, :remote => true, :html => { :class => "form-horizontal project_site" } do |f| %>
@@ -279,8 +343,292 @@
         </div>
 
 
+        <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add New Contact</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for @contact, :html => { :class => "form-horizontal contact msform" } do |f| %>
+
+            <% if @contact.errors.any? %>
+                <div id="error_expl" class="panel panel-danger">
+                  <div class="panel-heading">
+                    <h3 class="panel-title"><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h3>
+                  </div>
+                  <div class="panel-body">
+                    <ul>
+                      <% @contact.errors.full_messages.each do |msg| %>
+                          <li><%= msg %></li>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+            <% end %>
+
+            <ul id = "progressbar">
+              <li>Step 1 - Contact Type</li>
+              <li>Step 2 - Contact Information</li>
+              <li>Step 3 - Contact Location</li>
+            </ul>
+
+            <%=field_set_tag nil, class: 'fieldset_Contact_Type' do %>
+
+                <h3 class="fs-subtitle"></h3>
+                <div class="control-group">
+                  <%= f.label :contact_type_id, 'Contact Type', :class => 'control-label' %>
+                  <div class="controls contact-type-dropdown">
+                    <%= f.collection_select :contact_type_id, ContactType.all, :id, :contact_type_name, :class => 'form-control' %>
+                  </div>
+                  <%= error_span(@contact[:contact_type_id]) %>
+                </div>
+                <div class="control-group">
+                  <%= f.label :client_id, 'Client Name', :class => 'control-label' %>
+                  <div class="controls client-dropdown">
+                    <%= f.collection_select :client_id, Client.all, :id, :client_name, input_html: { class: 'chosen-select' } %>
+                  </div>
+                  <%= error_span(@contact[:client_id]) %>
+                </div>
+                <br>
+
+                <input type="button" name="next" class="next btn btn-default" value="Next" />
+                <br>
+            <%end%>
+
+            <%=field_set_tag nil, class: 'fieldset_Contact_Information' do%>
+
+                <h3 class="fs-subtitle"> Contact Information </h3>
+                <div class="control-group">
+                  <%= f.label :contact_first_name, 'First Name', :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :contact_first_name, :class => 'form-control' %>
+                  </div>
+                  <%= error_span(@contact[:contact_first_name]) %>
+                </div>
+                <div class="control-group">
+                  <%= f.label :contact_last_name, 'Last Name', :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :contact_last_name, :class => 'form-control' %>
+                  </div>
+                  <%= error_span(@contact[:contact_last_name]) %>
+                </div>
+                <div class="control-group">
+                  <%= f.label :contact_email, 'Email', :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :contact_email, :class => 'form-control' %>
+                  </div>
+                  <%= error_span(@contact[:contact_email]) %>
+                </div>
+                <div class="control-group">
+                  <%= f.label :contact_cell, 'Cell', :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :contact_cell, :class => 'form-control' %>
+                  </div>
+                  <%= error_span(@contact[:contact_cell]) %>
+                </div>
+                <div class="control-group">
+                  <%= f.label :contact_work, 'Work', :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :contact_work, :class => 'form-control' %>
+                  </div>
+                  <%= error_span(@contact[:contact_work]) %>
+                </div>
+
+                <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+                <input type="button" name="next" class="next btn btn-default" value="Next" />
+                <br>
+
+            <% end %>
 
 
+            <%= field_set_tag nil, class: 'fieldset_Contact_Location' do%>
+
+                <h3 class="fs-subtitle"> Contact Location</h3>
+                <div class="control-group">
+                  <%= f.label :contact_address, 'Contact Address', :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :contact_address, :class => 'form-control' %>
+                  </div>
+                  <%= error_span(@contact[:contact_work]) %>
+                </div>
+                <div class="control-group">
+                  <%= f.label :contact_city, 'City', :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :contact_city, :class => 'form-control' %>
+                  </div>
+                  <%= error_span(@contact[:contact_work]) %>
+                </div>
+                <div class="control-group">
+                  <%= f.label :state_id, 'State', :class => 'control-label' %>
+                  <div class="controls state-dropdown">
+                    <%= f.collection_select :state_id, State.all, :id, :state_name, :class => 'form-control' %>
+                  </div>
+                  <%= error_span(@contact[:contact_work]) %>
+                </div>
+
+                <div class="control-group">
+                  <%= f.label :contact_zip, 'Zip', :class => 'control-label' %>
+                  <div class="controls">
+                    <%= f.text_field :contact_zip, :class => 'form-control' %>
+                  </div>
+                  <%= error_span(@contact[:contact_work]) %>
+                </div>
+
+                <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
+                <br>
+            <% end %>
+
+
+
+            <br>
+            <br>
+
+
+            <%= f.submit nil, :class => 'btn btn-primary' %>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+        <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add Site</h4>
+                  </div>
+                  <div class="modal-body">
+                    <%= form_for @contact, :remote => true, :html => { :class => "form-horizontal project_site_information" } do |f| %>
+
+                        <div class="control-group">
+                          <%= f.label :contact, 'Contact Name', :class => 'control-label' %>
+                          <div class="controls funabounds">
+                            <%= f.collection_select :contact_id, Contact.all, :id, :contact_first_name,{}, :class => 'form-control' %>
+                            <%= f.hidden_field :project_id, :value => @project.id %>
+                          </div>
+                          <%= error_span(@project_contact[:contact_id]) %>
+                        </div>
+
+                        <%= f.submit nil, :class => 'btn btn-primary' %>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <% end %>
+
+                  </div>
+                </div>
+              </div>
+        </div>
+
+<script type="text/javascript">
+    //jQuery time
+    var current_fs, next_fs, previous_fs; //fieldsets
+    var left, opacity, scale; //fieldset properties which we will animate
+    var animating; //flag to prevent quick multi-click glitches
+
+    $(".next").click(function(){
+        if(animating) return false;
+        animating = true;
+
+        current_fs = $(this).parent();
+        next_fs = $(this).parent().next();
+
+        //activate next step on progressbar using the index of next_fs
+        $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+        //show the next fieldset
+        next_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({opacity: 0}, {
+            step: function(now, mx) {
+                //as the opacity of current_fs reduces to 0 - stored in "now"
+                //1. scale current_fs down to 80%
+                scale = 1 - (1 - now) * 0.2;
+                //2. bring next_fs from the right(50%)
+                left = (now * 50)+"%";
+                //3. increase opacity of next_fs to 1 as it moves in
+                opacity = 1 - now;
+                current_fs.css({'transform': 'scale('+scale+')'});
+                next_fs.css({'left': left, 'opacity': opacity});
+            },
+            duration: 800,
+            complete: function(){
+                current_fs.hide();
+                animating = false;
+            },
+            //this comes from the custom easing plugin
+            easing: 'easeInOutBack'
+        });
+    });
+
+    $(".previous").click(function(){
+        if(animating) return false;
+        animating = true;
+
+        current_fs = $(this).parent();
+        previous_fs = $(this).parent().prev();
+
+        //de-activate current step on progressbar
+        $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+
+        //show the previous fieldset
+        previous_fs.show();
+        //hide the current fieldset with style
+        current_fs.animate({opacity: 0}, {
+            step: function(now, mx) {
+                //as the opacity of current_fs reduces to 0 - stored in "now"
+                //1. scale previous_fs from 80% to 100%
+                scale = 0.8 + (1 - now) * 0.2;
+                //2. take current_fs to the right(50%) - from 0%
+                left = ((1-now) * 50)+"%";
+                //3. increase opacity of previous_fs to 1 as it moves in
+                opacity = 1 - now;
+                current_fs.css({'left': left});
+                previous_fs.css({'transform': 'scale('+scale+')', 'opacity': opacity});
+            },
+            duration: 800,
+            complete: function(){
+                current_fs.hide();
+                animating = false;
+            },
+            //this comes from the custom easing plugin
+            easing: 'easeInOutBack'
+        });
+    });
+
+    $(".submit").click(function(){
+        return false;
+    });
+    /**
+     * Created by Lawrence on 3/16/2015.
+     */
+
+</script>
+
+<div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add Existing Contact</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for @project_site_information, :remote => true, :html => { :class => "form-horizontal project_site_information" } do |f| %>
+
+
+
+            <%= f.submit nil, :class => 'btn btn-primary' %>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
