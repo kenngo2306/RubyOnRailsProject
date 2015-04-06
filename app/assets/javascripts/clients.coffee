@@ -11,7 +11,6 @@ refreshContactTable = ->
 ready = ->
   $('#create_site_button').click ->
     alert 'delete clicked'
-    refreshContactTable()
   $('.DataTables').DataTable()
 
   return
