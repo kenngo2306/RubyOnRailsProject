@@ -1,5 +1,5 @@
 var t = $('#sites_table').DataTable();
 t.row.add(['<%= @project_site_information.id %>','<%= @project_site_information.project_site.site_name %>','<%= @project_site_information.project_site.site_address %>','<%= @project_site_information.project_site.site_city %>','<%= @project_site_information.project_site.state.state_name %>','<%= @project_site_information.project_site.site_zip %>','<%= link_to "Design Info", @project_site_information , :class => "btn-primary btn-sm"%> <a href="http://maps.google.com/?q=<%=@project_site_information.project_site.get_address%>" target="_blank" class="btn btn-info btn-sm"><span class="fa fa-map-marker"> Map</span></a> <a href="http://www.weather.com/weather/today/l/<%=@project_site_information.project_site.get_address%>" target="_blank" class="btn btn-warning btn-sm"><span class="fa fa-sun-o fa-5"> Weather</span></a>']).draw();
-$('#myModal').modal('toggle');
+$('#myModal2').modal('toggle');
 
 

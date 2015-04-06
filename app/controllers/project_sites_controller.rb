@@ -29,10 +29,11 @@ class ProjectSitesController < ApplicationController
 
     respond_to do |format|
       if @project_site.save
+        @project_site_information = ProjectSiteInformation.last
         format.html { redirect_to @project_site, notice: 'Project site was successfully created.' }
         # format.json { render json: @project_site }
         format.json { render :show, status: :created, location: @project_site }
-        format.js { render :file => "/projects/show.js.erb" }
+        format.js {render :file => "/projects/show.js.erb"}
 
       else
         format.html { render :new }
