@@ -32,7 +32,7 @@ class ProjectSiteInformationsController < ApplicationController
       if @project_site_information.save
         format.html { redirect_to @project_site_information, notice: 'Project site information was successfully created.' }
         format.json { render :show, status: :created, location: @project_site_information }
-
+        format.js {render :file => "projects/showForExistedSite.js.erb" }
       else
         format.html { render :new }
         format.json { render json: @project_site_information.errors, status: :unprocessable_entity }

@@ -99,7 +99,7 @@
       </div>
       <div class="modal-body">
 
-        <%= form_for @project_type_information, :remote => true, :html => { :class => "form-horizontal project" } do |f| %>
+        <%= form_for @project_type_information, :remote => true, :html => { :class => "form-horizontal project_type_information" } do |f| %>
 
             <% if @project_type_information.errors.any? %>
                 <div id="error_expl" class="panel panel-danger">
@@ -115,7 +115,7 @@
                   </div>
                 </div>
             <% end %>
-
+            <%= f.hidden_field :project_site_information_id, :value => @project_site_information.id %>
             <div class="control-group">
               <%= f.label :project_type_id, 'Project Type', :class => 'control-label' %>
               <div class="controls funabounds">
