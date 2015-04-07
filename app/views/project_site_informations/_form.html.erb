@@ -207,6 +207,13 @@
     <%= error_span(@project_site_information[:pvt_locator_required]) %>
   </div>
 
+  <div class ="fields">
+    <% Utility.all.each do |utility| %>
+        <%= check_box_tag "project_site_information[utility_ids][]", utility.id, @project_site_information.utility_ids.include?(utility.id) %>
+        <%= utility.utility_name %> <br/>
+    <% end %>
+  </div>
+
                   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
                   <br>
                   <br>

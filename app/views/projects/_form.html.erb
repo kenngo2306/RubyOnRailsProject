@@ -229,6 +229,13 @@
     <%= f.label :permit_fees_required, 'Permit Fees Required', :class => 'control-label' %>
     <%= error_span(@project[:permit_fees_required]) %>
   </div>
+
+  <div class="field">
+    <% RequestedSalesDocument.all.each do |document| %>
+        <%= check_box_tag "project[requested_sales_document_ids][]", document.id, @project.requested_sales_document_ids.include?(document.id) %>
+        <%= document.requested_sales_document_name %> <br/>
+    <% end %>
+  </div>
 <br>
 
   </div>

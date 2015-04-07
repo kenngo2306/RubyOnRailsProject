@@ -4,6 +4,7 @@ class ProjectSiteInformation < ActiveRecord::Base
 
   has_many :project_type_informations
   has_many :project_types, through: :project_type_informations
+  has_many :project_utilities
   has_many :utilities, through: :project_utilities
 
   def self.getAllFromProjectID(project_id)
