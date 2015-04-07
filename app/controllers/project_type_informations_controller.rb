@@ -30,6 +30,7 @@ class ProjectTypeInformationsController < ApplicationController
       if @project_type_information.save
         format.html { redirect_to @project_type_information, notice: 'Project type information was successfully created.' }
         format.json { render :show, status: :created, location: @project_type_information }
+        format.js {render :file => "/project_site_informations/show.js.erb"}
       else
         format.html { render :new }
         format.json { render json: @project_type_information.errors, status: :unprocessable_entity }
@@ -43,13 +44,13 @@ class ProjectTypeInformationsController < ApplicationController
 
     respond_to do |format|
       if (!params[:question_ids].nil?)
-            Answer.where('project_type_information_id = ' + @project_type_information.id.to_s).destroy_all
-            i = 0
-            while i < params[:question_ids].size do
-              a = Answer.create(:question_id => params[:question_ids][i], :project_type_information_id => @project_type_information.id , :answer_text => params[:answer_texts][i])
-              a.save
-              i = i + 1
-            end
+        Answer.where('project_type_information_id = ' + @project_type_information.id.to_s).destroy_all
+        i = 0
+        while i < params[:question_ids].size do
+          a = Answer.create(:question_id => params[:question_ids][i], :project_type_information_id => @project_type_information.id , :answer_text => params[:answer_texts][i])
+          a.save
+          i = i + 1
+        end
       end
       if (@project_type_information.update(project_type_information_params))
         format.html { redirect_to @project_type_information, notice: 'Project type information was successfully updated.' }
@@ -72,13 +73,13 @@ class ProjectTypeInformationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project_type_information
-      @project_type_information = ProjectTypeInformation.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project_type_information
+    @project_type_information = ProjectTypeInformation.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def project_type_information_params
-      params.require(:project_type_information).permit(:proposal_number, :revision_number, :project_id, :project_type_id, :category_option_ids => [], :question_ids => [], :answer_texts =>[])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def project_type_information_params
+    params.require(:project_type_information).permit(:proposal_number, :revision_number, :project_type_id, :project_site_information_id, :category_option_ids => [], :question_ids => [], :answer_texts =>[])
+  end
 end

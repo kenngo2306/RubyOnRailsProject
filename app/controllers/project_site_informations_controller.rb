@@ -32,6 +32,7 @@ class ProjectSiteInformationsController < ApplicationController
       if @project_site_information.save
         format.html { redirect_to @project_site_information, notice: 'Project site information was successfully created.' }
         format.json { render :show, status: :created, location: @project_site_information }
+        format.js {render :file => "projects/showForExistedSite.js.erb" }
       else
         format.html { render :new }
         format.json { render json: @project_site_information.errors, status: :unprocessable_entity }
@@ -64,13 +65,13 @@ class ProjectSiteInformationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project_site_information
-      @project_site_information = ProjectSiteInformation.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project_site_information
+    @project_site_information = ProjectSiteInformation.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def project_site_information_params
-      params.require(:project_site_information).permit(:area_length, :area_width, :area_description, :geotech_report_in_possession, :bobcat_accessible, :construction_fence_required, :client_fence_dismantle_reinstall_required, :rock_excavation_required, :hand_dig_required, :dirt_haul_off_required, :tree_vegetation_removal_required, :area_is_sloped, :site_survey_required, :surface_protection_required, :under_ground_obstacles_yn, :structural_removal_required, :pvt_locator_required, :project_id, :project_site_id)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def project_site_information_params
+    params.require(:project_site_information).permit(:area_length, :area_width, :area_description, :geotech_report_in_possession, :bobcat_accessible, :construction_fence_required, :client_fence_dismantle_reinstall_required, :rock_excavation_required, :hand_dig_required, :dirt_haul_off_required, :tree_vegetation_removal_required, :area_is_sloped, :site_survey_required, :surface_protection_required, :under_ground_obstacles_yn, :structural_removal_required, :pvt_locator_required, :project_id, :project_site_id)
+  end
 end

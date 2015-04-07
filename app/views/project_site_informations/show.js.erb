@@ -1,0 +1,3 @@
+var t = $('#project_type_informations_table').DataTable();
+t.row.add(['<%= @project_type_information.id %>','<%= @project_type_information.project_type.project_type_name %>','<%= @project_type_information.proposal_number %>','<%= @project_type_information.revision_number %>', '<%= link_to 'Design Information', edit_project_type_information_path(@project_type_information) %>']).draw();
+$('#myModal').modal('toggle');

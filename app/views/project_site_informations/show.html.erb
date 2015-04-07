@@ -47,50 +47,36 @@
 </dl>
 
 <div class="showPageButton">
-<%= link_to t('.back', :default => t("helpers.links.back")),
-            project_site_informations_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-            edit_project_site_information_path(@project_site_information), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-            project_site_information_path(@project_site_information),
-            :method => 'delete',
-            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-            :class => 'btn btn-danger' %>
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              project_site_informations_path, :class => 'btn btn-default'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_project_site_information_path(@project_site_information), :class => 'btn btn-default' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              project_site_information_path(@project_site_information),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
 
 </div>
 
-<table class="DataTables">
+<table class="DataTables" id="project_type_informations_table">
   <thead>
-    <tr>
-      <th>Project Type</th>
-      <th>Proposal Number</th>
-      <th>Revision Number</th>
-      <th colspan="3">Actions</th>
-    </tr>
+  <tr>
+    <th>ID</th>
+    <th>Project Type</th>
+    <th>Proposal Number</th>
+    <th>Revision Number</th>
+    <th>Actions</th>
+  </tr>
   </thead>
   <tbody>
-    <% @project_site_information.project_type_informations.each do |project_type_information| %>
-        <tr>
-          <td>
-            <%= project_type_information.project_type.project_type_name %>
-          </td>
-          <td>
-            <%= project_type_information.proposal_number %>
-          </td>
-          <td>
-            <%= project_type_information.revision_number %>
-          </td>
-          <td>
-            <%= link_to('Manage Project Type Information', new_project_type_information_path, :class => 'btn btn-default btn-xs') %>
-
-          </td>
-        </tr>
-    <% end %>
+  <% @project_site_information.project_type_informations.each do |project_type_information| %>
+      <%= render partial: 'project_type_information_row', locals: {pti: project_type_information} %>
+  <% end %>
   </tbody>
 </table>
 
 
-<button type = "button"  class="btn btn-primary btn-lg" id="delete">Delete Table</button>
 
 
 
@@ -99,7 +85,7 @@
 
 
 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Add Site
+  Add Project Type
 </button>
 
 
@@ -113,7 +99,7 @@
       </div>
       <div class="modal-body">
 
-        <%= form_for @project_type_information, :html => { :class => "form-horizontal project" } do |f| %>
+        <%= form_for @project_type_information, :remote => true, :html => { :class => "form-horizontal project_type_information" } do |f| %>
 
             <% if @project_type_information.errors.any? %>
                 <div id="error_expl" class="panel panel-danger">
@@ -129,7 +115,7 @@
                   </div>
                 </div>
             <% end %>
-
+            <%= f.hidden_field :project_site_information_id, :value => @project_site_information.id %>
             <div class="control-group">
               <%= f.label :project_type_id, 'Project Type', :class => 'control-label' %>
               <div class="controls funabounds">
@@ -138,13 +124,13 @@
               <%= error_span(@project_type_information[:project_type_id]) %>
             </div>
 
-                <div class="control-group">
-                  <%= f.label :proposal_number,'Proposal Number', :class => 'control-label' %>
-                  <div class="controls projectName">
-                    <%= f.text_field :proposal_number, :class => 'form-control' %>
-                  </div>
-                  <%= error_span(@project_type_information[:proposal_number]) %>
-                </div>
+            <div class="control-group">
+              <%= f.label :proposal_number,'Proposal Number', :class => 'control-label' %>
+              <div class="controls projectName">
+                <%= f.text_field :proposal_number, :class => 'form-control' %>
+              </div>
+              <%= error_span(@project_type_information[:proposal_number]) %>
+            </div>
 
             <div class="control-group">
               <%= f.label :revision_number,'Revision Number', :class => 'control-label' %>
@@ -157,9 +143,8 @@
             <%= f.submit nil, :class => 'btn btn-primary' %>
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-            <%end%>
+        <%end%>
+      </div>
+    </div>
   </div>
 </div>
-</div>
-</div>
-
