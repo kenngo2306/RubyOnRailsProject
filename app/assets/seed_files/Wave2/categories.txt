@@ -20,17 +20,40 @@ Include Overspray Zone|2|1
 Splashpad Surfacing|2|2
 Zoned Required|2|2
 Shading Type|3|1
-Shade Surfacing|3|2
 Add 12" or 18" for wood chips|3|1
 Concrete Cutting and Removal Required|3|1
 Concrete Pour-back similar to existing|3|1
 Special Surface Cutting and Removal Required|3|1
 Special Surface Pour-back similar to existing|3|1
 Crane Required|3|1
-Footing|3|1
 Fabric only install/recover|3|1
 Fabric Removal and return to manufacturer|3|1
 Superspan Access|3|1
 Quick Release|3|1
 Sloped|3|1
 Delivery|3|1
+Structure 1: Fabric Type|3|1
+Structure 1: Coastal Primer|3|1
+Structure 1: Surfacing|3|2
+Structure 1: Footing|3|1
+Structure 1: Mounting|3|1
+Structure 2: Fabric Type|3|1
+Structure 2: Coastal Primer|3|1
+Structure 2: Surfacing|3|2
+Structure 2: Footing|3|1
+Structure 2: Mounting|3|1
+Structure 3: Fabric Type|3|1
+Structure 3: Coastal Primer|3|1
+Structure 3: Surfacing|3|2
+Structure 3: Footing|3|1
+Structure 3: Mounting|3|1
+Structure 4: Fabric Type|3|1
+Structure 4: Coastal Primer|3|1
+Structure 4: Surfacing|3|2
+Structure 4: Footing|3|1
+Structure 4: Mounting|3|1
+Structure 5: Fabric Type|3|1
+Structure 5: Coastal Primer|3|1
+Structure 5: Surfacing|3|2
+Structure 5: Footing|3|1
+Structure 5: Mounting|3|1

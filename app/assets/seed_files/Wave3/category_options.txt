@@ -88,10 +88,8 @@ Child(5-8)|21
 Youth|21
 New|22
 Repair|22
-Wood Chips|23
-Concrete/Asphalt|23
-Dirt/Grass|23
-Specialty/Rubber|23
+Yes|23
+No|23
 Yes|24
 No|24
 Yes|25
@@ -104,18 +102,78 @@ Yes|28
 No|28
 Yes|29
 No|29
-Drilled Footings|30
-Spread Footings|30
-Special Footings (See additional Notes)|30
+Yes|30
+No|30
 Yes|31
 No|31
 Yes|32
 No|32
 Yes|33
 No|33
-Yes|34
-No|34
-Yes|35
-No|35
-Freight/Elevator to site|36
-Client Unload|36
+Freight/Elevator to site|34
+Client Unload|34
+Regular|35
+Waterproof|35
+Yes|36
+No|36
+Wood Chips|37
+Concrete/Asphalt|37
+Dirt/Grass|37
+Speciality/Rubber|37
+Drilled Footings|38
+Spread Footings|38
+Special Footings (See additional Notes)|38
+In-ground|39
+Surface|39
+Regular|40
+Waterproof|40
+Yes|41
+No|41
+Wood Chips|42
+Concrete/Asphalt|42
+Dirt/Grass|42
+Speciality/Rubber|42
+Drilled Footings|43
+Spread Footings|43
+Special Footings (See additional Notes)|43
+In-ground|44
+Surface|44
+Regular|45
+Waterproof|45
+Yes|46
+No|46
+Wood Chips|47
+Concrete/Asphalt|47
+Dirt/Grass|47
+Speciality/Rubber|47
+Drilled Footings|48
+Spread Footings|48
+Special Footings (See additional Notes)|48
+In-ground|49
+Surface|49
+Regular|50
+Waterproof|50
+Yes|51
+No|51
+Wood Chips|52
+Concrete/Asphalt|52
+Dirt/Grass|52
+Speciality/Rubber|52
+Drilled Footings|53
+Spread Footings|53
+Special Footings (See additional Notes)|53
+In-ground|54
+Surface|54
+Regular|55
+Waterproof|55
+Yes|56
+No|56
+Wood Chips|57
+Concrete/Asphalt|57
+Dirt/Grass|57
+Speciality/Rubber|57
+Drilled Footings|58
+Spread Footings|58
+Special Footings (See additional Notes)|58
+In-ground|59
+Surface|59
