@@ -1,13 +1,5 @@
-<div class="container">
-  <div class="row vertical-offset-100">
-    <div class="col-md-10 col-md-offset-1">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <div class="row-fluid user-row">
 
-          </div>
-        </div>
-        <div class="panel-body">
+
           <%= form_for @project_type, :html => { :class => "form-horizontal project_type" } do |f| %>
 
     <% if @project_type.errors.any? %>
@@ -35,25 +27,12 @@
 <div >
     <%= f.label :question_name, "Text Fields Questions" , :class => 'control-label' %>
   <br>
-    <p>testing</p>
+
   <%= f.fields_for :questions do |builder| %>
-
-        <div class = "control-group">
-        <span class ="controls text-fields-questions">
-
-		<%= builder.text_field :question_name, :class => 'text-fields'%>
-
-		<%= builder.check_box :_destroy, :class => 'text-fields-checkbox'%>
-		<%= builder.label :_destroy, "Remove Question" , :class => 'text-fields-label'%>
-      </span>
-
-
-        </div>
-        </div>
-
+        <%= render 'question_fields', f:builder %>
   <% end %>
-
-
+  <%= link_to_add_fields "Add Text Question", f, :questions %>
+</div>
     <br>
 
 
@@ -63,14 +42,9 @@
   <%= f.fields_for :categories do |builder| %>
 	<%= render 'category_fields', f: builder %>
   <% end %>
-
+  <%= link_to_add_fields "Add Categories", f, :categories %>
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
             project_types_path, :class => 'btn btn-default' %>
 
 <% end %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
