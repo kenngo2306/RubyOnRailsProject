@@ -8,6 +8,7 @@
           </div>
         </div>
         <div class="panel-body">
+
           <%= form_for @client, :html => { :class => "form-horizontal client" } do |f| %>
   <div class="control-group">
     <%= f.label :client_name, 'Client Name', :class => 'control-label' %>
@@ -40,16 +41,12 @@
   <div class="control-group">
     <%= f.label :state_id, 'State', :class => 'control-label' %>
     <div class="controls state-controls">
-      <%= f.collection_select :state_id, State.all, :id,:state_name, class: 'select2' %><br/>
+      <%= f.collection_select :state_id, State.all, :id,:state_name, :class => 'form-control', :selected => 44 %><br/>
     </div>
     <%= error_span(@client[:state_id]) %>
   </div>
 
-    <h3>Contacts</h3>
-    <%= f.fields_for :contacts do |contact| %>
-        <%= render 'contacts_fields', :f => contact %>
-    <% end %>
-
+<br/>
 <div>
 
   <%= f.submit nil, :class => 'btn btn-primary' %>

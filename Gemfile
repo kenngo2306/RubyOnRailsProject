@@ -24,7 +24,6 @@ gem 'sendgrid'
 gem 'simple_form'
 gem 'kaminari'
 gem 'prawn-rails'
-gem 'chosen-rails'
 
 
 

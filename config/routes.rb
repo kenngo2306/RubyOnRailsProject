@@ -12,6 +12,16 @@ Rails.application.routes.draw do
 
   get 'reports/index'
 
+  get 'reports/monthly_clients'
+
+  get 'reports/monthly_projects'
+
+  get 'reports/completed_projects'
+
+  get 'reports/inprogress_projects'
+
+  get 'reports/preproposal_projects'
+
   resources :installers
 
   devise_for :users do

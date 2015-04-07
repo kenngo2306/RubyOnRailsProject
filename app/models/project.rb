@@ -7,11 +7,15 @@ class Project < ActiveRecord::Base
   belongs_to :project_status
   belongs_to :sales_person
   belongs_to :irrigation_responsibility
+  has_many :project_requested_sales_documents
   has_many :requested_sales_documents, through: :project_requested_sales_documents
+  has_many :project_contacts
   has_many :contacts, through: :project_contacts
   has_many :project_site_informations
   has_many :project_sites, through: :project_site_informations
 
   accepts_nested_attributes_for :project_site_informations
   accepts_nested_attributes_for :project_sites
+
 end
+
