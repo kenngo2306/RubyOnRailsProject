@@ -1,0 +1,10 @@
+<tr>
+  <td><%= pti.id %></td>
+  <td><%= pti.project_type.project_type_name %></td>
+  <td><%= pti.proposal_number %></td>
+  <td><%= pti.revision_number %></td>
+
+  <td>
+    <%= link_to 'Design Information', edit_project_type_information_path(pti) , :class => 'btn-primary btn-sm'%>
+  </td>
+</tr>

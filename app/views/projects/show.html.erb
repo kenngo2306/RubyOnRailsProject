@@ -151,6 +151,7 @@
 <table class="DataTables" id ="sites_table">
   <thead>
   <tr>
+    <th>ID</th>
     <th>Site Name</th>
     <th>Address</th>
     <th>City</th>
@@ -161,7 +162,7 @@
   </tr>
   </thead>
       <tbody>
-          <% @project.project_sites.each do |psi| %>
+          <% @project.project_site_informations.each do |psi| %>
 
                 <%= render partial: 'project_site_information_row', locals: {psi: psi} %>
 

@@ -29,10 +29,11 @@ class ProjectSitesController < ApplicationController
 
     respond_to do |format|
       if @project_site.save
+        @project_site_information = ProjectSiteInformation.last
         format.html { redirect_to @project_site, notice: 'Project site was successfully created.' }
         # format.json { render json: @project_site }
         format.json { render :show, status: :created, location: @project_site }
-        format.js { render :file => "/projects/show.js.erb" }
+        format.js {render :file => "/projects/show.js.erb"}
 
       else
         format.html { render :new }
@@ -69,13 +70,13 @@ class ProjectSitesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project_site
-      @project_site = ProjectSite.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project_site
+    @project_site = ProjectSite.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def project_site_params
-      params.require(:project_site).permit(:site_name, :site_address, :site_city, :site_zip, :site_access, :state_id, project_site_informations_attributes: [:id, :project_id])
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def project_site_params
+    params.require(:project_site).permit(:site_name, :site_address, :site_city, :site_zip, :site_access, :state_id, project_site_informations_attributes: [:id, :project_id])
+  end
 end
