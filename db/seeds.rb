@@ -53,7 +53,7 @@ end
 
 open(Rails.root.join('app','assets','seed_files','Wave1','project_types.txt')) do |project_types|
   project_types.read.each_line do |project_type|
-    line = project_type.gsub("\n","")
+    line = project_type.gsub("\r\n","")
     project_type_name = line
     ProjectType.create(:project_type_name => project_type_name)
   end
@@ -126,7 +126,7 @@ open(Rails.root.join('app','assets','seed_files','Wave2','project_statuses.txt')
   end
 end
 
-open(Rails.root.join('app','assets','seed_files','Wave2','projects.txt')) do |projects|
+open(Rails.root.join('app','assets','seed_files','Wave3','projects.txt')) do |projects|
   projects.read.each_line do |project|
     line = project.gsub("\r\n","")
     project_name,start_date,proposal_deadline,client_goal,time_frame_description,mobilization_quantity,liquidate_damages_yn,prevailing_wages_certified_payroll_yn,permit_special_inspection_in_possession,restricted_work_hours,permit_submittal_required,permit_fees_required,project_budget,deal_type_description,procurement_tool_description,deal_type_id,project_setting_id,procurement_tool_id,sales_person_id,project_status_id,irrigation_responsibility_id = line.chomp.split("|")
@@ -176,7 +176,7 @@ open(Rails.root.join('app','assets','seed_files','Wave3','contacts.txt')) do |co
   end
 end
 
-open(Rails.root.join('app','assets','seed_files','Wave3','project_requested_sales_documents.txt')) do |project_requested_sales_documents|
+open(Rails.root.join('app','assets','seed_files','Wave4','project_requested_sales_documents.txt')) do |project_requested_sales_documents|
   project_requested_sales_documents.read.each_line do |project_requested_sales_document|
     line = project_requested_sales_document.gsub("\r\n","")
     project_id,requested_sales_document_id = line.chomp.split("|")
@@ -184,7 +184,7 @@ open(Rails.root.join('app','assets','seed_files','Wave3','project_requested_sale
   end
 end
 
-open(Rails.root.join('app','assets','seed_files','Wave3','project_site_informations.txt')) do |project_site_informations|
+open(Rails.root.join('app','assets','seed_files','Wave4','project_site_informations.txt')) do |project_site_informations|
   project_site_informations.read.each_line do |project_site_information|
     line = project_site_information.gsub("\r\n","")
     project_site_id,area_length,area_width,area_description,geotech_report_in_possession,bobcat_accessible,drill_rig_access,concrete_truck_access,crane_access,skytrack_boomlift_access,construction_fence_required,client_fence_dismantle_reinstall_required,soil_condition,rock_excavation_required,hand_dig_required,dirt_haul_off_required,tree_vegetation_removal_required,area_is_sloped,site_survey_required,surface_protection_required,under_ground_obstacles_yn,structural_removal_required,pvt_locator_required,project_id = line.chomp.split("|")

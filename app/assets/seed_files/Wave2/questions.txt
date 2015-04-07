@@ -21,9 +21,64 @@ Custom Feature Request|2
 Theme|2
 Play Pad Dimensions|2
 Additional Notes|2
-Shade Location|3
-RMA#|3
-Maximum Height of Existing Equipment|3
-Concrete slab amount(in.)|3
-Additional length added for minimum entry height due to slope|3
+Structure 1: Shade Location|3
+Structure 1: Style|3
+Structure 1: Size or Use of Zone|3
+Structure 1: Maximum Height of Existing Equipment|3
+Structure 1: Additional length added for minimum entry height due to slope|3
+Structure 1: Quantity|3
+Structure 1: Fabric Color|3
+Structure 1: Powder Coat Color|3
+Structure 1: Number of Tops|3
+Structure 1: Number of Posts|3
+Structure 1: Concrete slab amount (in.)|3
+Structure 1: RMA#|3
+Structure 2: Shade Location|3
+Structure 2: Style|3
+Structure 2: Size or Use of Zone|3
+Structure 2: Maximum Height of Existing Equipment|3
+Structure 2: Additional length added for minimum entry height due to slope|3
+Structure 2: Quantity|3
+Structure 2: Fabric Color|3
+Structure 2: Powder Coat Color|3
+Structure 2: Number of Tops|3
+Structure 2: Number of Posts|3
+Structure 2: Concrete slab amount (in.)|3
+Structure 2: RMA#|3
+Structure 3: Shade Location|3
+Structure 3: Style|3
+Structure 3: Size or Use of Zone|3
+Structure 3: Maximum Height of Existing Equipment|3
+Structure 3: Additional length added for minimum entry height due to slope|3
+Structure 3: Quantity|3
+Structure 3: Fabric Color|3
+Structure 3: Powder Coat Color|3
+Structure 3: Number of Tops|3
+Structure 3: Number of Posts|3
+Structure 3: Concrete slab amount (in.)|3
+Structure 3: RMA#|3
+Structure 4: Shade Location|3
+Structure 4: Style|3
+Structure 4: Size or Use of Zone|3
+Structure 4: Maximum Height of Existing Equipment|3
+Structure 4: Additional length added for minimum entry height due to slope|3
+Structure 4: Quantity|3
+Structure 4: Fabric Color|3
+Structure 4: Powder Coat Color|3
+Structure 4: Number of Tops|3
+Structure 4: Number of Posts|3
+Structure 4: Concrete slab amount (in.)|3
+Structure 4: RMA#|3
+Structure 5: Shade Location|3
+Structure 5: Style|3
+Structure 5: Size or Use of Zone|3
+Structure 5: Maximum Height of Existing Equipment|3
+Structure 5: Additional length added for minimum entry height due to slope|3
+Structure 5: Quantity|3
+Structure 5: Fabric Color|3
+Structure 5: Powder Coat Color|3
+Structure 5: Number of Tops|3
+Structure 5: Number of Posts|3
+Structure 5: Concrete slab amount (in.)|3
+Structure 5: RMA#|3
 Additional Notes|3

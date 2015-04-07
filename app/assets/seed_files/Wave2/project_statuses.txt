@@ -15,3 +15,4 @@ Order Shipped|2
 Install|2
 Complete|3
 Archived|3
+Cancelled|3
