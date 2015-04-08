@@ -8,5 +8,8 @@ class ProjectType < ActiveRecord::Base
   accepts_nested_attributes_for :questions, allow_destroy: true
   accepts_nested_attributes_for :categories, allow_destroy: true
 
+
+  validates_presence_of :project_type_name
+  validates_length_of :project_type_name, maximum: 20
 end
 
