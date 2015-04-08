@@ -2,7 +2,7 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
-
+<%= link_to 'Manage Project', project_path(@project_site_information.project), class: 'btn-primary btn-sm'  %>
 <dl class="dl-horizontal">
   <dt><strong>Area Length:</strong></dt>
   <dd><%= @project_site_information.area_length %></dd>
