@@ -10,4 +10,6 @@ class ProjectTypeInformation < ActiveRecord::Base
   has_many :category_options, through: :category_option_selections
   accepts_nested_attributes_for :category_option_selections
 
+  validates_uniqueness_of :proposal_number, :revision_number, :project_id
+  validates_presence_of :project_id, :project_type_id
 end
