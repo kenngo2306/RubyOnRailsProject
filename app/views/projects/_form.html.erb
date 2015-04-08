@@ -31,67 +31,68 @@
 
 <%=field_set_tag nil, class: 'fieldset_General_Project_Info' do %>
 
-<div class="wrapper">
-  <div class="column1">
-
-  <div class="control-group">
+  <div class="control-group col-md-6">
     <%= f.label :project_name,'Project Name', :class => 'control-label' %>
-    <div class="controls projectName">
+    <div class="controls projectName ">
       <%= f.text_field :project_name, :class => 'form-control' %>
     </div>
     <%= error_span(@project[:project_name]) %>
   </div>
-  <div class="control-group">
+
+                  <div class="control-group col-md-6">
+                    <%= f.label :project_status_id, 'Project Status', :class => 'control-label' %>
+                    <div class="controls funabounds">
+                      <%= f.collection_select :project_status_id,ProjectStatus.all, :id, :project_status_name,{}, :class => 'form-control' %>
+                    </div>
+                    <%= error_span(@project[:project_status_id]) %>
+                  </div>
+
+  <div class="control-group col-md-6">
     <%= f.label :project_budget, 'Project Budget', :class => 'control-label' %>
-    <div class="controls projectBudget">
+    <div class="controls projectBudget ">
       <%= f.text_field :project_budget, :class => 'form-control' %>
     </div>
     <%= error_span(@project[:project_budget]) %>
   </div>
-  <div class="control-group">
+
+                  <div class="control-group col-md-6">
+                    <%= f.label :project_setting_id,'Project Setting',:class => 'control-label' %>
+                    <div class="controls funabounds">
+                      <%= f.collection_select :project_setting_id, ProjectSetting.all, :id, :project_setting_name,{}, :class => 'form-control ' %>
+                    </div>
+                    <%= error_span(@project[:project_setting_id]) %>
+                  </div>
+
+
+  <div class="control-group col-md-6">
     <%= f.label :start_date,'Start Date', :class => 'control-label' %>
     <div class="controls startDate">
       <%= f.text_field :start_date, :class => 'form-control datepicker' %>
     </div>
     <%= error_span(@project[:start_date]) %>
   </div>
-  <div class="control-group">
+
+                  <div class="control-group col-md-6">
+                    <%= f.label :sales_person_id, 'Sales Person', :class => 'control-label' %>
+                    <div class="controls funabounds">
+                      <%= f.collection_select :sales_person_id, SalesPerson.all, :id, :sales_person_fullname, {}, :class => 'form-control' %>
+                    </div>
+                    <%= error_span(@project[:sales_person_id]) %>
+                  </div>
+
+
+  <div class=" control-group lastRow">
     <%= f.label :proposal_deadline, 'Proposal Deadline', :class => 'control-label' %>
     <div class="controls proposalDeadline">
       <%= f.text_field :proposal_deadline, :class => 'form-control datepicker' %>
     </div>
     <%= error_span(@project[:proposal_deadline]) %>
-  </div>
-</div>
 
-  <div class="column2">
-  <div class="control-group">
-    <%= f.label :project_status_id, 'Project Status', :class => 'control-label' %>
-    <div class="controls funabounds">
-      <%= f.collection_select :project_status_id,ProjectStatus.all, :id, :project_status_name,{}, :class => 'form-control' %>
-    </div>
-    <%= error_span(@project[:project_status_id]) %>
   </div>
 
-  <div class="control-group">
-    <%= f.label :project_setting_id,'Project Setting',:class => 'control-label' %>
-    <div class="controls funabounds">
-      <%= f.collection_select :project_setting_id, ProjectSetting.all, :id, :project_setting_name,{}, :class => 'form-control ' %>
-    </div>
-    <%= error_span(@project[:project_setting_id]) %>
-  </div>
-
-  <div class="control-group">
-    <%= f.label :sales_person_id, 'Sales Person', :class => 'control-label' %>
-    <div class="controls funabounds">
-      <%= f.collection_select :sales_person_id, SalesPerson.all, :id, :sales_person_fullname, {}, :class => 'form-control' %>
-    </div>
-    <%= error_span(@project[:sales_person_id]) %>
-  </div>
-    <br/>
-  </div>
-</div>
-                  <input type="button" name="next" class="next btn btn-default" value="Next" />
+                  <input type="button" name="next" class="next btn btn-default" value="Next"/>
+                  <br>
+                  <br>
                   <%= link_to t('.cancel', :default => t("helpers.links.cancel")), projects_path, :class => 'btn btn-default' %>
 
 <% end %>
@@ -99,53 +100,52 @@
 
 <%=field_set_tag nil, class: 'fieldset_Project_Info' do %>
 
-<div class="wrapper">
-  <div class="column1">
 
 
-  <div class="control-group">
+  <div class="control-group col-md-6">
     <%= f.label :client_goal, 'Client Goal', :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :client_goal, :size => '10x7', :class => 'form-control' %>
+      <%= f.text_area :client_goal, :size => '10x6', :class => 'form-control' %>
     </div>
     <%= error_span(@project[:client_goal]) %>
   </div>
 
-  <div class="control-group">
+                  <div class="control-group col-md-6">
+                    <%= f.label :mobilization_quantity, 'Mobilization Quantity', :class => 'control-label' %>
+                    <div class="controls mobilizationQuantity">
+                      <%= f.text_field :mobilization_quantity, :class => 'form-control' %>
+                    </div>
+                    <%= error_span(@project[:mobilization_quantity]) %>
+                  </div>
+
+<br>
+                  <br>
+  <div class="control-group col-md-6">
     <%= f.label :deal_type_id, 'Deal Type', :class => 'control-label' %>
     <div class="controls funabounds">
       <%= f.collection_select :deal_type_id, DealType.all, :id, :deal_type_name, {}, :class => 'form-control' %>
     </div>
     <%= error_span(@project[:deal_type_id]) %>
   </div>
-  <div class="control-group">
+
+
+                  <div class="control-group col-md-6">
+                    <%= f.label :time_frame_description, 'Time Frame Description', :class => 'control-label' %>
+                    <div class="controls">
+                      <%= f.text_area :time_frame_description, size:'10x6', :class => 'form-control' %>
+                    </div>
+                    <%= error_span(@project[:time_frame_description]) %>
+                  </div>
+
+  <div class="control-group col-md-6">
     <%= f.label :deal_type_description, 'Deal Type Description', :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_area :deal_type_description, size: '10x7', :class => 'form-control' %>
+      <%= f.text_area :deal_type_description, size: '10x6', :class => 'form-control' %>
     </div>
     <%= error_span(@project[:deal_type_description]) %>
   </div>
 
-  </div>
-  <div class="column2">
-
-    <div class="control-group">
-      <%= f.label :mobilization_quantity, 'Mobilization Quantity', :class => 'control-label' %>
-      <div class="controls mobilizationQuantity">
-        <%= f.text_field :mobilization_quantity, :class => 'form-control' %>
-      </div>
-      <%= error_span(@project[:mobilization_quantity]) %>
-    </div>
-
-    <div class="control-group">
-      <%= f.label :time_frame_description, 'Time Frame Description', :class => 'control-label' %>
-      <div class="controls">
-        <%= f.text_area :time_frame_description, size:'10x7', :class => 'form-control' %>
-      </div>
-      <%= error_span(@project[:time_frame_description]) %>
-    </div>
-
-  <div class="control-group">
+  <div class="control-group col-md-6">
     <%= f.label :procurement_tool_id, 'Procurement Tool', :class => 'control-label' %>
     <div class="controls funabounds">
       <%= f.collection_select :procurement_tool_id, ProcurementTool.all, :id, :procurement_tool_name, {}, :class => 'form-control' %>
@@ -154,7 +154,7 @@
   </div>
 
 
-  <div class="control-group">
+  <div class="control-group col-md-6">
     <%= f.label :irrigation_responsibility_id, 'Irrigation Responsibility', :class => 'control-label' %>
     <div class="controls funabounds">
       <%= f.collection_select :irrigation_responsibility_id, IrrigationResponsibility.all, :id, :irrigation_responsibility_name, {}, :class => 'form-control' %>
@@ -163,12 +163,13 @@
   </div>
 <br>
 
-</div>
-</div>
-                  <br/>
-                  <br/>
+
+                  <br>
+                  <br>
                   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
                   <input type="button" name="next" class="next btn btn-default" value="Next" />
+                  <br>
+                  <br>
                   <%= link_to t('.cancel', :default => t("helpers.links.cancel")), projects_path, :class => 'btn btn-default' %>
 
 <% end %>
@@ -176,8 +177,6 @@
 
 <%=field_set_tag nil, class: 'fieldset_Additional_Project_Info' do %>
 
-<div class="wrapper">
-    <div class="column1">
 
   <div class="control-group">
     <%= f.label :restricted_work_hours,'Restricted Work Hours', :class => 'control-label' %>
@@ -211,8 +210,7 @@
     <%= error_span(@project[:permit_special_inspection_in_possession]) %>
   </div>
 
-    </div>
-    <div class="column2">
+
 
   <div class="control-group">
     <span class="controls">
@@ -229,22 +227,15 @@
     <%= f.label :permit_fees_required, 'Permit Fees Required', :class => 'control-label' %>
     <%= error_span(@project[:permit_fees_required]) %>
   </div>
-
-  <div class="field">
-    <% RequestedSalesDocument.all.each do |document| %>
-        <%= check_box_tag "project[requested_sales_document_ids][]", document.id, @project.requested_sales_document_ids.include?(document.id) %>
-        <%= document.requested_sales_document_name %> <br/>
-    <% end %>
-  </div>
 <br>
 
-  </div>
-</div>
 
                   <br/>
-                  <br/>
+
                   <input type="button" name="previous" class="previous btn btn-default" value="Previous" />
                   <%= f.submit nil, :class => 'btn btn-primary' %>
+        <br/>
+        <br>
                   <%= link_to t('.cancel', :default => t("helpers.links.cancel")), projects_path, :class => 'btn btn-default' %>
 <%end %>
 
