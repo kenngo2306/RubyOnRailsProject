@@ -29,8 +29,18 @@
                 <td style = "background-color:#5cb85c"><%= project.id %></td>
             <% end %>
         <td><%= project.project_name %></td>
-        <td><%= project.start_date.to_formatted_s(:long_ordinal)%></td>
-        <td><%= project.proposal_deadline.to_formatted_s(:long_ordinal)%></td>
+        <% if project.start_date.nil? %>
+            <td></td>
+        <% else %>
+            <td><%= project.start_date.to_formatted_s(:long_ordinal)%></td>
+        <% end %>
+
+        <% if project.proposal_deadline.nil? %>
+                <td></td>
+        <% else %>
+            <td><%= project.proposal_deadline.to_formatted_s(:long_ordinal)%></td>
+        <% end %>
+
         <td><%= project.sales_person.sales_person_fullname %></td>
         <td>
         <%= form_for(project) do |f| %>

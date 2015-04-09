@@ -19,11 +19,20 @@
     <dd><%= @project.project_budget %></dd>
 
     <dt><strong>Start Date:</strong></dt>
-    <dd><%= @project.start_date.to_formatted_s(:long_ordinal)%></dd>
+        <% if @project.start_date.nil? %>
+            <dd></dd>
+        <% else %>
+            <dd><%= @project.start_date.to_formatted_s(:long_ordinal)%></dd>
+        <% end %>
+
 
     <dt><strong>Proposal Deadline:</strong></dt>
-    <dd><%= @project.proposal_deadline.to_formatted_s(:long_ordinal)%></dd>
 
+        <% if @project.proposal_deadline.nil? %>
+            <dd></dd>
+        <% else %>
+            <dd><%= @project.proposal_deadline.to_formatted_s(:long_ordinal)%></dd>
+        <% end %>
     <dt><strong>Project Status:</strong></dt>
     <dd><%= @project.project_status.project_status_name %></dd>
 
