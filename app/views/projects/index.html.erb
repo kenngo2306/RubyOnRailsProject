@@ -21,7 +21,13 @@
     <% @projects.each do |project| %>
       <tr>
         <% if current_user.admin? %>
-        <td><%= link_to project.id, project_path(project) %></td>
+            <% if project.project_status.status_category_id == 1 %>
+                <td style = "background-color:cornflowerblue"><%= project.id %></td>
+            <% elsif project.project_status.status_category_id == 2 %>
+                <td style = "background-color:darkorange"><%= project.id %></td>
+            <% elsif project.project_status.status_category_id == 3 %>
+                <td style = "background-color:#5cb85c"><%= project.id %></td>
+            <% end %>
         <td><%= project.project_name %></td>
         <td><%= project.start_date.to_formatted_s(:long_ordinal)%></td>
         <td><%= project.proposal_deadline.to_formatted_s(:long_ordinal)%></td>
