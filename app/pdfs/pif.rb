@@ -9,9 +9,9 @@ class Pif < Prawn::Document
     generate_funabounds_logo
     generate_project_info
     generate_general_project_info
+    project_contact_rows
     generate_project_sites
     generate_project_type_informations
-
     # test_things
   end
 
@@ -30,19 +30,40 @@ class Pif < Prawn::Document
 
   #general project info table
   def generate_general_project_info
-    table [["Project Name"]] +
-          [[@project.project_name]]
+    move_down 20
+    table [["Project Name"]] +[[@project.project_name]] do
+      rows(0).font_style = :bold
+      self.row_colors = ["8bb7ed","FFFFFF"]
+    end
+  end
+
+  def project_contact_rows
+    move_down 20
+    contact =[["Contact Type","Contact Name"," Contact Address"]] +
+     @project.project_contacts.map do |pc|
+       [pc.contact.contact_type.contact_type_name, pc.contact.contact_first_name + pc.contact.contact_last_name, "#{pc.contact.contact_address}  #{pc.contact.contact_city}, #{pc.contact.state.state_name}  #{pc.contact.contact_zip}"]
+     end
+   table contact do
+     rows(0).font_style = :bold
+     column(1..2).width = 180
+     column(3).width = 100
+     rows(0).row_colors = ["8bb7ed","FFFFFF"]
+   end
   end
 
   #project sites table
   def generate_project_sites
     move_down 20
-    table project_site_rows
+    table project_site_rows do
+      rows(0).font_style = :bold
+      self.row_colors = ["ffa100","FFFFFF"]
+    end
   end
+
   def project_site_rows
     [["Site Name", "Site Access","Address"]] +
     @project.project_site_informations.map do |psi|
-      [psi.project_site.site_name,psi.project_site.site_access,psi.project_site.site_address]
+      [psi.project_site.site_name, psi.project_site.site_access,"#{psi.project_site.site_address}  #{psi.project_site.site_city}, #{psi.project_site.state.state_name}  #{psi.project_site.site_zip}"]
     end
   end
 
