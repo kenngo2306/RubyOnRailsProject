@@ -48,16 +48,16 @@
         </td>
         <td>
           <div>
-          <%= f.submit 'Update', :class => 'btn btn-default btn-sm' %>
+          <%= f.submit 'Update', :class => 'btn-default ' %>
           <% end %>
-          <button type="button" id="pick" class="btn btn-default btn-sm">Documents</button></div>
+          <button type="button" id="pick" class=" btn-default">Documents</button></div>
           <div>
             <br>
           <%= link_to t('.show', :default => t("helpers.links.show")),
-                      project_path(project), :class => ' btn btn-default btn-sm' %>
+                      project_path(project), :class => ' btn-default btn-sm' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_project_path(project), :class => 'btn btn-default btn-sm' %>
-         <%= link_to ('PIF'), project_path(project, format: "pdf"), :class => 'btn btn-default btn-sm', :target => "_blank"  %>
+                      edit_project_path(project), :class => ' btn-default btn-sm' %>
+         <%= link_to ('PIF'), project_path(project, format: "pdf"), :class => ' btn-default btn-sm', :target => "_blank"  %>
           </div>
 
 

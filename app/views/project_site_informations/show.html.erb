@@ -3,62 +3,29 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+<%= link_to 'Manage Project', project_path(@project_site_information.project), class: 'btn btn-primary btn-sm'  %>
 
 <div class="backgroundContainer2">
 <div class="column1">
 <fieldset>
   <legend>General Information</legend>
   <br>
-  <dl class="dl-horizontal">
 
-<%= link_to 'Manage Project', project_path(@project_site_information.project), class: 'btn-primary btn-sm'  %>
 <dl class="dl-horizontal">
+  <dt><strong>Project Name</strong></dt>
+  <dd><%= @project_site_information.project.project_name %></dd>
+  <dt><strong>Project Site Name</strong></dt>
+  <dd><%= @project_site_information.project_site.site_name %></dd>
   <dt><strong>Area Length:</strong></dt>
   <dd><%= @project_site_information.area_length %></dd>
   <dt><strong>Area Width:</strong></dt>
   <dd><%= @project_site_information.area_width %></dd>
   <dt><strong>Area Description:</strong></dt>
   <dd><%= @project_site_information.area_description %></dd>
-  <dt><strong>Geotech Report in Possession:</strong></dt>
-  <dd><%= @project_site_information.geotech_report_in_possession %></dd>
-  <dt><strong>Bobcat Accessible:</strong></dt>
-  <dd><%= @project_site_information.bobcat_accessible %></dd>
-  <dt><strong>Construction Fence Required:</strong></dt>
-  <dd><%= @project_site_information.construction_fence_required %></dd>
-  <dt><strong>Client Fence Dismantle Reinstall Required:</strong></dt>
-  <dd><%= @project_site_information.client_fence_dismantle_reinstall_required %></dd>
-  <dt><strong>Rock Excavation Required:</strong></dt>
-  <dd><%= @project_site_information.rock_excavation_required %></dd>
-  <dt><strong>Hand Dig Required:</strong></dt>
-  <dd><%= @project_site_information.hand_dig_required %></dd>
-  <dt><strong>Dirt Haul Off Required:</strong></dt>
-  <dd><%= @project_site_information.dirt_haul_off_required %></dd>
-  <dt><strong>Tree Vegetation Removal Required:</strong></dt>
-  <dd><%= @project_site_information.tree_vegetation_removal_required %></dd>
-  <dt><strong>Area is Sloped:</strong></dt>
-  <dd><%= @project_site_information.area_is_sloped %></dd>
-  <dt><strong>Site Survey Required:</strong></dt>
-  <dd><%= @project_site_information.site_survey_required %></dd>
-  <dt><strong>Surface Protection Required:</strong></dt>
-  <dd><%= @project_site_information.surface_protection_required %></dd>
-  <dt><strong>Under Ground Obstacles:</strong></dt>
-  <dd><%= @project_site_information.under_ground_obstacles_yn %></dd>
-  <dt><strong>Structural Removal Required:</strong></dt>
-  <dd><%= @project_site_information.structural_removal_required %></dd>
-  <dt><strong>PVT Locator Required:</strong></dt>
-  <dd><%= @project_site_information.pvt_locator_required %></dd>
 
 
-  <dt><strong>Project Name</strong></dt>
-  <dd><%= @project_site_information.project.project_name %></dd>
-  <dt><strong>Project Site Name</strong></dt>
-  <dd><%= @project_site_information.project_site.site_name %></dd>
-    <dt><strong>Area Length:</strong></dt>
-    <dd><%= @project_site_information.area_length %></dd>
-    <dt><strong>Area Width:</strong></dt>
-    <dd><%= @project_site_information.area_width %></dd>
-    <dt><strong>Area Description:</strong></dt>
-    <dd><%= @project_site_information.area_description %></dd>
+
+
       </dl>
 </fieldset>
 </div>
