@@ -229,10 +229,17 @@
   </div>
   
   
-  <div class="field">
+  <div class="control-group">
     <% RequestedSalesDocument.all.each do |document| %>
-        <%= check_box_tag "project[requested_sales_document_ids][]", document.id, @project.requested_sales_document_ids.include?(document.id) %>
-        <%= document.requested_sales_document_name %> <br/>
+
+
+        <%= check_box_tag "project[requested_sales_document_ids][]", document.id, @project.requested_sales_document_ids.include?(document.id), class: 'controls'%>
+
+        <span class ="control-label">
+        <%= document.requested_sales_document_name %>
+        </span>
+
+        <br/>
     <% end %>
   </div>
 <br>
