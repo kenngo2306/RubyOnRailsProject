@@ -72,12 +72,11 @@
 
 
 <div class="showPageButton">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              project_site_informations_path, :class => 'btn btn-default'  %>
+
   <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_project_site_information_path(@project_site_information), :class => 'btn btn-default' %>
 
-  <button type="button" id="pick" class="btn btn-primary btn-sm">Documents</button>
+  <button type="button" id="pick" class="btn-primary btn-sm">Documents</button>
 </div>
 
 <table class="DataTables" id="project_type_informations_table">

@@ -1,14 +1,11 @@
 <tr>
   <td><%= pc.id %></td>
-  <td><%= pc.contact.contact_first_name %></td>
-  <td><%= pc.contact.contact_last_name %></td>
+  <td><%= pc.contact.full_contact_name %></td>
   <td><%= pc.contact.contact_email %></td>
   <td><%= pc.contact.contact_cell %></td>
   <td><%= pc.contact.contact_work %></td>
-  <td><%= pc.contact.contact_address %></td>
-  <td><%= pc.contact.contact_city %></td>
-  <td><%= pc.contact.contact_zip %></td>
-  <td><%= pc.contact.state.state_name %></td>
+  <td><%= pc.contact.full_address %></td>
+
   <td><%= pc.contact.client.client_name %></td>
   <td><%= pc.contact.contact_type.contact_type_name %></td>
   <td>

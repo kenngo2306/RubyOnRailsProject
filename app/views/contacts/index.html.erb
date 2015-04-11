@@ -11,9 +11,6 @@
       <th>Cell</th>
       <th>Work</th>
       <th>Address</th>
-      <th>City</th>
-      <th>Zip</th>
-      <th>State</th>
       <th>Client Name</th>
       <th>Contact Type</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -27,10 +24,7 @@
         <td><%= contact.contact_email %></td>
         <td><%= contact.contact_cell %></td>
         <td><%= contact.contact_work %></td>
-        <td><%= contact.contact_address %></td>
-        <td><%= contact.contact_city %></td>
-        <td><%= contact.contact_zip %></td>
-        <td><%= contact.state_id %></td>
+        <td><%= contact.full_address %></td>
         <td><%= contact.client.client_name %></td>
         <td><%= contact.contact_type.contact_type_name %></td>
         <td>

@@ -3,4 +3,7 @@ class StatusCategory < ActiveRecord::Base
 
   validates_presence_of :status_category_name
   validates_length_of :status_category_name, :maximum => 50
+
+
+
 end
