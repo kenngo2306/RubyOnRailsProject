@@ -5,8 +5,10 @@ class DashboardController < ApplicationController
 
     @project_statuses = ProjectStatus.all
 
-
+    @projects = Project.all
     @status_categories = StatusCategory.all
+
+  
   end
 
 end

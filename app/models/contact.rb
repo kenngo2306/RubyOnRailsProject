@@ -18,4 +18,8 @@ class Contact < ActiveRecord::Base
   def full_contact_name
     "#{contact_first_name} #{contact_last_name}"
   end
+
+  def full_address
+    "#{contact_address}  #{contact_city}, #{state.state_name} #{contact_zip} "
+  end
 end
