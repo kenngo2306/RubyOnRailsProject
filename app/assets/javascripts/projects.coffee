@@ -12,7 +12,7 @@ ready = ->
   $('.datepicker').datepicker(dateFormat: 'yy-mm-dd')
   $('#create_site_button').click ->
     alert 'delete clicked'
-    refreshSiteTable()
+
   $('.DataTables').DataTable()
 
   return

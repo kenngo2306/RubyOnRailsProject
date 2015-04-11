@@ -17,6 +17,15 @@ class ProjectTypeInformationsController < ApplicationController
     @project_type_information = ProjectTypeInformation.new
   end
 
+  def deleteOnProjectSiteInfo
+    @project_site_information_id = @project_type_information.project_site_information.id
+    @project_type_information.destroy
+    respond_to do |format|
+      format.html { redirect_to project_type_informations_url, notice: 'Project type information was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
+
   # GET /project_type_informations/1/edit
   def edit
   end
@@ -65,9 +74,11 @@ class ProjectTypeInformationsController < ApplicationController
   # DELETE /project_type_informations/1
   # DELETE /project_type_informations/1.json
   def destroy
+    @project_site_information_id = @project_type_information.project_site_information.id
     @project_type_information.destroy
     respond_to do |format|
-      format.html { redirect_to project_type_informations_url, notice: 'Project type information was successfully destroyed.' }
+      # format.html { redirect_to project_type_informations_url, notice: 'Project type information was successfully destroyed.' }
+      format.html { redirect_to project_site_information_path(ProjectSiteInformation.find(@project_site_information_id)), notice: 'Design information was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

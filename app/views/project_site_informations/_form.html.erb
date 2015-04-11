@@ -207,10 +207,13 @@
     <%= error_span(@project_site_information[:pvt_locator_required]) %>
   </div>
 
-  <div class ="fields">
+  <div class ="control-group">
+    <b>Utility</b><br/>
     <% Utility.all.each do |utility| %>
         <%= check_box_tag "project_site_information[utility_ids][]", utility.id, @project_site_information.utility_ids.include?(utility.id) %>
-        <%= utility.utility_name %> <br/>
+        <span class ="control-label">
+            <%= utility.utility_name %> <br/>
+        </span>
     <% end %>
   </div>
 
@@ -314,8 +317,7 @@
 
 
               <%= f.submit nil, :class => 'btn btn-primary' %>
-  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-            project_site_informations_path, :class => 'btn btn-default' %>
+  <%= link_to 'cancel', project_site_information_path(@project_site_information) , :class => 'btn btn-default' %>
 
 <% end %>
         </div>

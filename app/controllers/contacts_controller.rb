@@ -30,6 +30,7 @@ class ContactsController < ApplicationController
       if @contact.save
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
         format.json { render :show, status: :created, location: @contact }
+        format.js {render :file => "/clients/show.js.erb"}
       else
         format.html { render :new }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
@@ -42,7 +43,7 @@ class ContactsController < ApplicationController
   def update
     respond_to do |format|
       if @contact.update(contact_params)
-        format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
+        format.html { redirect_to client_path(@contact.client), notice: 'Contact was successfully updated.' }
         format.json { render :show, status: :ok, location: @contact }
       else
         format.html { render :edit }
@@ -69,6 +70,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:contact_first_name, :contact_last_name, :contact_email, :contact_cell, :contact_work, :client_id, :contact_type_id, :state_id)
+      params.require(:contact).permit(:contact_first_name, :contact_last_name, :contact_email, :contact_cell, :contact_work, :client_id, :contact_type_id, :state_id, :contact_address, :contact_city, :contact_zip)
     end
 end
