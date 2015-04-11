@@ -1,0 +1,5 @@
+var t = $('#contacts_table').DataTable();
+t.row.add(['<%= @contact.id %>','<%= @contact.full_contact_name %>','<%= @contact.contact_email %>','<%= @contact.contact_cell %>','<%= @contact.contact_work %>','<%= @contact.contact_address %>','<%= @contact.contact_city%>','<%= @contact.state.state_name%>','<%= @contact.contact_zip%>','<%= link_to 'Show', contact_path(@contact),:class => "btn-default btn-sm"  %> <%= link_to 'Edit', edit_contact_path(@contact),:class =>"btn-default btn-sm"  %>']).draw();
+
+$('#myModal').modal('toggle');
+

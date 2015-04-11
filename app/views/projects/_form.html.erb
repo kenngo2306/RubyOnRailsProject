@@ -228,19 +228,19 @@
     <%= error_span(@project[:permit_fees_required]) %>
   </div>
   
-  
+  <br/>
   <div class="control-group">
+    <b>Requested Documents</b><br/>
+
     <% RequestedSalesDocument.all.each do |document| %>
-
-
         <%= check_box_tag "project[requested_sales_document_ids][]", document.id, @project.requested_sales_document_ids.include?(document.id), class: 'controls'%>
-
         <span class ="control-label">
-        <%= document.requested_sales_document_name %>
+            <%= document.requested_sales_document_name %>
         </span>
-
         <br/>
     <% end %>
+
+
   </div>
 <br>
 

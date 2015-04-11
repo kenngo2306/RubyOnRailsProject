@@ -3,6 +3,11 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 #jQuery time
 
+$(document).ready ->
+  $("#new_project_site").on("ajax:success", (e, data, status, xhr) ->
+
+  ).on "ajax:error", (e, xhr, status, error) ->
+    console.log(e, xhr,status, error)
 
 $(document).ready ->
   $('#next').click ->
