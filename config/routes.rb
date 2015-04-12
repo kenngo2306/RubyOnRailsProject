@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
   get 'reports/preproposal_projects'
 
+  get 'projects/inactive_projects'
+
   resources :installers
 
   devise_for :users do
