@@ -7,7 +7,7 @@ Site Amenities|1|2
 Sports Equipment|1|2
 Safety Surfacing|1|2
 Subsurface Material|1|1
-Boarders|1|1
+Borders|1|1
 Water System Type|2|1
 Water Source|2|1
 Drainage|2|1

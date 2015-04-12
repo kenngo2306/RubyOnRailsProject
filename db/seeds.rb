@@ -207,8 +207,8 @@ end
 open(Rails.root.join('app','assets','seed_files','Wave4','project_type_informations.txt')) do |project_type_informations|
   project_type_informations.read.each_line do |project_type_information|
     line = project_type_information.gsub("\r\n","")
-    proposal_number,revision_number,project_type_id,project_site_information_id = line.chomp.split("|")
-    ProjectTypeInformation.create(:proposal_number => proposal_number, :revision_number => revision_number, :project_type_id => project_type_id, :project_site_information_id => project_site_information_id)
+    proposal_number,revision_number,project_type_id,project_site_information_id,wind_load,building_code = line.chomp.split("|")
+    ProjectTypeInformation.create(:proposal_number => proposal_number, :revision_number => revision_number, :project_type_id => project_type_id, :project_site_information_id => project_site_information_id,:wind_load => wind_load, :building_code => building_code)
   end
 end
 
