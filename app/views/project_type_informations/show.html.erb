@@ -2,8 +2,11 @@
 <div class="page-header">
   <h1>Design Information</h1>
 </div>
-<%= link_to 'Manage Project Site', project_site_information_path(@project_type_information.project_site_information), class: 'btn-primary btn-sm' %>
-<%= link_to 'Manage Project', project_path(@project_type_information.project_site_information.project), class: 'btn-primary btn-sm' %>
+<%= link_to 'Manage Project Site', project_site_information_path(@project_type_information.project_site_information), class: 'btn btn-primary btn-sm' %>
+<%= link_to 'Manage Project', project_path(@project_type_information.project_site_information.project), class: 'btn btn-primary btn-sm' %>
+<br>
+<br>
+
 <dl class="dl-horizontal">
   <dt><strong>Proposal Number:</strong></dt>
   <dd><%= @project_type_information.proposal_number %></dd>
@@ -12,6 +15,9 @@
 
   <dt><strong>Project Type ID:</strong></dt>
   <dd><%= @project_type_information.project_type.project_type_name %></dd>
+
+
+
 </dl>
 
 <div class ="showPageButton">

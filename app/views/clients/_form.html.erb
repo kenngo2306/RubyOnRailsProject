@@ -26,35 +26,35 @@
 
           <%= form_for @client, :html => { :class => "form-horizontal client" } do |f| %>
   <div class="control-group">
-    <%= f.label :client_name, 'Client Name', :class => 'control-label' %>
+    <%= f.label :client_name, '*Client Name', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :client_name, :class => 'form-control' %>
     </div>
     <%= error_span(@client[:client_name]) %>
   </div>
   <div class="control-group">
-    <%= f.label :billing_address, 'Billing Address', :class => 'control-label' %>
+    <%= f.label :billing_address, '*Billing Address', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :billing_address, :class => 'form-control' %>
     </div>
     <%= error_span(@client[:billing_address]) %>
   </div>
   <div class="control-group">
-    <%= f.label :billing_city, 'Billing City', :class => 'control-label' %>
+    <%= f.label :billing_city, '*Billing City', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :billing_city, :class => 'form-control' %>
     </div>
     <%= error_span(@client[:billing_city]) %>
   </div>
   <div class="control-group">
-    <%= f.label :billing_zip, 'Billing Zip', :class => 'control-label' %>
+    <%= f.label :billing_zip, '*Billing Zip', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_field :billing_zip, :class => 'form-control' %>
     </div>
     <%= error_span(@client[:billing_zip]) %>
   </div>
   <div class="control-group">
-    <%= f.label :state_id, 'State', :class => 'control-label' %>
+    <%= f.label :state_id, '*State', :class => 'control-label' %>
     <div class="controls funabounds">
       <%= f.collection_select :state_id, State.all, :id,:state_name, {}, :class => 'form-control', :selected => 44 %><br/>
     </div>

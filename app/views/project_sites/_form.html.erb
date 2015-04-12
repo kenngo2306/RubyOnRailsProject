@@ -64,7 +64,7 @@
               <div class="control-group">
                 <%= f.label :state_id, 'State', :class => 'control-label' %>
                 <div class="controls funabounds">
-                  <%= f.collection_select :state_id, State.all, :id, :state_name, {}, :class => 'form-control', :selected => 44 %>
+                  <%= f.collection_select :state_id, State.all, :id, :state_name, {}, :class => 'form-control' %>
                 </div>
                 <%= error_span(@project_site[:state_id]) %>
               </div>
@@ -82,3 +82,10 @@
     </div>
   </div>
 </div>
+
+<script>
+
+    $(document).ready(function(){
+        $('select option:contains("Texas")').prop('selected',true);
+    });
+</script>

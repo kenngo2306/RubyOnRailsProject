@@ -36,17 +36,17 @@
 
                   <h3 class="fs-subtitle"></h3>
                   <div class="control-group">
-                    <%= f.label :contact_type_id, 'Contact Type', :class => 'control-label' %>
-                    <div class="controls contact-type-dropdown">
-                      <%= f.collection_select :contact_type_id, ContactType.all, :id, :contact_type_name, :class => 'form-control' %>
+                    <%= f.label :contact_type_id, '*Contact Type', :class => 'control-label' %>
+                    <div class="controls funabounds">
+                      <%= f.collection_select :contact_type_id, ContactType.all, :id, :contact_type_name, {}, :class => 'form-control' %>
                     </div>
                     <%= error_span(@contact[:contact_type_id]) %>
                   </div>
 <!----Add blank data for client name or add jquery to hide dropdown below---->
                   <div class="control-group">
                     <%= f.label :client_id, 'Client Name', :class => 'control-label' %>
-                    <div class="controls client-dropdown">
-                      <%= f.collection_select :client_id, Client.all, :id, :client_name, input_html: { class: 'chosen-select' } %>
+                    <div class="controls funabounds">
+                      <%= f.collection_select :client_id, Client.all, :id, :client_name, {}, class: 'form-control' %>
                     </div>
                     <%= error_span(@contact[:client_id]) %>
                   </div>
@@ -60,35 +60,35 @@
 
                   <h3 class="fs-subtitle"> Contact Information </h3>
                   <div class="control-group">
-                    <%= f.label :contact_first_name, 'First Name', :class => 'control-label' %>
+                    <%= f.label :contact_first_name, '*First Name', :class => 'control-label' %>
                     <div class="controls">
                       <%= f.text_field :contact_first_name, :class => 'form-control' %>
                     </div>
                     <%= error_span(@contact[:contact_first_name]) %>
                   </div>
                   <div class="control-group">
-                    <%= f.label :contact_last_name, 'Last Name', :class => 'control-label' %>
+                    <%= f.label :contact_last_name, '*Last Name', :class => 'control-label' %>
                     <div class="controls">
                       <%= f.text_field :contact_last_name, :class => 'form-control' %>
                     </div>
                     <%= error_span(@contact[:contact_last_name]) %>
                   </div>
                   <div class="control-group">
-                    <%= f.label :contact_email, 'Email', :class => 'control-label' %>
+                    <%= f.label :contact_email, '*Email', :class => 'control-label' %>
                     <div class="controls">
                       <%= f.text_field :contact_email, :class => 'form-control' %>
                     </div>
                     <%= error_span(@contact[:contact_email]) %>
                   </div>
                   <div class="control-group">
-                    <%= f.label :contact_cell, 'Cell', :class => 'control-label' %>
+                    <%= f.label :contact_cell, 'Cell Number', :class => 'control-label' %>
                     <div class="controls">
                       <%= f.text_field :contact_cell, :class => 'form-control' %>
                     </div>
                     <%= error_span(@contact[:contact_cell]) %>
                   </div>
                   <div class="control-group">
-                    <%= f.label :contact_work, 'Work', :class => 'control-label' %>
+                    <%= f.label :contact_work, '*Work Number', :class => 'control-label' %>
                     <div class="controls">
                       <%= f.text_field :contact_work, :class => 'form-control' %>
                     </div>
@@ -106,29 +106,29 @@
 
                   <h3 class="fs-subtitle"> Contact Location</h3>
                   <div class="control-group">
-                    <%= f.label :contact_address, 'Contact Address', :class => 'control-label' %>
+                    <%= f.label :contact_address, '*Contact Address', :class => 'control-label' %>
                     <div class="controls">
                       <%= f.text_field :contact_address, :class => 'form-control' %>
                     </div>
                     <%= error_span(@contact[:contact_work]) %>
                   </div>
                   <div class="control-group">
-                    <%= f.label :contact_city, 'City', :class => 'control-label' %>
+                    <%= f.label :contact_city, '*City', :class => 'control-label' %>
                     <div class="controls">
                       <%= f.text_field :contact_city, :class => 'form-control' %>
                     </div>
                     <%= error_span(@contact[:contact_work]) %>
                   </div>
                   <div class="control-group">
-                    <%= f.label :state_id, 'State', :class => 'control-label' %>
-                    <div class="controls state-dropdown">
-                      <%= f.collection_select :state_id, State.all, :id, :state_name, :class => 'form-control' %>
+                    <%= f.label :state_id, '*State', :class => 'control-label' %>
+                    <div class="controls funabounds">
+                      <%= f.collection_select :state_id, State.all, :id, :state_name, {}, :class => 'form-control get_state'  %>
                     </div>
                     <%= error_span(@contact[:contact_work]) %>
                   </div>
 
                   <div class="control-group">
-                    <%= f.label :contact_zip, 'Zip', :class => 'control-label' %>
+                    <%= f.label :contact_zip, '*Zip', :class => 'control-label' %>
                     <div class="controls">
                       <%= f.text_field :contact_zip, :class => 'form-control' %>
                     </div>
@@ -166,6 +166,11 @@
     var current_fs, next_fs, previous_fs; //fieldsets
     var left, opacity, scale; //fieldset properties which we will animate
     var animating; //flag to prevent quick multi-click glitches
+
+
+    $(document).ready(function(){
+        $('select option:contains("Texas")').prop('selected',true);
+    });
 
     $(".next").click(function(){
         if(animating) return false;

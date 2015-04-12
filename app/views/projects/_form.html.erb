@@ -32,7 +32,7 @@
 <%=field_set_tag nil, class: 'fieldset_General_Project_Info' do %>
 
   <div class="control-group col-md-6">
-    <%= f.label :project_name,'Project Name', :class => 'control-label' %>
+    <%= f.label :project_name,'*Project Name', :class => 'control-label' %>
     <div class="controls projectName ">
       <%= f.text_field :project_name, :class => 'form-control' %>
     </div>
@@ -40,7 +40,7 @@
   </div>
 
                   <div class="control-group col-md-6">
-                    <%= f.label :project_status_id, 'Project Status', :class => 'control-label' %>
+                    <%= f.label :project_status_id, '*Project Status', :class => 'control-label' %>
                     <div class="controls funabounds">
                       <%= f.collection_select :project_status_id,ProjectStatus.all, :id, :project_status_name,{}, :class => 'form-control' %>
                     </div>
@@ -56,7 +56,7 @@
   </div>
 
                   <div class="control-group col-md-6">
-                    <%= f.label :project_setting_id,'Project Setting',:class => 'control-label' %>
+                    <%= f.label :project_setting_id,'*Project Setting',:class => 'control-label' %>
                     <div class="controls funabounds">
                       <%= f.collection_select :project_setting_id, ProjectSetting.all, :id, :project_setting_name,{}, :class => 'form-control ' %>
                     </div>
@@ -73,7 +73,7 @@
   </div>
 
                   <div class="control-group col-md-6">
-                    <%= f.label :sales_person_id, 'Sales Person', :class => 'control-label' %>
+                    <%= f.label :sales_person_id, '*Sales Person', :class => 'control-label' %>
                     <div class="controls funabounds">
                       <%= f.collection_select :sales_person_id, SalesPerson.all, :id, :sales_person_fullname, {}, :class => 'form-control' %>
                     </div>
@@ -121,7 +121,7 @@
 <br>
                   <br>
   <div class="control-group col-md-6">
-    <%= f.label :deal_type_id, 'Deal Type', :class => 'control-label' %>
+    <%= f.label :deal_type_id, '*Deal Type', :class => 'control-label' %>
     <div class="controls funabounds">
       <%= f.collection_select :deal_type_id, DealType.all, :id, :deal_type_name, {}, :class => 'form-control' %>
     </div>
@@ -146,7 +146,7 @@
   </div>
 
   <div class="control-group col-md-6">
-    <%= f.label :procurement_tool_id, 'Procurement Tool', :class => 'control-label' %>
+    <%= f.label :procurement_tool_id, '*Procurement Tool', :class => 'control-label' %>
     <div class="controls funabounds">
       <%= f.collection_select :procurement_tool_id, ProcurementTool.all, :id, :procurement_tool_name, {}, :class => 'form-control' %>
     </div>
@@ -155,7 +155,7 @@
 
 
   <div class="control-group col-md-6">
-    <%= f.label :irrigation_responsibility_id, 'Irrigation Responsibility', :class => 'control-label' %>
+    <%= f.label :irrigation_responsibility_id, '*Irrigation Responsibility', :class => 'control-label' %>
     <div class="controls funabounds">
       <%= f.collection_select :irrigation_responsibility_id, IrrigationResponsibility.all, :id, :irrigation_responsibility_name, {}, :class => 'form-control' %>
     </div>
