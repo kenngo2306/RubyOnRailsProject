@@ -21,7 +21,7 @@ class Pif < Prawn::Document
   end
 
   def generate_project_info
-    move_up 45
+    move_up 75
     text "Project Information Form \##{@project.id}",
          size:14
     text "Generated: #{(Date.current).in_time_zone("Central Time (US & Canada)").strftime("%x")} #{Time.now.in_time_zone("Central Time (US & Canada)").strftime("%I:%M %P")}",
@@ -31,32 +31,46 @@ class Pif < Prawn::Document
   #general project info table
   def generate_general_project_info
     move_down 20
-    table [["Project Name"]] +[[@project.project_name]] do
-      rows(0).font_style = :bold
-      self.row_colors = ["8bb7ed","FFFFFF"]
+    table [["Project Summary"]] + [["Project Name","Sales Person"]] +[[@project.project_name, "#{@project.sales_person.sales_person_first_name} #{@project.sales_person.sales_person_last_name}"]] do
+      rows(0..1).font_style = :bold
+      rows(0).background_color = "a414e2"
+      rows(0).text_color = "FFFFFF"
+      rows(1).background_color = "25b2ea"
+      rows(0).width = 200
+      column(0).width = 150
+      column(1).width = 100
     end
   end
 
   def project_contact_rows
-    move_down 20
-    contact =[["Contact Type","Contact Name"," Contact Address"]] +
+    contact =[["Contact Type","Contact Name","Contact Cell", "Contact Address","Contact Email", "Contact Work"]] +
      @project.project_contacts.map do |pc|
-       [pc.contact.contact_type.contact_type_name, pc.contact.contact_first_name + pc.contact.contact_last_name, "#{pc.contact.contact_address}  #{pc.contact.contact_city}, #{pc.contact.state.state_name}  #{pc.contact.contact_zip}"]
+       [pc.contact.contact_type.contact_type_name, "#{pc.contact.contact_first_name} #{pc.contact.contact_last_name}", pc.contact.contact_cell, "#{pc.contact.contact_address}  #{pc.contact.contact_city}, #{pc.contact.state.state_name}  #{pc.contact.contact_zip}", pc.contact.contact_email, pc.contact.contact_work]
      end
-   table contact do
+  #  contact = contact + [[]] +
+  #  @project.project_contacts.map do |pc|
+  #    [pc.contact.contact_email, pc.contact.contact_work]
+  #  end
+      table contact do
      rows(0).font_style = :bold
-     column(1..2).width = 180
-     column(3).width = 100
-     rows(0).row_colors = ["8bb7ed","FFFFFF"]
-   end
+     rows(2).font_style = :bold
+     columns(0).width = 60
+     columns(1).width = 140
+     columns(2).width = 85
+     columns(3).width = 150
+     rows(0).background_color = "efb34c"
+     rows(2).background_color = "efb34c"
+      end
   end
 
   #project sites table
   def generate_project_sites
-    move_down 20
     table project_site_rows do
       rows(0).font_style = :bold
-      self.row_colors = ["ffa100","FFFFFF"]
+      column(0).width = 150
+      column(1).width = 100
+      column(2).width = 280
+      rows(0).background_color = "f76571"
     end
   end
 
@@ -72,11 +86,13 @@ class Pif < Prawn::Document
     move_down 20
     a = [["Project Site Information"]]
     @project.project_site_informations.map do |psi|
+      start_new_page
       a = a + [["Site Name","Site Access","Site Address"]] +
                 [[psi.project_site.site_name,psi.project_site.site_access,psi.project_site.site_address]]
       psi.project_type_informations.map do |pti|
-        a = a + [["Proposal Number",pti.proposal_number]] +
-                  [["Revision Number",pti.revision_number]]
+        a = a + [["Proposal Number",pti.proposal_number] +
+                  ["Revision Number",pti.revision_number]] +
+                    [["Project Design Information"]]
         pti.category_option_selections.map do |cos|
           a = a + [[cos.category_option.category.category_name,cos.category_option.category_option_name]]
         end
@@ -85,7 +101,15 @@ class Pif < Prawn::Document
         end
       end
     end
-    table a
+    table a do
+      rows(0..1).font_style = :bold
+      column(0).width = 150
+      column(1).width = 100
+      column(2).width = 280
+      rows(0).background_color = "a414e2"
+      rows(1).background_color = "f76571"
+      rows(0).text_color = "FFFFFF"
+    end
   end
 
 end
