@@ -2,7 +2,9 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
-
+<div class="backgroundContainerContact">
+  <fieldset>
+    <legend>General Information</legend>
 <dl class="dl-horizontal">
   <dt><strong>Client Name:</strong></dt>
   <dd><%= @contact.client.client_name %></dd>
@@ -31,13 +33,14 @@
 
 
 </dl>
-
+    </fieldset>
+</div>
 <div class = "showPageButton">
 <% if current_user.admin? || current_user.insidesales? || current_user.salesrep? %>
 <%= link_to t('.back', :default => t("helpers.links.back")),
-              contacts_path, :class => 'btn-default btn-sm'  %>
+              contacts_path, :class => 'btn btn-default btn-sm'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_contact_path(@contact), :class => 'btn-default btn-sm' %>
+              edit_contact_path(@contact), :class => 'btn btn-default btn-sm' %>
 
 <% elsif current_user.installer? %>
 <%= link_to t('.back', :default => t("helpers.links.back")),
