@@ -2,7 +2,10 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
+<div class ="backgroundContainerClient">
 
+  <fieldset>
+    <legend>General Information</legend>
 <dl class="dl-horizontal">
   <dt><strong>Client Name:</strong></dt>
   <dd><%= @client.client_name %></dd>
@@ -15,7 +18,8 @@
   <dt><strong>State:</strong></dt>
   <dd><%= @client.state.state_name %></dd>
 </dl>
-
+  </fieldset>
+</div>
 <div class = "showPageButton">
 <%= link_to t('.back', :default => t("helpers.links.back")),
               clients_path, :class => 'btn btn-default'  %>
