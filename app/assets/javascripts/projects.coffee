@@ -2,20 +2,20 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-refreshSiteTable = ->
-#  $.getJSON "/allSitesByProjectID/" + $("#project_id").val(), {}, {json, response} ->
-#    $siteTable = $("#sites_table")
-  $("#sites_table > tbody").html("");
-  return
+
 
 ready = ->
-  $('.datepicker').datepicker(dateFormat: 'yy-mm-dd')
-  $('#create_site_button').click ->
-    alert 'delete clicked'
+  $(".datepicker").datepicker(
+
+    dateFormat: "yy-mm-dd"
+    defaultDate: new Date()
+  ).attr "readonly", "readonly"
+
 
   $('.DataTables').DataTable()
 
   return
+
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
