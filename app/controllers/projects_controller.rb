@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   def index
 
     if params[:project_status_id].nil?
-      @projects = Project.all
+      @projects = Project.where('project_status_id not in (17,18)')
     else
       @projects = ProjectStatus.find(params[:project_status_id]).projects
     end
@@ -76,7 +76,7 @@ end
           StatusMailer.sample_email(@project).deliver
           # end
         # end
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to projects_path, notice: 'Project was successfully updated.' }
 
         format.json { render :show, status: :ok, location: @project }
       else
