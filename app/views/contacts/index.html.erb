@@ -31,12 +31,14 @@
           <% if current_user.admin? %>
           <%= link_to t('.show', :default => t("helpers.links.show")),
                       contact, :class => 'btn-default btn-sm'  %>
+              <br><br>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_contact_path(contact), :class => 'btn-default btn-sm' %>
 
           <% elsif current_user.insidesales? || current_user.salesrep? %>
               <%= link_to t('.show', :default => t("helpers.links.show")),
                           contact, :class => 'btn-default btn-sm'  %>
+              <br><br>
               <%= link_to t('.edit', :default => t("helpers.links.edit")),
                           edit_contact_path(contact), :class => 'btn-default btn-sm' %>
           <% elsif current_user.installer? %>

@@ -55,8 +55,8 @@
   </div>
   <div class="control-group">
     <%= f.label :state_id, 'State', :class => 'control-label' %>
-    <div class="controls state-controls">
-      <%= f.collection_select :state_id, State.all, :id,:state_name, :class => 'form-control', :selected => 44 %><br/>
+    <div class="controls funabounds">
+      <%= f.collection_select :state_id, State.all, :id,:state_name, {}, :class => 'form-control', :selected => 44 %><br/>
     </div>
     <%= error_span(@client[:state_id]) %>
   </div>

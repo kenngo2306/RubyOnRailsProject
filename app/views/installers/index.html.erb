@@ -25,11 +25,7 @@
           <% if current_user.admin? %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_installer_path(installer), :class => 'btn-default btn-sm' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      installer_path(installer),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn-sm btn-danger' %>
+
           <% end %>
         </td>
       </tr>
@@ -39,4 +35,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_installer_path,
-            :class => 'btn-sm btn-primary' %>
+            :class => 'btn btn-primary btn-sm' %>
