@@ -29,6 +29,8 @@ class ProjectContactsController < ApplicationController
 
     respond_to do |format|
       if @project_contact.save
+	
+
         format.html { redirect_to @project_contact, notice: 'Project contact was successfully created.' }
         format.json { render :show, status: :created, location: @project_contact }
         format.js {render :file => "/projects/show_contact.js.erb"}
@@ -42,6 +44,8 @@ class ProjectContactsController < ApplicationController
   # PATCH/PUT /project_contacts/1
   # PATCH/PUT /project_contacts/1.json
   def update
+
+
     respond_to do |format|
       if @project_contact.update(project_contact_params)
         format.html { redirect_to @project_contact, notice: 'Project contact was successfully updated.' }

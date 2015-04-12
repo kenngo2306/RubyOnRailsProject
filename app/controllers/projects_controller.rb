@@ -64,9 +64,20 @@ end
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
+
     respond_to do |format|
+
+
+
       if @project.update(project_params)
-        format.html { redirect_to projects_path, notice: 'Project was successfully updated.' }
+
+        # if @project.project_status_id_change
+          # @project.project_status_id_changed?
+          StatusMailer.sample_email(@project).deliver
+          # end
+        # end
+        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
