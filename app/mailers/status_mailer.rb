@@ -1,8 +1,8 @@
 class StatusMailer < ApplicationMailer
-default from: "status_change@fabplaygounds.com"
+default from: "funaboundshouston@gmail.com"
 
   def sample_email(project)
     @project = project
-    mail(to: 'rthonsgard@gmail.com', subject: 'Status Change:' + @project.project_name)
+    mail(to: 'funaboundshouston@gmail.com', subject: 'Status Change:' + @project.project_name)
   end
 end

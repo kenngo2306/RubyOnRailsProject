@@ -44,8 +44,8 @@ config.action_mailer.delivery_method = :smtp
 config.action_mailer.smtp_settings = {
  :address              => "smtp.gmail.com",
  :port                 => 587,
- :user_name            => "rthonsgard@gmail.com",
- :password             => "r187799982",
+ :user_name            => "funaboundshouston@gmail.com",
+ :password             => "Whale15!",
  :authentication       => "plain",
 :enable_starttls_auto => true
 }
