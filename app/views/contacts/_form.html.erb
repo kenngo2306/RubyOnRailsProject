@@ -122,7 +122,7 @@
                   <div class="control-group">
                     <%= f.label :state_id, 'State', :class => 'control-label' %>
                     <div class="controls state-dropdown">
-                      <%= f.collection_select :state_id, State.all, :id, :state_name, :class => 'form-control' %>
+                      <%= f.collection_select :state_id, State.all, :id, :state_name, :class => 'form-control',:selected => 44 %>
                     </div>
                     <%= error_span(@contact[:contact_work]) %>
                   </div>
