@@ -1,5 +1,17 @@
 class Project < ActiveRecord::Base
 
+  # after_update :send_email, :if => :project_status_id_changed?
+
+  # def send_email
+  #   Send email here
+    #
+    # StatusMailer.sample_email.deliver
+  #
+  # end
+
+  def project_status_id_change?
+    @project.project_status_id_changed?
+  end
 
   belongs_to :procurement_tool
   belongs_to :deal_type
