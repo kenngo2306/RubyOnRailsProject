@@ -12,7 +12,7 @@ class Contact < ActiveRecord::Base
   validates_length_of :contact_first_name, :contact_last_name, :contact_address, :maximum => 50
   validates_length_of :contact_city, :maximum => 25
   validates_length_of :contact_zip, :maximum => 9
-  validates_format_of :contact_cell, :contact_work, :with => /[0-9]{3}-[0-9]{3}-[0-9]{4}/, :message => "- Phone numbers must be in xxx-xxx-xxxx format."
+  validates_format_of :contact_cell, :contact_work, :with => /[\(]?\d\d\d[\)\- ]?\d\d\d[- ]?\d\d\d\d/, :message => "- Phone numbers must be in xxx-xxx-xxxx format."
   validates_format_of :contact_email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :message => "- Email format incorrect (Example: user@mail.com)"
 
   def full_contact_name
