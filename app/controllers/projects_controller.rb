@@ -12,6 +12,9 @@ class ProjectsController < ApplicationController
     end
 end
 
+  def inactive_projects
+    @projects = Project.where('project_status_id in (17,18)')
+  end
 
   # GET /projects/1
   # GET /projects/1.json
@@ -63,7 +66,7 @@ end
   def update
     respond_to do |format|
       if @project.update(project_params)
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to projects_path, notice: 'Project was successfully updated.' }
         format.json { render :show, status: :ok, location: @project }
       else
         format.html { render :edit }
