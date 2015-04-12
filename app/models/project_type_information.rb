@@ -12,4 +12,5 @@ class ProjectTypeInformation < ActiveRecord::Base
 
 
   validates_presence_of  :project_type_id
+  validates_length_of :wind_load, :building_code, maximum: 40
 end
