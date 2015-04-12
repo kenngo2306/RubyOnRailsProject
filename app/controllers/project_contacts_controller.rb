@@ -31,6 +31,7 @@ class ProjectContactsController < ApplicationController
       if @project_contact.save
         format.html { redirect_to @project_contact, notice: 'Project contact was successfully created.' }
         format.json { render :show, status: :created, location: @project_contact }
+        format.js {render :file => "/projects/show_contact.js.erb"}
       else
         format.html { render :new }
         format.json { render json: @project_contact.errors, status: :unprocessable_entity }
