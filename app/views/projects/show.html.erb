@@ -236,7 +236,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Add Site</h4>
+                <h4 class="modal-title" id="myModalLabel">Add Existing Site</h4>
               </div>
               <div class="modal-body">
                 <%= form_for @project_site_information, :remote => true, :html => { :class => "form-horizontal project_site_information" } do |f| %>
@@ -265,7 +265,7 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Add Existing Site</h4>
+                <h4 class="modal-title" id="myModalLabel">Add New Site</h4>
               </div>
               <div class="modal-body">
                 <%= form_for @project_site, :remote => true, :html => { :class => "form-horizontal project_site" } do |f| %>
@@ -312,7 +312,7 @@
                     <div class="control-group">
                       <%= f.label :state_id, 'State', :class => 'control-label' %>
                       <div class="controls funabounds">
-                        <%= f.collection_select :state_id, State.all, :id, :state_name, :class => 'form-control',:selected => 44 %>
+                        <%= f.collection_select :state_id, State.all, :id, :state_name, {}, :class => 'form-control',:selected => 44 %>
                       </div>
                       <%= error_span(@project_site[:state_id]) %>
                     </div>
@@ -325,8 +325,8 @@
                     </div>
                     <div class="control-group">
                       <%= f.label :site_access, 'Site Access',:class => 'control-label' %>
-                      <div class="controls funabounds">
-                        <%= f.text_field :site_access, :class => 'form-control' %>
+                      <div class="controls">
+                        <%= f.text_area :site_access, size: '10x6', :class => 'form-control' %>
                       </div>
                       <%= error_span(@project_site[:site_access]) %>
                     </div>
@@ -383,15 +383,15 @@
                 <h3 class="fs-subtitle"></h3>
                 <div class="control-group">
                   <%= f.label :contact_type_id, 'Contact Type', :class => 'control-label' %>
-                  <div class="controls contact-type-dropdown">
-                    <%= f.collection_select :contact_type_id, ContactType.all, :id, :contact_type_name, :class => 'form-control' %>
+                  <div class="controls funabounds">
+                    <%= f.collection_select :contact_type_id, ContactType.all, :id, :contact_type_name, {}, :class => 'form-control' %>
                   </div>
                   <%= error_span(@contact[:contact_type_id]) %>
                 </div>
                 <div class="control-group">
                   <%= f.label :client_id, 'Client Name', :class => 'control-label' %>
-                  <div class="controls client-dropdown">
-                    <%= f.collection_select :client_id, Client.all, :id, :client_name, input_html: { class: 'chosen-select' } %>
+                  <div class="controls funabounds">
+                    <%= f.collection_select :client_id, Client.all, :id, :client_name, {}, class: 'form-control' %>
                   </div>
                   <%= error_span(@contact[:client_id]) %>
                 </div>
@@ -466,8 +466,8 @@
                 </div>
                 <div class="control-group">
                   <%= f.label :state_id, 'State', :class => 'control-label' %>
-                  <div class="controls state-dropdown">
-                    <%= f.collection_select :state_id, State.all, :id, :state_name, :class => 'form-control' %>
+                  <div class="controls funabounds">
+                    <%= f.collection_select :state_id, State.all, :id, :state_name, {}, :class => 'form-control' %>
                   </div>
                   <%= error_span(@contact[:contact_work]) %>
                 </div>
