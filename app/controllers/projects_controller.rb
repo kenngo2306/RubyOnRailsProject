@@ -64,16 +64,16 @@ end
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
+    @old_status = @project.project_status_id.to_s
 
     respond_to do |format|
-
-
-
       if @project.update(project_params)
-
+        if params[:project][:project_status_id] != @old_status
+          StatusMailer.sample_email(@project).deliver
+        end
         # if @project.project_status_id_change
           # @project.project_status_id_changed?
-          StatusMailer.sample_email(@project).deliver
+
           # end
         # end
         format.html { redirect_to projects_path, notice: 'Project was successfully updated.' }
