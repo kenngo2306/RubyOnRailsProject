@@ -7,18 +7,70 @@
 <br>
 <br>
 
+<div class="backgroundContainerPTI">
+
+<fieldset >
+
+  <legend>General Information</legend>
+
 <dl class="dl-horizontal">
+
+
+  <dt><strong>Project Type Name:</strong></dt>
+  <dd><%= @project_type_information.project_type.project_type_name %></dd>
   <dt><strong>Proposal Number:</strong></dt>
   <dd><%= @project_type_information.proposal_number %></dd>
   <dt><strong>Revision Number:</strong></dt>
   <dd><%= @project_type_information.revision_number %></dd>
 
-  <dt><strong>Project Type ID:</strong></dt>
-  <dd><%= @project_type_information.project_type.project_type_name %></dd>
+    </dl>
+  </fieldset>
 
 
 
-</dl>
+<fieldset>
+<legend>Multiple Selection Questions</legend>
+
+
+
+<% @project_type_information.category_option_selections.each do |selection| %>
+      <div class ="col-sm-4">
+
+    <strong><%=selection.category_option.category.category_name%>:</strong>
+
+    <%=selection.category_option.category_option_name%>
+
+        <br>
+      </div>
+<%end%>
+
+
+  </fieldset>
+
+
+  <br>
+
+  <div>
+
+  <fieldset>
+    <legend>Open-Ended Questions</legend>
+
+
+    <% @project_type_information.answers.each do |answer|%>
+          <div class = col-sm-4>
+      <strong><%=answer.question.question_name%>:</strong>
+
+      <%=answer.answer_text%>
+            <br>
+          </div>
+      <%end%>
+
+
+  </fieldset>
+</div>
+
+<br>
+  <br>
 
 <div class ="showPageButton">
 <%= link_to t('.back', :default => t("helpers.links.back")),
@@ -32,5 +84,4 @@
               :class => 'btn btn-danger' %>
 </div>
 
-
-
+</div>
