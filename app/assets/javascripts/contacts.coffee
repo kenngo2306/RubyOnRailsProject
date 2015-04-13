@@ -7,7 +7,16 @@ $(document).ready ->
   $("#new_project_site").on("ajax:success", (e, data, status, xhr) ->
 
   ).on "ajax:error", (e, xhr, status, error) ->
+    msg = jQuery.parseJSON(xhr.responseText)
+    error = "Error: \r\n"
+    $.each msg, (key, value) ->
+      error = error + key + ' ' + value + '\r\n'
+      return
+    alert error
     console.log(e, xhr,status, error)
+    return
+
+
 
 $(document).ready ->
   $('#next').click ->
