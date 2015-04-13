@@ -273,7 +273,7 @@
                         <%= project_site_information.hidden_field :project_id, :value => @project.id %>
                     <% end %>
                     <% if @project_site.errors.any? %>
-                        <div id="error_expl" class="panel panel-danger">
+                        <div id="error_expl1" class="panel panel-danger">
                           <div class="panel-heading">
                             <h3 class="panel-title"><%= pluralize(@project_site.errors.count, "error") %> prohibited this project_site from being saved:</h3>
                           </div>
