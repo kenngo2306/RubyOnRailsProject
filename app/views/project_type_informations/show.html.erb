@@ -4,6 +4,8 @@
 </div>
 <%= link_to 'Manage Project Site', project_site_information_path(@project_type_information.project_site_information), class: 'btn btn-primary btn-sm' %>
 <%= link_to 'Manage Project', project_path(@project_type_information.project_site_information.project), class: 'btn btn-primary btn-sm' %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+            edit_project_type_information_path(@project_type_information), :class => 'btn btn-primary btn-sm' %>
 <br>
 <br>
 
@@ -40,7 +42,6 @@
 
     <%=selection.category_option.category_option_name%>
 
-        <br>
       </div>
 <%end%>
 
@@ -61,7 +62,7 @@
       <strong><%=answer.question.question_name%>:</strong>
 
       <%=answer.answer_text%>
-            <br>
+            
           </div>
       <%end%>
 
@@ -73,15 +74,9 @@
   <br>
 
 <div class ="showPageButton">
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              project_type_informations_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_project_type_information_path(@project_type_information), :class => 'btn btn-default' %>
-<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              project_type_information_path(@project_type_information),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+
+
+
 </div>
 
 </div>
