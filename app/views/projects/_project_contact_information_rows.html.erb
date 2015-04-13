@@ -6,7 +6,7 @@
   <td><%= pc.contact.contact_work %></td>
   <td><%= pc.contact.full_address %></td>
 
-  <td><%= pc.contact.client.client_name %></td>
+  <td><%= pc.contact.client.client_name unless pc.contact.client_id.nil? %></td>
   <td><%= pc.contact.contact_type.contact_type_name %></td>
   <td>
     <%= link_to 'Show', pc , :class => ' btn-primary btn-sm'%>

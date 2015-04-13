@@ -30,10 +30,11 @@ class ContactsController < ApplicationController
       if @contact.save
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
         format.json { render :show, status: :created, location: @contact }
-        format.js {render :file => "/clients/show.js.erb"}
+        format.js {render :file => "/projects/show_new_contact.js.erb"}
       else
         format.html { render :new }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
+        format.js {render json: @contact.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -48,6 +49,7 @@ class ContactsController < ApplicationController
       else
         format.html { render :edit }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
+
       end
     end
   end
@@ -70,6 +72,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:contact_first_name, :contact_last_name, :contact_email, :contact_cell, :contact_work, :client_id, :contact_type_id, :state_id, :contact_address, :contact_city, :contact_zip)
+      params.require(:contact).permit(:contact_first_name, :contact_last_name, :contact_email, :contact_cell, :contact_work, :client_id, :contact_type_id, :state_id, :contact_address, :contact_city, :contact_zip, project_contacts_attributes:[:id, :project_id])
     end
 end
