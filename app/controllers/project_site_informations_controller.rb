@@ -11,7 +11,9 @@ class ProjectSiteInformationsController < ApplicationController
   # GET /project_site_informations/1
   # GET /project_site_informations/1.json
   def show
+
     @project_type_information = ProjectTypeInformation.new
+
   end
 
   # GET /project_site_informations/new

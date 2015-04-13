@@ -10,6 +10,11 @@ class ProjectTypeInformationsController < ApplicationController
   # GET /project_type_informations/1
   # GET /project_type_informations/1.json
   def show
+    @project_site_informations = ProjectSiteInformation.all
+    @project_type = ProjectType.all
+    @category = Category.all
+    @category_option = CategoryOption.all
+    @category_option_selection = CategoryOptionSelection.all
   end
 
   # GET /project_type_informations/new

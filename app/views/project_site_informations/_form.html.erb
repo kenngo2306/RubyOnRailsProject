@@ -35,7 +35,7 @@
               <%=field_set_tag nil, class: 'fieldset_site_info' do %>
 
               <div class="control-group">
-                <%= f.label :project_id, 'Project Name', :class => 'control-label' %>
+                <%= f.label :project_id, '*Project Name', :class => 'control-label' %>
                 <div class="controls funabounds">
                   <%= f.collection_select :project_id, Project.all, :id, :project_name, {}, :class => 'form-control' %>
                 </div>
@@ -43,7 +43,7 @@
               </div>
 
               <div class="control-group">
-                <%= f.label :project_site_id, 'Project Site Name', :class => 'control-label' %>
+                <%= f.label :project_site_id, '*Project Site Name', :class => 'control-label' %>
                 <div class="controls funabounds">
                   <%= f.collection_select :project_site_id, ProjectSite.all, :id, :site_name,{}, :class => 'form-control' %>
                 </div>
@@ -52,21 +52,21 @@
 
 
               <div class="control-group">
-    <%= f.label :area_length,'Area Length', :class => 'control-label' %>
+    <%= f.label :area_length,'*Area Length', :class => 'control-label' %>
     <div class="controls areaLength">
       <%= f.text_field :area_length, :class => 'form-control' %>
     </div>
     <%= error_span(@project_site_information[:area_length]) %>
   </div>
   <div class="control-group">
-    <%= f.label :area_width, 'Area Width', :class => 'control-label' %>
+    <%= f.label :area_width, '*Area Width', :class => 'control-label' %>
     <div class="controls areaWidth">
       <%= f.text_field :area_width, :class => 'form-control' %>
     </div>
     <%= error_span(@project_site_information[:area_width]) %>
   </div>
   <div class="control-group">
-    <%= f.label :area_description, 'Area Description', :class => 'control-label' %>
+    <%= f.label :area_description, '*Area Description', :class => 'control-label' %>
     <div class="controls">
       <%= f.text_area :area_description, :size=> '17x7', :class => 'form-control' %>
     </div>
