@@ -287,6 +287,9 @@ ActiveRecord::Schema.define(version: 20150412231902) do
     t.datetime "updated_at"
     t.integer  "role"
     t.string   "name"
+    t.integer  "failed_attempts"
+    t.string   "unlock_token"
+    t.datetime "locked_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

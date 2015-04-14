@@ -386,7 +386,15 @@
               </div>
               <%= error_span(@contact[:contact_type_id]) %>
             </div>
+            <br>
 
+            <div class="control-group">
+              <%= f.label :client_id, 'Client', :class => 'control-label', :id => 'client_label' %>
+              <div class="controls client-dropdown">
+                <%= f.collection_select :client_id, Client.all, :id, :client_name, :class => 'form-control' %>
+              </div>
+              <%= error_span(@contact[:client_id]) %>
+            </div>
 
             <br>
 
