@@ -156,7 +156,8 @@ class Pif < Prawn::Document
   def design_information_header
      @project.project_site_informations.map do |psi|
       si =
-       [ ["Project Name",psi.project.project_name, "Site Name",psi.project_site.site_name],
+       [ ["Project Design Information","","",""],
+         ["Project Name",psi.project.project_name, "Site Name",psi.project_site.site_name],
          ["Area Length",psi.area_length,"Area_Width",psi.area_width],
          ["Area Description",psi.area_description,"Surface Protection?",psi.surface_protection_required.to_s],
          ["Underground Obstacles?", psi.under_ground_obstacles_yn.to_s,"Structural Removal?",psi.structural_removal_required.to_s],
@@ -169,6 +170,9 @@ class Pif < Prawn::Document
          ["Tree Vegetation?", psi.tree_vegetation_removal_required.to_s,"Concrete Truck Access?",psi.concrete_truck_access.to_s],
          ["Sloped Area?",psi.area_is_sloped.to_s,"Site Survey Required?", psi.site_survey_required.to_s]
        ]
+      psi.project_utilities.map do |ut|
+      si = si +  [["Project Utilities",ut.utility.utility_name]]
+      end
       psi.project_type_informations.map do |pti|
          # psi.project_type_informations.map do |pti|
          #  [[pti.project_type.project_type_name]]
@@ -185,18 +189,22 @@ class Pif < Prawn::Document
         start_new_page
         table si do
          columns(0..3).rows(1..-1).width = 135
+         rows(0).text_color = "FFFFFF"
+         rows(0).background_color = "a414e2"
          column(0).font_style = :bold
+         column(2..3).row(0).font_style = :bold
          column(2).rows(1..-1).font_style = :bold
          column(1).row(0).font_style = :bold
          rows(0..-1).size = 10
-         column(0).rows(1..-1).background_color = "3affca"
-         column(1).background_color = "adffe9"
-         column(2).rows(0..-1).background_color = "3affca"
-         column(3).background_color = "adffe9"
-         columns(0..1).row(0).background_color = "00dba0"
-         column(2..3).row(0).background_color = "f76571"
+         column(0).rows(1..-1).background_color = "62fc7e"
+         column(1).background_color = "adffbc"
+         column(2).rows(0..-1).background_color = "62fc7e"
+         column(3).background_color = "adffbc"
+         columns(0..3).row(0).background_color = "a414e2"
          column(0).row(0).borders = :top, :left
-         column(1).row(0).borders = :top, :bottom, :right
+         column(1..2).row(0).borders = :top, :bottom
+         column(3).row(0).borders = :top, :bottom, :right
+         row(-1).background_color = "f76571"
         end
         move_down 20
         start_new_page
