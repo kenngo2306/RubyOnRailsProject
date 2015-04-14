@@ -1,9 +1,17 @@
 class ReportsController < ApplicationController
 
  def index
+
  end
 
  def monthly_clients
+  respond_to do |format|
+   format.html
+   format.pdf do
+    pdf = MonthlyClients.new(view_context)
+    send_data pdf.render, filename: "Monthly Clients.pdf", type: "application/pdf", disposition: "inline"
+   end
+  end
  end
 
  def monthly_projects

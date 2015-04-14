@@ -93,19 +93,19 @@
     <dd><%= @project.restricted_work_hours %></dd>
 
     <dt><strong>Liquidate Damages?:</strong></dt>
-    <dd><%= @project.liquidate_damages_yn %></dd>
+    <dd><%= t @project.liquidate_damages_yn.class %></dd>
 
     <dt><strong>Wages & Certified Payroll?:</strong></dt>
-    <dd><%= @project.prevailing_wages_certified_payroll_yn %></dd>
+    <dd><%= t @project.prevailing_wages_certified_payroll_yn.class %></dd>
 
     <dt><strong>Permit Special Possessed?:</strong></dt>
-    <dd><%= @project.permit_special_inspection_in_possession %></dd>
+    <dd><%= t @project.permit_special_inspection_in_possession.class %></dd>
 
     <dt><strong>Permit Submittal Required?</strong></dt>
-    <dd><%= @project.permit_submittal_required %></dd>
+    <dd><%= t @project.permit_submittal_required.class %></dd>
 
     <dt><strong>Permit Fees Required?:</strong></dt>
-    <dd><%= @project.permit_fees_required %></dd>
+    <dd><%= t @project.permit_fees_required.class %></dd>
 
   </dl>
 
