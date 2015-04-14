@@ -12,14 +12,14 @@ class User < ActiveRecord::Base
 
 	def self.emailval
 		validates_uniqueness_of :email
-  end
+	end
 
-  validates_presence_of :name, :email
+  validates_presence_of :name, :email, :password
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :message => "- Email format incorrect (Example: user@mail.com)"
   validates_length_of :name, maximum: 30
-	
-  # Include default devise modules. Others available are:
+
+	# Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 	devise :database_authenticatable, :registerable,
-		:recoverable, :rememberable, :trackable, :validatable
+		:recoverable, :rememberable, :trackable, :validatable, :lockable
 	end
