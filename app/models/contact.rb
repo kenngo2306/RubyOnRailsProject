@@ -3,8 +3,11 @@ class Contact < ActiveRecord::Base
   belongs_to :client
   belongs_to :contact_type
   belongs_to :state
-  has_many :projects_contacts
+  has_many :project_contacts
+  accepts_nested_attributes_for :project_contacts
   has_many :projects, through: :project_contacts
+
+
 
   validates_presence_of :contact_first_name, :contact_last_name, :contact_email,
                         :contact_work, :contact_address, :contact_city, :contact_zip,

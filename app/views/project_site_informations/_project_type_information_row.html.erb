@@ -5,7 +5,7 @@
   <td><%= pti.revision_number %></td>
 
   <td>
-    <%= link_to 'Design Information', edit_project_type_information_path(pti) , :class => 'btn-default btn-sm'%>
+    <%= link_to 'Design Information',  edit_project_type_information_path(pti) , :class => 'btn-default btn-sm'%>
     <a data-confirm="Are you sure?" class=" btn-danger btn-sm" rel="nofollow" data-method="delete" href="/project_type_informations/<%= pti.id %>">Delete</a>
   </td>
 </tr>
