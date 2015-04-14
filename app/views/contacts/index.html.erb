@@ -25,7 +25,7 @@
         <td><%= contact.contact_cell %></td>
         <td><%= contact.contact_work %></td>
         <td><%= contact.full_address %></td>
-        <td><%= contact.client.client_name %></td>
+        <td><%= contact.client.client_name unless contact.client_id.nil? %></td>
         <td><%= contact.contact_type.contact_type_name %></td>
         <td>
           <% if current_user.admin? %>
