@@ -32,5 +32,15 @@ class Project < ActiveRecord::Base
   validates_presence_of :project_name, :deal_type_id, :project_setting_id, :procurement_tool_id, :sales_person_id, :project_status_id, :irrigation_responsibility_id
   validates_length_of :project_budget, maximum: 20
   validates_length_of :procurement_tool_description, :deal_type_description, maximum: 150
+
+  def designCount
+    @count = 0
+    project_site_informations.each do |project_site_information|
+      project_site_information.project_type_informations.each do |project_type_information|
+        @count = @count + 1
+      end
+    end
+    @count
+  end
 end
 

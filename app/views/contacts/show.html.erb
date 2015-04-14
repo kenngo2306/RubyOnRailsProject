@@ -27,7 +27,7 @@
   <dt><strong>State:</strong></dt>
   <dd><%= @contact.state.state_name %></dd>
   <dt><strong>Client:</strong></dt>
-  <dd><%=@contact.client.client_name %></dd>
+  <dd><%=@contact.client.client_name unless @contact.client_id.nil? %></dd>
   <dt><strong>Contact Type:</strong></dt>
   <dd><%= @contact.contact_type.contact_type_name %></dd>
 
