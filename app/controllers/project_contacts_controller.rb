@@ -60,9 +60,10 @@ class ProjectContactsController < ApplicationController
   # DELETE /project_contacts/1
   # DELETE /project_contacts/1.json
   def destroy
+    @project = Project.find(@project_contact.project_id)
     @project_contact.destroy
     respond_to do |format|
-      format.html { redirect_to project_contacts_url, notice: 'Project contact was successfully destroyed.' }
+      format.html { redirect_to project_path(@project), notice: 'Project contact was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

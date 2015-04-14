@@ -30,6 +30,7 @@ class ContactsController < ApplicationController
       if @contact.save
         format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
         format.json { render :show, status: :created, location: @contact }
+        @project_contact = @contact.project_contacts.first
         format.js {render :file => "/projects/show_new_contact.js.erb"}
       else
         format.html { render :new }
