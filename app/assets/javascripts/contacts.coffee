@@ -21,6 +21,19 @@ $(document).ready ->
     return
       # enable chosen js
 
+  $('#contact_contact_type_id').change ->
+#    alert 'changed!'
+    val = $('#contact_contact_type_id').val()
+    if(val>1)
+      $('#contact_client_id').hide()
+      $('#client_label').hide()
+      $('#contact_client_id').val('')
+    else if (val = 1)
+      $('#contact_client_id').show()
+      $('#client_label').show()
+      $("#contact_client_id option[value='1']").attr 'selected', true
+    return
+
   return
 
 

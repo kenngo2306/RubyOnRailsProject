@@ -4,9 +4,7 @@
   <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
 </head>
 <body>
-<h1>Status Change on <%= @project.project_name  %> </h1>
-<p>
-  Status changed to <%= @project.project_status.project_status_name  %>
-</p>
+<h2>There has been a status change on <%= @project.project_name  %> </h2>
+<h4>The status has been changed to <b><%= @project.project_status.project_status_name  %></b></h4>
 </body>
 </html>

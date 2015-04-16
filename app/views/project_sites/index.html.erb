@@ -30,7 +30,7 @@
                       project_site, :class => ' btn-default btn-sm'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_project_site_path(project_site), :class => ' btn-default btn-sm' %>
-
+          <%= link_to "Delete", project_site, :method=>:delete, data: {confirm: "Are you sure?"}, :class => 'btn-danger btn-sm' unless project_site.project_site_informations.count > 0 %>
         </td>
       </tr>
     <% end %>

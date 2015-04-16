@@ -14,9 +14,13 @@ ready = ->
 
 jQuery ->
   $('form').on 'click', '.remove_fields', (event) ->
-    $(this).prev('input[type=hidden]').val('1')
-    $(this).closest('fieldset').hide()
-    event.preventDefault()
+    if confirm('Are you sure? All Project Design Information related to this will also be deleted')
+      # continue with delete
+      $(this).prev('input[type=hidden]').val('1')
+      $(this).closest('fieldset').hide()
+      event.preventDefault()
+    else
+
 
   $('form').on 'click', '.add_fields', (event) ->
     time = new Date().getTime()

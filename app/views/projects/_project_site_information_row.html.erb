@@ -9,6 +9,7 @@
     <div>
     <%= link_to "Site Info", edit_project_site_information_path(psi),:class => " btn-default btn-sm"%>
     <%= link_to 'Design Info', psi , :class => ' btn-default btn-sm'%>
+    <%= link_to "Delete", psi, :method=>:delete, data: {confirm: "Are you sure? You will delete " + psi.project_type_informations.count.to_s + " Designs too!"}, :class => 'btn-danger btn-sm' %>
     </div>
     <br>
     <div>

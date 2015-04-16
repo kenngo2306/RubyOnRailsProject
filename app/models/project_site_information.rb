@@ -2,9 +2,9 @@ class ProjectSiteInformation < ActiveRecord::Base
   belongs_to :project_site
   belongs_to :project
 
-  has_many :project_type_informations
+  has_many :project_type_informations, :dependent => :delete_all
   has_many :project_types, through: :project_type_informations
-  has_many :project_utilities
+  has_many :project_utilities, :dependent => :delete_all
   has_many :utilities, through: :project_utilities
 
 
