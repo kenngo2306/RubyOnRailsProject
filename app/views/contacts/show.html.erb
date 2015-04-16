@@ -6,8 +6,7 @@
   <fieldset>
     <legend>General Information</legend>
 <dl class="dl-horizontal">
-  <dt><strong>Client Name:</strong></dt>
-  <dd><%= @contact.client.client_name %></dd>
+
   <dt><strong>Contact Type:</strong></dt>
   <dd><%= @contact.contact_type.contact_type_name %></dd>
   <dt><strong>Contact Name:</strong></dt>
@@ -26,7 +25,7 @@
   <dd><%= @contact.contact_zip %></dd>
   <dt><strong>State:</strong></dt>
   <dd><%= @contact.state.state_name %></dd>
-  <dt><strong>Client:</strong></dt>
+  <dt><strong><%= 'Client:' unless @contact.client_id.nil? %> </strong></dt>
   <dd><%=@contact.client.client_name unless @contact.client_id.nil? %></dd>
   <dt><strong>Contact Type:</strong></dt>
   <dd><%= @contact.contact_type.contact_type_name %></dd>

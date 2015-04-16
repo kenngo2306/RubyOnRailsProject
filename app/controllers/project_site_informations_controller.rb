@@ -59,9 +59,10 @@ class ProjectSiteInformationsController < ApplicationController
   # DELETE /project_site_informations/1
   # DELETE /project_site_informations/1.json
   def destroy
+    @project = Project.find(@project_site_information.project_id)
     @project_site_information.destroy
     respond_to do |format|
-      format.html { redirect_to project_site_informations_url, notice: 'Project site information was successfully destroyed.' }
+      format.html { redirect_to project_path(@project), notice: 'Project site information was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
