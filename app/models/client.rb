@@ -9,4 +9,6 @@ class Client < ActiveRecord::Base
   validates_length_of :client_name, :billing_address, :maximum => 50
   validates_length_of :billing_city, :maximum => 25
   validates_length_of :billing_zip, :maximum => 9
+
+
 end
