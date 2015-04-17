@@ -18,7 +18,7 @@
         <td><%=utility.utility_name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_utility_path(utility), :class => 'btn btn-default btn-xs' %>
+                      edit_utility_path(utility), :class => ' btn-default btn-sm' %>
 
         </td>
       </tr>
@@ -28,4 +28,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_utility_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-primary btn-index' %>

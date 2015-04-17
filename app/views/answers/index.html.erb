@@ -8,7 +8,7 @@
       <th>ID</th>
       <th>Answer Text</th>
       <th>Question</th>
-      <th>Project Type</th>
+      <th>Project Type Information ID</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -17,18 +17,18 @@
       <tr>
         <td><%= link_to answer.id, answer_path(answer) %></td>
         <td><%= answer.answer_text %></td>
-        <td><%= answer.question_id %></td>
+        <td><%= answer.question.question_name %></td>
         <td><%= answer.project_type_information_id %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
-                      answer, :class => 'btn btn-default btn-xs'  %>
+                      answer, :class => ' btn-default btn-sm'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_answer_path(answer), :class => 'btn btn-default btn-xs' %>
+                      edit_answer_path(answer), :class => 'btn-default btn-sm' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       answer_path(answer),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-xs btn-danger' %>
+                      :class => ' btn-sm btn-danger' %>
         </td>
       </tr>
     <% end %>
@@ -37,4 +37,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_answer_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-primary btn-index' %>

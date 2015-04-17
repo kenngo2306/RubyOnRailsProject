@@ -10,11 +10,15 @@ class ProjectTypesController < ApplicationController
   # GET /project_types/1
   # GET /project_types/1.json
   def show
+    @project_types = ProjectType.all
+    @category = Category.all
+    @category_option = CategoryOption.all
+    @category_option_selection = CategoryOptionSelection.all
   end
 
   # GET /project_types/new
   def new
-    @project_type = ProjectType.new
+    @project_types = ProjectType.new
   end
 
   # GET /project_types/1/edit

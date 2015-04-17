@@ -47,5 +47,5 @@
 <% if current_user.admin? || current_user.salesrep? || current_user.insidesales? %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_project_contact_path,
-            :class => 'btn-sm btn-primary' %>
+            :class => 'btn btn-primary btn-index' %>
 <% end %>

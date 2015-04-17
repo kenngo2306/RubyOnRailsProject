@@ -3,15 +3,63 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+<div class = "backgroundContainer">
+  <fieldset>
+    <legend>General Information</legend>
 <dl class="dl-horizontal">
   <dt><strong>Project Type Name:</strong></dt>
   <dd><%= @project_type.project_type_name %></dd>
 </dl>
+  </fieldset>
 
-<div class = "showPageButton">
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              project_types_path, :class => 'btn btn-default'  %>
-<%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_project_type_path(@project_type), :class => 'btn btn-default' %>
+  </div>
+
+<div class = "backgroundContainerPTI">
+<fieldset>
+  <legend>Multiple Selection Questions</legend>
+
+
+
+  <% @project_type.categories.each do |category| %>
+      <div class ="col-sm-3">
+
+        <strong><%=category.category_name%>:</strong>
+        <br><br>
+        <%category.category_options.each do |option|%>
+            <div>
+        <%= option.category_option_name %>
+            </div>
+        <%end%>
+      </div>
+  <%end%>
+
+
+</fieldset>
+  </div>
+<br><br>
+
+<div class = "backgroundContainer2">
+<fieldset>
+  <legend>Open-Ended Questions</legend>
+
+
+  <% @project_type.questions.each do |question|%>
+      <div class = col-sm-4>
+        <strong><%=question.question_name%></strong>
+        <br><br>
+
+
+      </div>
+  <%end%>
+
+
+</fieldset>
+
+
+<br>
+
+
+
+
 
 </div>
