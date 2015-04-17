@@ -9,8 +9,10 @@
         </div>
         <div class="panel-body">
           <%= form_for @status_category, :html => { :class => 'form-horizontal' } do |f| %>
+
+              <div class = "required">* Required Fields</div>
               <div class="control-group">
-                <%= f.label :status_category_name, 'Status Category Name', :class => 'control-label' %>
+                <%= f.label :status_category_name, '*Status Category Name', :class => 'control-label' %>
 
                 <div class="controls">
                   <%= f.text_field :status_category_name, :class => 'form-control' %>

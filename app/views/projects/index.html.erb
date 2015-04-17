@@ -133,7 +133,7 @@
 <% if current_user.admin? || current_user.insidesales? || current_user.salesrep? %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_project_path,
-            :class => 'btn btn-primary btn-sm' %>
+            :class => 'btn btn-primary btn-index' %>
 <% end %>
 
 <script>

@@ -16,17 +16,22 @@
             <li>Step 3 - Open-Ended Questions</li>
 
           </ul>
+          <div class = "required">* Required Fields</div>
           <div class = "non-edit">
           <h5><b>Project: </b> <%= @project_type_information.project_site_information.project.project_name %></h5><br/>
           <h5><b>Project Site: </b><%= @project_type_information.project_site_information.project_site.site_name %></h5><br/>
           <h5><b>Project Type: </b><%= @project_type_information.project_type.project_type_name%></h5>
         </div>
           <br>
+
+
           <%= simple_form_for(@project_type_information)do |f| %>
               <%= field_set_tag nil, class: 'fieldset_ProjectType_GeneralInformation' do%>
 
                   <%= f.input :proposal_number %>
                   <%= f.input :revision_number %>
+                 <%= f.input  :wind_load, :label => "*Wind Load" %>
+                  <%= f.input :building_code%>
                   <br>
                   <input type="button" name="next" class="next btn btn-default" value="Next" /> <br>
               <% end %>

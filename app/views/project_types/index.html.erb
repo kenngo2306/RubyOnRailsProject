@@ -17,8 +17,10 @@
         <td><%= project_type.project_type_name %></td>
 
         <td>
+          <%= link_to t('.show', :default => t("helpers.links.show")),
+                      project_type_path(project_type), :class => 'btn-default btn-sm' %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_project_type_path(project_type), :class => 'btn btn-default btn-xs' %>
+                      edit_project_type_path(project_type), :class => ' btn-default btn-sm' %>
 
         </td>
       </tr>
@@ -28,4 +30,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_project_type_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-primary btn-index' %>

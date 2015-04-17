@@ -135,9 +135,12 @@
                   </div>
                 </div>
             <% end %>
+
+            <div class = "required">* Required Fields</div>
+
             <%= f.hidden_field :project_site_information_id, :value => @project_site_information.id %>
             <div class="control-group">
-              <%= f.label :project_type_id, 'Project Type', :class => 'control-label' %>
+              <%= f.label :project_type_id, '*Project Type', :class => 'control-label' %>
               <div class="controls funabounds">
                 <%= f.collection_select :project_type_id,ProjectType.all, :id, :project_type_name,{}, :class => 'form-control' %>
               </div>
@@ -158,6 +161,22 @@
                 <%= f.text_field :revision_number, :class => 'form-control' %>
               </div>
               <%= error_span(@project_type_information[:revision_number]) %>
+            </div>
+
+            <div class="control-group">
+              <%= f.label :wind_load,'*Wind Load', :class => 'control-label' %>
+              <div class="controls projectName">
+                <%= f.text_field :wind_load, :class => 'form-control' %>
+              </div>
+              <%= error_span(@project_type_information[:wind_load]) %>
+            </div>
+
+            <div class="control-group">
+              <%= f.label :building_code,'Building Code', :class => 'control-label' %>
+              <div class="controls projectName">
+                <%= f.text_field :building_code, :class => 'form-control' %>
+              </div>
+              <%= error_span(@project_type_information[:building_code]) %>
             </div>
             <br>
             <%= f.submit nil, :class => 'btn btn-primary' %>

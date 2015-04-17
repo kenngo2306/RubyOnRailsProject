@@ -18,7 +18,7 @@
         <td><%= procurement_tool.procurement_tool_name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_procurement_tool_path(procurement_tool), :class => 'btn btn-default btn-xs' %>
+                      edit_procurement_tool_path(procurement_tool), :class => ' btn-default btn-sm' %>
 
         </td>
       </tr>
@@ -28,4 +28,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_procurement_tool_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-primary btn-index' %>

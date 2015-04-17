@@ -31,7 +31,7 @@
                 <li>Step 2 - Contact Information</li>
                 <li>Step 3 - Contact Location</li>
               </ul>
-
+              <div class = "required">* Required Fields</div>
               <%=field_set_tag nil, class: 'fieldset_Contact_Type' do %>
 
                   <h3 class="fs-subtitle"></h3>
@@ -58,7 +58,7 @@
 
               <%=field_set_tag nil, class: 'fieldset_Contact_Information' do%>
 
-                  <h3 class="fs-subtitle"> Contact Information </h3>
+
                   <div class="control-group">
                     <%= f.label :contact_first_name, '*First Name', :class => 'control-label' %>
                     <div class="controls">
@@ -104,7 +104,7 @@
 
               <%= field_set_tag nil, class: 'fieldset_Contact_Location' do%>
 
-                  <h3 class="fs-subtitle"> Contact Location</h3>
+
                   <div class="control-group">
                     <%= f.label :contact_address, '*Contact Address', :class => 'control-label' %>
                     <div class="controls">
