@@ -16,7 +16,7 @@
     </tr>
     </thead>
     <tbody>
-    <% Project.where(created_at: (DateTime.current.midnight - 30.day)..Date.current.midnight).each do |project| %>
+    <% Project.where(start_date: (DateTime.current.midnight - 30.day)..Date.current.midnight).each do |project| %>
         <tr>
               <td><%= project.id %></td>
               <td><%= project.project_name %></td>
