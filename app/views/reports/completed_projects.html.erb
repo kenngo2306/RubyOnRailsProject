@@ -1,0 +1,27 @@
+<div class="page-header" xmlns="http://www.w3.org/1999/html">
+  <h1><%=t '.title', :default => 'Completed Project Reports' %></h1>
+</div>
+<div class="table-responsive">
+
+  <table class="table table-striped" id="dataTables">
+
+    <thead>
+    <tr>
+      <th>Project Name</th>
+      <th>Project Setting</th>
+      <th>Start Date</th>
+      <th>Sales Person</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% Project.where(project_status: 16).each do |project| %>
+        <tr>
+          <td><%= project.project_name %></td>
+          <td><%= project.project_setting.project_setting_name %></td>
+          <td><%= project.start_date.to_formatted_s(:long_ordinal)%></td>
+          <td><%= project.sales_person.sales_person_fullname %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
