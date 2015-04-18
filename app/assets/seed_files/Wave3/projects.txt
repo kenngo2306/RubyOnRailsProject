@@ -1,16 +1,16 @@
-Stevenson Splashpad|2014-01-15|2014-02-05|Stay within budget|needs to finish by the end of february|2|TRUE|TRUE|TRUE|Monday And Sunday|TRUE|FALSE|$50,000|||1|2|1|1|12|1
-Sugar Land Skeeters|2014-02-06|2014-03-20|Increase traffic in the park for children between 2 and 5 years of age|Needs to be complete 6-8 weeks after ordering the equipment|4|FALSE|TRUE|TRUE|Saturday and Sunday|TRUE|FALSE|$400,000-$450,000|||2|2|1|1|1|2
-Cody Pools|2014-03-21|2014-03-28|Create a unique water park|N/A|1|FALSE|TRUE|TRUE||TRUE|FALSE|$50,000|||4|1|1|2|2|3
-Hays High School|2014-03-29|2014-04-11|safe playground for students|finish sometime during april|2|FALSE|TRUE|TRUE|Monday through Thursday|TRUE|FALSE|$50,000|||5|3|2|2|3|1
-KIPP Charter School|2014-04-12|2014-04-19|Effectively use the entire area allocated|N/A|3|TRUE|TRUE|TRUE|Monday through Thursday|TRUE|FALSE|$50,000|||2|3|2|2|14|1
-Muellar Lake Park|2014-04-20|2014-04-30|Keep a seperate area for feeding ducks|N/A|5|TRUE|TRUE|TRUE|Saturday and Sunday|TRUE|FALSE|$50,000|||3|2|2|2|5|2
-Ramsey Park|2014-05-01|2014-05-11|finish on time|Needs to be done by may 11|4|TRUE|TRUE|FALSE||TRUE|FALSE|$50,000|||2|2|1|3|6|3
-Shrine of the True Cross Catholic School|2014-05-12|2014-05-31|Safe, well designed park for children to play and parents to relax|N/A|4|TRUE|TRUE|TRUE|Saturday and Sunday|TRUE|FALSE|$50,000|||1|3|2|1|7|1
-Sienna Plantation Residential Assoc.|2014-06-01|2014-06-05|include a running trail around the shading area|N/A|2|TRUE|TRUE|FALSE|Anytime after 8 P.M.|TRUE|FALSE|$50,000|||1|2|1|1|12|1
-Sonterra Park|2014-06-06|2014-06-30|Playground and shading installed by next month|N/A|1|TRUE|TRUE|FALSE|Wednesday|TRUE|FALSE|$50,000|||1|2|2|1|11|2
-St. Thomas Episcopal School|2014-07-01|2014-07-14|Safe water themed park completed before the end of summer vacation|completed by the end of the summer|2|TRUE|TRUE|TRUE|Monday and Friday|TRUE|FALSE|$50,000|||2|3|1|1|8|3
-The PREP School of McKinney|2014-07-15|2014-07-19|Complete new shading area in the next three months|done within a week of ordering|3|TRUE|TRUE|TRUE|Monday and Wednesday|TRUE|FALSE|$50,000|||4|3|1|1|6|1
-Jordan Loop Park|2014-07-20|2014-07-31|must incude an obstcle trail for kids under 6 years of age|N/A|3|FALSE|TRUE|TRUE||TRUE|FALSE|$50,000|||1|2|2|1|10|1
-Walker Station|2014-08-01|2014-08-08|park must be fenced before splashpad gets installed|done in the first week of August|2|TRUE|TRUE|TRUE|Tuesday|TRUE|FALSE|$50,000|||1|2|2|1|5|2
-Whole Foods Austin|2014-08-09|2014-08-19|Must have accessible and easy to find trash cans around the park|N/A|1|FALSE|TRUE|TRUE||TRUE|FALSE|$50,000|||2|2|1|1|15|3
-Woodmere Park|2014-08-20|2014-08-31|Project must be completed before the halloween block party.|Must be completed by the week of Oct. 27|3|TRUE|TRUE|TRUE|Tuesday and Saturday|TRUE|FALSE|$50,000|||2|2|2|2|10|1
+Stevenson Splashpad|2015-01-15|2015-02-05|Stay within budget|needs to finish by the end of february|2|TRUE|TRUE|TRUE|Monday And Sunday|TRUE|FALSE|$50,000|||1|2|1|1|12|1
+Sugar Land Skeeters|2015-02-06|2015-03-20|Increase traffic in the park for children between 2 and 5 years of age|Needs to be complete 6-8 weeks after ordering the equipment|4|FALSE|TRUE|TRUE|Saturday and Sunday|TRUE|FALSE|$400,000-$450,000|||2|2|1|1|1|2
+Cody Pools|2015-03-21|2015-03-28|Create a unique water park|N/A|1|FALSE|TRUE|TRUE||TRUE|FALSE|$50,000|||4|1|1|2|2|3
+Hays High School|2015-03-29|2015-04-11|safe playground for students|finish sometime during april|2|FALSE|TRUE|TRUE|Monday through Thursday|TRUE|FALSE|$50,000|||5|3|2|2|3|1
+KIPP Charter School|2015-04-12|2015-04-19|Effectively use the entire area allocated|N/A|3|TRUE|TRUE|TRUE|Monday through Thursday|TRUE|FALSE|$50,000|||2|3|2|2|14|1
+Muellar Lake Park|2015-04-20|2015-04-30|Keep a seperate area for feeding ducks|N/A|5|TRUE|TRUE|TRUE|Saturday and Sunday|TRUE|FALSE|$50,000|||3|2|2|2|5|2
+Ramsey Park|2015-05-01|2015-05-11|finish on time|Needs to be done by may 11|4|TRUE|TRUE|FALSE||TRUE|FALSE|$50,000|||2|2|1|3|6|3
+Shrine of the True Cross Catholic School|2015-05-12|2015-05-31|Safe, well designed park for children to play and parents to relax|N/A|4|TRUE|TRUE|TRUE|Saturday and Sunday|TRUE|FALSE|$50,000|||1|3|2|1|7|1
+Sienna Plantation Residential Assoc.|2015-06-01|2015-06-05|include a running trail around the shading area|N/A|2|TRUE|TRUE|FALSE|Anytime after 8 P.M.|TRUE|FALSE|$50,000|||1|2|1|1|12|1
+Sonterra Park|2015-06-06|2015-06-30|Playground and shading installed by next month|N/A|1|TRUE|TRUE|FALSE|Wednesday|TRUE|FALSE|$50,000|||1|2|2|1|11|2
+St. Thomas Episcopal School|2015-07-01|2015-07-14|Safe water themed park completed before the end of summer vacation|completed by the end of the summer|2|TRUE|TRUE|TRUE|Monday and Friday|TRUE|FALSE|$50,000|||2|3|1|1|8|3
+The PREP School of McKinney|2015-07-15|2015-07-19|Complete new shading area in the next three months|done within a week of ordering|3|TRUE|TRUE|TRUE|Monday and Wednesday|TRUE|FALSE|$50,000|||4|3|1|1|6|1
+Jordan Loop Park|2015-07-20|2015-07-31|must incude an obstcle trail for kids under 6 years of age|N/A|3|FALSE|TRUE|TRUE||TRUE|FALSE|$50,000|||1|2|2|1|10|1
+Walker Station|2015-08-01|2015-08-08|park must be fenced before splashpad gets installed|done in the first week of August|2|TRUE|TRUE|TRUE|Tuesday|TRUE|FALSE|$50,000|||1|2|2|1|5|2
+Whole Foods Austin|2015-08-09|2015-08-19|Must have accessible and easy to find trash cans around the park|N/A|1|FALSE|TRUE|TRUE||TRUE|FALSE|$50,000|||2|2|1|1|15|3
+Woodmere Park|2015-08-20|2015-08-31|Project must be completed before the halloween block party.|Must be completed by the week of Oct. 27|3|TRUE|TRUE|TRUE|Tuesday and Saturday|TRUE|FALSE|$50,000|||2|2|2|2|10|1
