@@ -22,17 +22,17 @@
           <% if current_user.admin? %>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
-                      project_contact, :class => 'btn-default btn-sm'  %>
+                      project_contact, :class => 'fa fa-eye fa-2 btn btn-default btn-sm'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_project_contact_path(project_contact), :class => 'btn-default btn-sm' %>
+                      edit_project_contact_path(project_contact), :class => ' fa fa-edit fa-2 btn btn-default btn-sm' %>
 
         </td>
           <% elsif current_user.salesrep? || current_user.insidesales? %>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
-                          project_contact, :class => 'btn-default btn-sm'  %>
+                          project_contact, :class => 'fa fa-eye fa-2 btn btn-default btn-sm'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                          edit_project_contact_path(project_contact), :class => 'btn-default btn-sm' %>
+                          edit_project_contact_path(project_contact), :class => ' fa fa-edit fa-2 btn btn-default btn-sm' %>
         </td>
           <% elsif current_user.installer? %>
         <td id="installericons">

@@ -39,7 +39,7 @@
 <%= link_to t('.back', :default => t("helpers.links.back")),
               contacts_path, :class => 'btn btn-default btn-sm'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_contact_path(@contact), :class => 'btn btn-default btn-sm' %>
+              edit_contact_path(@contact), :class => ' fa fa-edit fa-2 btn btn-default btn-sm' %>
 
 <% elsif current_user.installer? %>
 <%= link_to t('.back', :default => t("helpers.links.back")),

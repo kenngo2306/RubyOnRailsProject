@@ -3,6 +3,10 @@
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
 
+<div class ="backgroundContainer2">
+  <fieldset>
+    <legend>General Information</legend>
+
 <dl class="dl-horizontal">
   <dt><strong>Project:</strong></dt>
   <dt><strong>Site Name:</strong></dt>
@@ -19,8 +23,8 @@
   <dd><%= @project_site.state.state_name %></dd>
 </dl>
 
-
-
+  </fieldset>
+</div>
 
 
 
@@ -28,7 +32,7 @@
 <%= link_to t('.back', :default => t("helpers.links.back")),
               project_sites_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_project_site_path(@project_site), :class => 'btn btn-default' %>
+              edit_project_site_path(@project_site), :class => 'fa fa-edit fa-2 btn btn-default btn-sm' %>
 
 
 </div>

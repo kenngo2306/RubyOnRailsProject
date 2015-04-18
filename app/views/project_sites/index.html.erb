@@ -27,9 +27,9 @@
         <td><%= project_site.state.state_name %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),
-                      project_site, :class => ' btn-default btn-sm'  %>
+                      project_site, :class => 'fa fa-eye fa-2 btn btn-default btn-sm'  %><br><br>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_project_site_path(project_site), :class => ' btn-default btn-sm' %>
+                      edit_project_site_path(project_site), :class => 'fa fa-edit fa-2 btn btn-default btn-sm' %>
           <%= link_to "Delete", project_site, :method=>:delete, data: {confirm: "Are you sure?"}, :class => 'btn-danger btn-sm' unless project_site.project_site_informations.count > 0 %>
         </td>
       </tr>
