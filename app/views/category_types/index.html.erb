@@ -17,7 +17,7 @@
         <td><%= category_type.category_type_name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_category_type_path(category_type), :class => ' btn-default btn-sm' %>
+                      edit_category_type_path(category_type), :class => 'btn btn-default btn-sm' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       category_type_path(category_type),
                       :method => :delete,

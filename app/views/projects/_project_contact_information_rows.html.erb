@@ -9,7 +9,7 @@
   <td><%= pc.contact.client.client_name unless pc.contact.client_id.nil? %></td>
   <td><%= pc.contact.contact_type.contact_type_name %></td>
   <td>
-    <%= link_to 'Show', pc , :class => ' btn-primary btn-sm'%>
-    <%= link_to "Delete", pc, :method=>:delete, data: {confirm: "Are you sure?"}, :class => 'btn-danger btn-sm' %>
+    <%= link_to 'Show', pc , :class => 'fa fa-eye fa-2 btn btn-default btn-sm'%>
+    <%= link_to "Delete", pc, :method=>:delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger btn-sm' %>
   </td>
 </tr>

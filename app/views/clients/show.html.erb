@@ -24,7 +24,7 @@
 <%= link_to t('.back', :default => t("helpers.links.back")),
               clients_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_client_path(@client), :class => 'btn btn-default' %>
+              edit_client_path(@client), :class => 'fa fa-edit fa-2 btn btn-default' %>
 
 </div>
 
@@ -46,7 +46,11 @@
         <th><%=t '.actions', :default => t("helpers.actions") %></th>
       </tr>
       </thead>
+
       <tbody>
+      <div class="headermargins">
+        <h3><%= @client.client_name %> Contacts</h3>
+      </div>
       <% @client.contacts.each do |contact| %>
       <tr>
           <td><%= contact.id %></td>
@@ -63,9 +67,9 @@
           <td>
             <% if current_user.admin? %>
                 <%= link_to t('.show', :default => t("helpers.links.show")),
-                            contact, :class => 'btn-default btn-sm'  %>
+                            contact, :class => 'fa fa-eye fa-2 btn btn-default btn-sm'  %>
                 <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                            edit_contact_path(contact), :class => 'btn-default btn-sm' %>
+                            edit_contact_path(contact), :class => ' fa fa-edit fa-2 btn btn-default btn-sm' %>
 
          </td>
       </tr>
@@ -82,7 +86,7 @@
 
 
 
-    <%= link_to 'Create New Project', new_project_path, :class => 'btn btn-primary btn-sm'%>
+
     <table class="DataTables" id ="projects_table">
       <thead>
       <tr>
@@ -102,6 +106,9 @@
       </tr>
       </thead>
       <tbody>
+      <div class="headermargins">
+        <h3><%= @client.client_name %> Projects</h3>
+      </div>
         <% @client.contacts.each do |contact| %>
             <% contact.project_contacts.each do |project_contact| %>
                 <tr>
@@ -120,7 +127,7 @@
         <% end %>
       </tbody>
     </table>
-
+    <%= link_to 'Create New Project', new_project_path, :class => 'btn btn-primary btn-sm'%>
 <% end %>
 
 

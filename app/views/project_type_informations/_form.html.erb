@@ -1,3 +1,5 @@
+
+
 <body class="main" style="background-image: url(<%= asset_path 'island.jpg' %>)" >
 <div class="container">
   <div class="row vertical-offset-100">
@@ -26,6 +28,7 @@
 
 
           <%= simple_form_for(@project_type_information)do |f| %>
+
               <%= field_set_tag nil, class: 'fieldset_ProjectType_GeneralInformation' do%>
 
                   <%= f.input :proposal_number %>
@@ -76,7 +79,7 @@
 
               <%end%>
               <br>
-              <%= f.button :submit %>
+              <%= f.button :submit , :value => "Update Design Information"%>
           <% end %>
 
           <!-- jQuery -->
@@ -90,6 +93,8 @@
               var current_fs, next_fs, previous_fs; //fieldsets
               var left, opacity, scale; //fieldset properties which we will animate
               var animating; //flag to prevent quick multi-click glitches
+
+              $(".page-header > h1").text("Edit Design Information");
 
               $(".next").click(function(){
                   if(animating) return false;
