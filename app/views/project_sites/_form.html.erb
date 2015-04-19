@@ -48,6 +48,13 @@
                 <%= error_span(@project_site[:site_city]) %>
               </div>
               <div class="control-group">
+                <%= f.label :state_id, '*State', :class => 'control-label' %>
+                <div class="controls funabounds">
+                  <%= f.collection_select :state_id, State.all, :id, :state_name, {}, :class => 'form-control' %>
+                </div>
+                <%= error_span(@project_site[:state_id]) %>
+              </div>
+              <div class="control-group">
                 <%= f.label :site_zip, '*Site Zip', :class => 'control-label' %>
                 <div class="controls siteZip">
                   <%= f.text_field :site_zip, :class => 'form-control' %>
@@ -61,13 +68,7 @@
                 </div>
                 <%= error_span(@project_site[:site_access]) %>
               </div>
-              <div class="control-group">
-                <%= f.label :state_id, '*State', :class => 'control-label' %>
-                <div class="controls funabounds">
-                  <%= f.collection_select :state_id, State.all, :id, :state_name, {}, :class => 'form-control' %>
-                </div>
-                <%= error_span(@project_site[:state_id]) %>
-              </div>
+
               <br>
 
 
