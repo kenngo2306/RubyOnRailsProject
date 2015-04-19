@@ -29,6 +29,7 @@
                       client, :class => 'fa fa-eye fa-2 btn btn-default btn-sm'  %>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_client_path(client), :class => 'fa fa-edit fa-2 btn btn-default btn-sm ' %>
+          <%= link_to "Delete", client, :method=>:delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger btn-sm' unless client.has_project? %>
              <% if client.id.blank? %>
 
              <% end %>
@@ -39,7 +40,7 @@
                           client, :class => ' fa fa-eye fa-2 btn btn-default btn-sm'  %>
               <%= link_to t('.edit', :default => t("helpers.links.edit")),
                           edit_client_path(client), :class => 'fa fa-edit fa-2 btn btn-default btn-sm' %>
-          </td>
+                      </td>
           <% elsif current_user.installer? %>
             <td id="installericons">
               <span class="glyphicon glyphicon-lock"></span>

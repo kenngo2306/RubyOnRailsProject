@@ -20,7 +20,7 @@
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_deal_type_path(deal_type), :class => 'fa fa-edit fa-2 btn btn-default btn-sm' %>
-
+          <%= link_to "Delete", deal_type, :method=>:delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger btn-sm' unless deal_type.projects.count > 0 %>
         </td>
       </tr>
     <% end %>

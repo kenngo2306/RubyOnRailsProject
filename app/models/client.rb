@@ -13,4 +13,16 @@ class Client < ActiveRecord::Base
   def full_address
     "#{billing_address}  #{billing_city}, #{state.state_name} #{billing_zip}"
   end
+
+  def has_project?
+    @count = 0
+    contacts.each do |contact|
+      if contact.no_project?
+        @count = 0
+      else
+        @count = @count + 1
+      end
+    end
+    @count > 0 ? true : false
+  end
 end
