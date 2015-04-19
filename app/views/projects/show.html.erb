@@ -132,7 +132,7 @@
 
 <div class = "showPageButton">
 
-<% if current_user.admin? || current_user.salesrep? || current_user.insidesales? %>
+<% if current_user.admin? || current_user.salesrep? || current_user.insidesales?  %>
 <%= link_to t('.back', :default => t("helpers.links.back")),
               projects_path, :class => 'btn btn-default'  %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -151,7 +151,7 @@
 
 <!-- Tables --->
 
-<% if current_user.admin? || current_user.salesrep? || current_user.insidesales? %>
+<% if current_user.admin? || current_user.salesrep? || current_user.insidesales? || current_user.installer? %>
 <div>
 <div class="headermargins">
     <h3><%= @project.project_name %> Sites</h3>
@@ -177,13 +177,8 @@
           <%end %>
       </tbody>
   </table>
+    <%= render partial: 'add_edit_project_site' unless current_user.installer? %>
 
-    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-      Add New Site
-    </button>
-    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal2">
-      Select Existing Site
-    </button>
     <br/>
 </div>
 
@@ -213,13 +208,8 @@
   <%end %>
   </tbody>
 </table>
+        <%= render partial: 'add_edit_contact' %>
 
-    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal3">
-      Add New Contact
-    </button>
-    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal4">
-      Select Existing Contact
-    </button>
     <br/>
 </div>
 

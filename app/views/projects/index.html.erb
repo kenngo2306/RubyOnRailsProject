@@ -125,7 +125,9 @@
             <td><%= project.sales_person.sales_person_fullname %></td>
             <td><%= project.project_status.project_status_name %></td>
             <td>
-            <%= link_to ('PIF'), project_path(project, format: "pdf"), :class => 'btn-default btn-sm' %>
+              <%= link_to t('.show', :default => t("helpers.links.show")),
+                          project_path(project), :class => 'fa fa-eye fa-2 btn btn-default btn-sm' %>
+            <%= link_to ('PIF'), project_path(project, format: "pdf"), :class => 'btn btn-default btn-sm' %>
 
               <%= link_to('Documents',{ :controller => 'google_drive', :action => "index"},  :class => "btn btn-default btn-sm" )  %>
             </td>
