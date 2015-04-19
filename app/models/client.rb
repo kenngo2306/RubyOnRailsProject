@@ -10,5 +10,7 @@ class Client < ActiveRecord::Base
   validates_length_of :billing_city, :maximum => 25
   validates_length_of :billing_zip, :maximum => 9
 
-
+  def full_address
+    "#{billing_address}  #{billing_city}, #{state.state_name} #{billing_zip}"
+  end
 end

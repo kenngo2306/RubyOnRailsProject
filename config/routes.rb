@@ -20,11 +20,15 @@ Rails.application.routes.draw do
 
   get 'reports/completed_projects'
 
-  get 'reports/inprogress_projects'
+  get 'reports/in_progress_projects'
 
   get 'reports/preproposal_projects'
 
+  get 'reports/count_of_project_type'
+
   get 'projects/inactive_projects'
+
+
 
   resources :installers
 

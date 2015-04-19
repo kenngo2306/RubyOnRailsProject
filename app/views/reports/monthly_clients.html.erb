@@ -1,0 +1,26 @@
+<div class="page-header" xmlns="http://www.w3.org/1999/html">
+  <h1><%=t '.title', :default => 'Monthly Client Reports' %></h1>
+</div>
+<div class="table-responsive">
+
+  <table class="table table-striped " id="dataTables" >
+
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Client Name</th>
+      <th>Address</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @clients = Client.where(created_at: (DateTime.current.midnight - 30.day)..Date.current.midnight) %>
+    <% @clients.each do |client| %>
+        <tr>
+          <td><%= client.id %></td>
+          <td><%= client.client_name %></td>
+          <td><%= client.full_address %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
