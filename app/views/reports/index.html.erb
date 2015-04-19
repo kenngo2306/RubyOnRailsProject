@@ -13,7 +13,7 @@
     <td>Monthly Client Report</td>
     <td>
 
-      <%= link_to('View Report', reports_index_path(format: "pdf"), :class => 'btn btn-default btn-sm')  %>
+      <%= link_to('View Report', reports_monthly_clients_path, :class => 'btn btn-default btn-sm')  %>
     </td>
   </tr>
   <tr>
@@ -37,7 +37,13 @@
   <tr>
     <td>Projects In Progress Report</td>
     <td>
-      <%= link_to('View Report', reports_inprogress_projects_path, :class => 'btn btn-default btn-sm')  %>
+      <%= link_to('View Report', reports_in_progress_projects_path, :class => 'btn btn-default btn-sm')  %>
+    </td>
+  </tr>
+  <tr>
+    <td>Monthly Project Type Count</td>
+    <td>
+      <%= link_to('View Report', reports_count_of_project_type_path, :class => 'btn btn-default btn-sm')  %>
     </td>
   </tr>
   </tbody>

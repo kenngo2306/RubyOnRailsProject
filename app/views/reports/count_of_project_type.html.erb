@@ -1,0 +1,24 @@
+<div class="page-header" xmlns="http://www.w3.org/1999/html">
+  <h1><%=t '.title', :default => 'Monthly Project Type Count' %></h1>
+</div>
+<div class="table-responsive">
+
+  <table class="table table-striped " id="dataTables" >
+
+    <thead>
+    <tr>
+      <th>Project Type Name</th>
+      <th>Count</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <% @project_types.each do |key, value| %>
+        <tr>
+          <td><%= key %></td>
+          <td><%= value %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

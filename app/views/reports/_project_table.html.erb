@@ -1,0 +1,25 @@
+<table class="table table-striped " id="dataTables" >
+
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Project Name</th>
+    <th>Start Date</th>
+    <th>Proposal Deadline</th>
+    <th>Sales Person</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @projects.each do |project| %>
+      <tr>
+        <td><%= project.id %></td>
+        <td><%= project.project_name %></td>
+        <td><%= project.start_date.to_formatted_s(:long_ordinal)%></td>
+        <td><%= project.proposal_deadline.to_formatted_s(:long_ordinal)%></td>
+        <td><%= project.sales_person.sales_person_fullname %></td>
+        <td><%= project.project_status.project_status_name %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
