@@ -18,7 +18,7 @@ class ProjectTypesController < ApplicationController
 
   # GET /project_types/new
   def new
-    @project_types = ProjectType.new
+    @project_type = ProjectType.new
   end
 
   # GET /project_types/1/edit

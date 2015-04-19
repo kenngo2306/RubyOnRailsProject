@@ -22,6 +22,7 @@
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_project_type_path(project_type), :class => 'fa fa-edit fa-2 btn btn-default btn-sm' %>
 
+          <%= link_to "Delete", project_type, :method=>:delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger btn-sm' unless project_type.hasQuestion? %>
         </td>
       </tr>
     <% end %>

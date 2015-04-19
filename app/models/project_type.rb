@@ -11,5 +11,13 @@ class ProjectType < ActiveRecord::Base
 
   validates_presence_of :project_type_name
   validates_length_of :project_type_name, maximum: 20
+
+  def hasQuestion?
+    if questions.count > 0 || categories.count > 0
+      true
+    else
+      false
+    end
+  end
 end
 
