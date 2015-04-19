@@ -49,7 +49,9 @@
                     <td>
                       <div>
                         <%= f.submit 'Update', :class => 'btn btn-default btn-sm ' %>
-                <% end %>
+                        <%= link_to "Delete", project, :method=>:delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger btn-sm' %>
+
+              <% end %>
                 <button type="button" id="pick" class="btn btn-default btn-sm">Documents</button></div>
                 <div>
                   <br>
