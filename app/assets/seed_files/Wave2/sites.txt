@@ -18,3 +18,4 @@ McColum Park|1212 McCall Road|Austin|78703|N/A|44
 St. Agnes Church|5321 McAllen Drive|Austin|78744|N/A|44
 Joe Gaither Park|4500 Foster Ave|Houston|77096|N/A|44
 Park Village Park|3456 Cypress Blvd|Houston|77094|Use the side entrance|44
+Outside T2 building|College of Technology|Houston|77004|N/A|44
