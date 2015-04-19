@@ -14,7 +14,10 @@ class User < ActiveRecord::Base
 		validates_uniqueness_of :email
 	end
 
-  validates_presence_of :name, :email, :password
+  validates_presence_of :name, :email
+  validate do |user|
+    errors.add :base, 'Incorrect Format' if user.encrypted_password.blank?
+  end
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, :message => "- Email format incorrect (Example: user@mail.com)"
   validates_length_of :name, maximum: 30
 

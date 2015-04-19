@@ -25,4 +25,8 @@ class Contact < ActiveRecord::Base
   def full_address
     "#{contact_address}  #{contact_city}, #{state.state_name} #{contact_zip} "
   end
+
+  def no_project?
+    project_contacts.nil?
+  end
 end
