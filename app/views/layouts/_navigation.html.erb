@@ -28,6 +28,8 @@
 		<%= render 'layouts/insidesales_navigation_links' %>
 	  <% elsif current_user.installer? %>
 		<%= render 'layouts/installer_navigation_links' %>
+	  <% elsif current_user.emptyrole? %>
+		<%= render 'layouts/emptyrole_navigation_links' %>
 	  <% end %>
       </ul>
 	

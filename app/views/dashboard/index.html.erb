@@ -73,6 +73,7 @@
 
 
 </script>
+<% if current_user.admin? || current_user.salesrep? || current_user.insidesales? || current_user.installer? %>
 <div class="dashboard-container">
 <div class="row">
 <% color_array = ["panel panel-primary",  "panel panel-yellow",  "panel panel-green", "panel panel-primary",  "panel panel-yellow",  "panel panel-green","panel panel-primary",  "panel panel-yellow",  "panel panel-green" ]%>
@@ -189,7 +190,8 @@
     });
 
 </script>
-
-
+<% elsif current_user.emptyrole? %>
+<h2 style="text-align:center">No Access. Please get an admin to change your role.</h2>
+<% end %>
 
 
