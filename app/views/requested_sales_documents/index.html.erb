@@ -17,12 +17,12 @@
         <td><%= requested_sales_document.requested_sales_document_name %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_requested_sales_document_path(requested_sales_document), :class => 'fa fa-edit fa-2 btn btn-default btn-sm' %>
+                      edit_requested_sales_document_path(requested_sales_document), :class => ' btn-default btn-sm' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       requested_sales_document_path(requested_sales_document),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-sm btn-danger' %>
+                      :class => ' btn-sm btn-danger' unless requested_sales_document.project_requested_sales_documents.count > 0 %>
         </td>
       </tr>
     <% end %>
