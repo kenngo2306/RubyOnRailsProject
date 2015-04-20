@@ -20,6 +20,14 @@ $(document).ready ->
     $('.fieldset_Contact_Location').show()
     return
       # enable chosen js
+  val = $('#contact_contact_type_id').val()
+  if (val>1)
+    $('#contact_client_id').hide()
+    $('#client_label').hide()
+    $('#contact_client_id').val('')
+  else if (val = 1)
+    $('#contact_client_id').show()
+    $('#client_label').show()
 
   $('#contact_contact_type_id').change ->
 #    alert 'changed!'

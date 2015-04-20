@@ -44,6 +44,10 @@ class ContactsController < ApplicationController
   # PATCH/PUT /contacts/1.json
   def update
     respond_to do |format|
+      @contact_type_id = @contact.contact_type_id
+      if @contact_type_id > 1
+        @contact.client_id = ''
+      end
       if @contact.update(contact_params)
         format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
         format.json { render :show, status: :ok, location: @contact }
