@@ -49,7 +49,12 @@ Rails.application.configure do
       :authentication       => "plain",
       :enable_starttls_auto => true
   }
-
+  #School server:
   config.action_mailer.default_url_options = { :host => 'http://129.7.138.54/' }
+
+  #########
+
+  #Ken's laptop:
+   # config.action_mailer.default_url_options = { :host => 'http://192.168.195.100/' }
 
 end

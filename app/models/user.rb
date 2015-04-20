@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 	
 	def set_default_role
 		self.role ||= :admin
+    # self.role ||= :emptyrole
+
 	end
 
 	def self.emailval

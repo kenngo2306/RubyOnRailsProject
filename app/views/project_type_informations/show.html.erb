@@ -2,8 +2,8 @@
 <div class="page-header">
   <h1>Design Information</h1>
 </div>
-<%= link_to 'Manage Project Site', project_site_information_path(@project_type_information.project_site_information), class: 'btn btn-primary btn-sm' %>
 <%= link_to 'Manage Project', project_path(@project_type_information.project_site_information.project), class: 'btn btn-primary btn-sm' %>
+<%= link_to 'Manage Project Site', project_site_information_path(@project_type_information.project_site_information), class: 'btn btn-primary btn-sm' %>
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
             edit_project_type_information_path(@project_type_information), :class => 'btn btn-primary btn-sm' %>
 <br>
