@@ -36,11 +36,10 @@
 </div>
 <div class = "showPageButton">
 <% if current_user.admin? || current_user.insidesales? || current_user.salesrep? %>
-<%= link_to t('.back', :default => t("helpers.links.back")),
-              contacts_path, :class => 'btn btn-default btn-sm'  %>
+
 <%= link_to t('.edit', :default => t("helpers.links.edit")),
               edit_contact_path(@contact), :class => ' fa fa-edit fa-2 btn btn-default btn-sm' %>
-
+<%= link_to 'Show Client', client_path(@contact.client), :class => 'fa fa-eye fa-2 btn btn-default btn-sm' unless @contact.client.nil? %>
 <% elsif current_user.installer? %>
 <%= link_to t('.back', :default => t("helpers.links.back")),
             contacts_path, :class => 'btn-default btn-sm'  %>

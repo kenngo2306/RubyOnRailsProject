@@ -1,5 +1,5 @@
 Age Group|1|2
-post_type|1|1
+Post Type|1|1
 Coastal Primer|1|1
 Play Series|1|2
 Free standing Play Activities|1|2
