@@ -40,13 +40,7 @@
     </div>
     <%= error_span(@client[:billing_address]) %>
   </div>
-              <div class="control-group">
-                <%= f.label :state_id, '*State', :class => 'control-label' %>
-                <div class="controls funabounds">
-                  <%= f.collection_select :state_id, State.all, :id,:state_name, {}, :class => 'form-control' %><br/>
-                </div>
-                <%= error_span(@client[:state_id]) %>
-              </div>
+
   <div class="control-group">
     <%= f.label :billing_city, '*Billing City', :class => 'control-label' %>
     <div class="controls">
@@ -54,6 +48,15 @@
     </div>
     <%= error_span(@client[:billing_city]) %>
   </div>
+
+              <div class="control-group">
+                <%= f.label :state_id, '*State', :class => 'control-label' %>
+                <div class="controls funabounds">
+                  <%= f.collection_select :state_id, State.all, :id,:state_name, {}, :class => 'form-control' %><br/>
+                </div>
+                <%= error_span(@client[:state_id]) %>
+              </div>
+
   <div class="control-group siteZip">
     <%= f.label :billing_zip, '*Billing Zip', :class => 'control-label' %>
     <div class="controls">
