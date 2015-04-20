@@ -18,6 +18,7 @@
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_project_setting_path(project_setting), :class => 'fa fa-edit fa-2 btn btn-default btn-sm' %>
+          <%= link_to "Delete", project_setting, :method=>:delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger btn-sm' unless project_setting.projects.count > 0 %>
 
         </td>
       </tr>

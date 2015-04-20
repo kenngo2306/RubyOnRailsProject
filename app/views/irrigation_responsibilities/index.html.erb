@@ -20,6 +20,7 @@
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_irrigation_responsibility_path(irrigation_responsibility), :class => 'fa fa-edit fa-2 btn btn-default btn-sm' %>
+          <%= link_to "Delete", irrigation_responsibility, :method=>:delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger btn-sm' unless irrigation_responsibility.projects.count > 0 %>
 
         </td>
       </tr>

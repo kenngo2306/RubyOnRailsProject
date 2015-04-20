@@ -19,6 +19,7 @@
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_utility_path(utility), :class => 'fa fa-edit fa-2 btn btn-default btn-sm' %>
+          <%= link_to "Delete", utility, :method=>:delete, data: {confirm: "Are you sure?"}, :class => 'btn btn-danger btn-sm' unless utility.project_utilities.count > 0 %>
 
         </td>
       </tr>
