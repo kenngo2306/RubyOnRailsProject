@@ -304,7 +304,7 @@
                     <div class="control-group">
                       <%= f.label :state_id, '*State', :class => 'control-label' %>
                       <div class="controls funabounds">
-                        <%= f.collection_select :state_id, State.all, :id, :state_name, {}, :class => 'form-control get_state' %>
+                        <%= f.collection_select :state_id, State.all, :id, :state_name, {}, :class => 'form-control' %>
                       </div>
                       <%= error_span(@project_site[:state_id]) %>
                     </div>
@@ -507,9 +507,9 @@
     var left, opacity, scale; //fieldset properties which we will animate
     var animating; //flag to prevent quick multi-click glitches
 
-//    $(document).ready(function(){
-//        $('select option:contains("Texas")').prop('selected',true);
-//    });
+    $(document).ready(function(){
+        $('select option:contains("Texas")').prop('selected',true);
+    });
 
     $(".next").click(function(){
         if(animating) return false;
